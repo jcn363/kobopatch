@@ -216,6 +216,10 @@ https://www.mobileread.com/forums/showpost.php?p=3312320&postcount=1
 
 https://www.mobileread.com/forums/showthread.php?t=272762
 
+# FONTS
+
+https://www.mobileread.com/forums/showthread.php?t=204363
+
 # nickel GUI not displaying certain characters
 
 https://www.mobileread.com/forums/showthread.php?t=278392
