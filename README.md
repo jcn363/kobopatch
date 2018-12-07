@@ -20,7 +20,7 @@ https://www.mobileread.com/forums/showpost.php?p=3312320&postcount=1
 
 https://www.mobileread.com/forums/showthread.php?t=272762
 
-# FONTS
+# FUENTES (tipos de letra)
 
 https://www.mobileread.com/forums/showthread.php?t=204363
 
