@@ -246,6 +246,10 @@ https://www.mobileread.com/forums/showthread.php?t=292914
 
 http://www.pbchess.vlasovsoft.net/en/index.html
 
+# The UltimateMangaReader
+
+https://www.mobileread.com/forums/showthread.php?t=299094
+
 # Random Screensaver Image
 
 https://www.mobileread.com/forums/showthread.php?t=255238
