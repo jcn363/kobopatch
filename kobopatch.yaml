@@ -98,7 +98,7 @@ overrides:
   src/libnickel-PROGRESIVE.yaml:
     Dictionary, remove long winded closest match notification: yes
     unclassified (PROGRESIVE): #yes deprecated since 4.11.11911
-    My ePub/Kepub fixed font sharpness: no
+    My ePub/Kepub fixed font sharpness: yes
     Wikipedia Search language: yes
     My KePub stylesheet additions: yes
     My Dictionary text font-family/font-size/line-height: yes
@@ -110,12 +110,12 @@ overrides:
   src/libnickel.so.1.0.0.yaml:
     Rename new home screen footer: no
     Set slide to unlock: yes #10
-    Enable rotation on all devices: no #2
+    Enable rotation on all devices: yes #2
     Both page turn buttons go next: no
     Rename settings: no
     Replace adobe page numbers toggle with invert screen: yes #1
     Always show confirmation dialog before upgrading: yes
-    Set reading footer height: no
+    Set reading footer height: no # in libnickel-PROGRESIVE.yaml
 # PATCH GROUP - DON'T EANBLE MORE THAN 1
     My 10 line spacing values: no #8
     My 24 line spacing values: yes #6
@@ -124,8 +124,8 @@ overrides:
     Custom font sizes: yes #9
     Freedom to advanced fonts control: yes #5
 # PATCH GROUP - DON'T EANBLE MORE THAN 1
-    ePub fixed/adjustable top/bottom margins: #yes #11
-    ePub fixed top/bottom margins: yes
+    ePub fixed/adjustable top/bottom margins: yes #11
+    ePub fixed top/bottom margins: no
     ePub disable built-in body padding-bottom: no
 # END GROUP
     Custom kepub default margins: yes #3
@@ -194,12 +194,15 @@ translations:
 # files:
 #   src/whatever.txt: usr/local/Kobo/whatever.txt
 files:
+# To remove the system fonts
+# https://www.mobileread.com/forums/showthread.php?t=278392
   src/delete_files/delete_fonts.rules: etc/udev/rules.d/delete_fonts.rules
   src/delete_files/delete_fonts.sh: root/delete_fonts.sh
   src/hyphenDicts/dicthtml-e6.zip: mnt/onboard/.kobo/dict/dicthtml-es.zip
   src/hyphenDicts/hyph_de.dic: usr/local/Kobo/hyphenDicts/hyph_de.dic
-  src/hyphenDicts/hyph_es.dic: usr/local/Kobo/hyphenDicts/hyph_es.dic
-  src/hyphenDicts/hyph_es_ES.dic: usr/local/Kobo/hyphenDicts/hyph_es_ES.dic
+  src/hyphenDicts/hyph_es.dic:
+    - usr/local/Kobo/hyphenDicts/hyph_es.dic 
+    - usr/local/Kobo/hyphenDicts/hyph_es_ES.dic
   src/hyphenDicts/hyph_en_US.dic: usr/local/Kobo/hyphenDicts/hyph_en_US.dic
   src/hyphenDicts/hyph_fr.dic: usr/local/Kobo/hyphenDicts/hyph_fr.dic
   src/hyphenDicts/hyph_la.dic: usr/local/Kobo/hyphenDicts/hyph_la.dic
@@ -208,6 +211,7 @@ files:
   src/otros/jcn-t.css:
     - mnt/onboard/kobo_extra.css
     - mnt/onboard/.kobo/kepub/kepub-book.css
+# https://www.ibm.com/plex/
   src/fonts/IBMPlexMono-Regular.ttf:
     - mnt/onboard/fonts/IBMPlexMono-Regular.ttf
     - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexMono-Regular.ttf
@@ -244,9 +248,11 @@ files:
   src/fonts/IBMPlexSerif-BoldItalic.ttf:
     - mnt/onboard/fonts/IBMPlexSerif-BoldItalic.ttf
     - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexSerif-BoldItalic.ttf
+# https://sansforgetica.rmit/
   src/fonts/SansForgetica-Regular.otf:
     - mnt/onboard/fonts/SansForgetica-Regular.otf
     - mnt/onboard/.adds/koreader/fonts/Forgetica/SansForgetica-Regular.otf
+# https://www.type-together.com/literata
   src/fonts/Literata-BoldItalic.otf:
     - mnt/onboard/fonts/Literata-BoldItalic.otf
     - mnt/onboard/.adds/koreader/fonts/Literata/Literata-BoldItalic.otf
@@ -259,6 +265,7 @@ files:
   src/fonts/Literata-Regular.otf:
     - mnt/onboard/fonts/Literata-Regular.otf
     - mnt/onboard/.adds/koreader/fonts/Literata/Literata-Regular.otf
+# https://github.com/adobe-fonts/source-sans-pro
   src/fonts/SourceSansPro-Regular.ttf: mnt/onboard/fonts/SourceSansPro-Regular.ttf
   src/fonts/SourceSansPro-Italic.ttf: mnt/onboard/fonts/SourceSansPro-Italic.ttf
   src/fonts/SourceSansPro-Bold.ttf: mnt/onboard/fonts/SourceSansPro-Bold.ttf
