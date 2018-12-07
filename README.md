@@ -16,7 +16,7 @@ Para la versión actual (4.10.11655):
 
 6.- Descargar los parches (kobopatch_4.10.11655.zip) desde https://github.com/geek1011/kobopatch-patches/releases (a día de hoy https://github.com/geek1011/kobopatch-patches/releases/download/v16/kobopatch_4.10.11655.zip)
 
-7.- Descomprimir el fichero anterior. Se crea una carpeta kobopatch_4.10.11655 dentro de la cual verás un fichero kobopatch.yaml. Abre el fichero con un editor de texto (si tu sistema operativo es Windows usa Notepad++ u otro que pueda usar los cambios de línea tipo UNIX. Con Linux no tendrás problema alguno y con Mac es altamente improbable que los tengas).
+7.- Descomprimir el fichero anterior. Se crea una carpeta kobopatch_4.10.11655 dentro de la cual verás un fichero kobopatch.yaml. Abre el fichero con un editor de texto (si tu sistema operativo es Windows usa Notepad++ u otro que pueda usar los cambios de línea tipo UNIX. Con Linux no tendrás problema alguno y con Mac es improbable que los tengas).
 
 8.- Modifica el fichero para que te quede a tu gusto. Guardar los cambios. (Si quieres modificar algún parche continúa en 9, de lo contrario en 10).
 
