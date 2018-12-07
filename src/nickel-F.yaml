@@ -1,0 +1,1215 @@
+Custom font-size:
+  - Enabled: no
+  - Description: |
+      Based on tshering's BAD EYES
+      source: tshering/KBPatcher17_4.4.9995/4_plus_source/nickel
+      When editing the replacement values (into the NOZLIB) below,
+      BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      If a replacement string is too long you will get an error when making the patch,
+      but if one is too short then there will be no error,
+      but strange things will happen.
+#
+# Only my personal () make me do something like this.
+# This is against my thinking, need, want... even will.
+#
+# This is only for those who want to change the font-size
+# (to increase a little bit the performance)
+# without bother on the look.
+#
+# This patch will NOT WORK with:
+#
+# Custom reading footer style
+# Custom synopsis/details line spacing
+# Custom synopsis/font size
+# Dictionary pop-up frame size increase
+# Changing the info panel in full size screensaver- beta 1
+# Custom font to Collection and Authors names
+# Increase headlines font
+#
+# for sure, and probably with any other.
+#
+#      Device type.
+#        - Touch # Trilogy
+#        - Touch2 # Pika
+#        - Mini # Pixie
+#        - AuraHD # Dragon
+#        - Aura # Phoenix
+#        - Aura2 # Star
+#        - Glo # Kraken - uses the values of Phoenix
+#        - H2O # Dahlia - uses the values of Dragon
+#        - H2O2 # Snow
+#        - GloHD # Alyssum
+#        - ClaraHD # Nova
+#        - AuraOne # Daylight
+#        - Forma # Frost - uses the values of Daylight
+#
+#1 (zlib) pos: 1504d
+#zlib stream: offset_hex(0x1504D) offset_int32(86093) len_int32(3744) sha1(2ff51c25daf4c135c9aeda24e110677892616a6a)
+  - FindZlib: "reader_head"
+  - ReplaceZlib:
+      Find:    "font-size: 36px" # dragon
+      Replace: "font-size: 39px"
+  - ReplaceZlib:
+      Find:    "font-size: 28px" # phoenix
+      Replace: "font-size: 32px"
+  - ReplaceZlib:
+      Find:    "font-size: 23px" # trilogy
+      Replace: "font-size: 27px"
+
+#2 (zlib) pos: 252ac1
+#zlib stream: offset_hex(0x252AC1) offset_int32(2435777) len_int32(57344) sha1(da62721d3ebc43e60e0221f16f2f7c4c1b98154b)
+  - FindZlib: "QWidget[small"
+  - ReplaceZlib:
+      Find:    "QCheckBox[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                QCheckBox[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                QCheckBox[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                QCheckBox[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                QCheckBox[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                QCheckBox[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "QCheckBox{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "QRadioButton[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                QRadioButton[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                QRadioButton[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                QRadioButton[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                QRadioButton[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                QRadioButton[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "QRadioButton{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "N3ButtonLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                N3ButtonLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                N3ButtonLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                N3ButtonLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                N3ButtonLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                N3ButtonLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "N3ButtonLabel{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "N3ButtonLabel[labelSize=\"medium\"][qApp_deviceIsTrilogy=true] {\n  font-size: 30px;\n}\n\
+                N3ButtonLabel[labelSize=\"medium\"][qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n}\n\
+                N3ButtonLabel[labelSize=\"medium\"][qApp_deviceIsDragon=true] {\n  font-size: 46px;\n}\n\
+                N3ButtonLabel[labelSize=\"medium\"][qApp_deviceIsAlyssum=true] {\n  font-size: 50px;\n}\n\
+                N3ButtonLabel[labelSize=\"medium\"][qApp_deviceIsNova=true] {\n  font-size: 50px;\n}\n\
+                N3ButtonLabel[labelSize=\"medium\"][qApp_deviceIsDaylight=true] {\n  font-size: 60px;\n}\n\
+                N3ButtonLabel[labelSize=\"small\"][qApp_deviceIsTrilogy=true] {\n  font-size: 23px;\n}\n\
+                N3ButtonLabel[labelSize=\"small\"][qApp_deviceIsPhoenix=true] {\n  font-size: 28px;\n}\n\
+                N3ButtonLabel[labelSize=\"small\"][qApp_deviceIsDragon=true] {\n  font-size: 36px;\n}\n\
+                N3ButtonLabel[labelSize=\"small\"][qApp_deviceIsAlyssum=true] {\n  font-size: 39px;\n}\n\
+                N3ButtonLabel[labelSize=\"small\"][qApp_deviceIsNova=true] {\n  font-size: 39px;\n}\n\
+                N3ButtonLabel[labelSize=\"small\"][qApp_deviceIsDaylight=true] {\n  font-size: 46px;\n}"
+      Replace: "N3ButtonLabel[labelSize=\"medium\"]{font-size:64px;}\n\
+                N3ButtonLabel[labelSize=\"small\"]{font-size:52px;}"
+  - ReplaceZlib:
+      Find:    "SmallButtonLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 14px;\n  min-height: 0px;\n}\n\
+                SmallButtonLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 19px;\n  min-height: 0px;\n}\n\
+                SmallButtonLabel[qApp_deviceIsDragon=true] {\n  font-size: 24px;\n  min-height: 0px;\n}\n\
+                SmallButtonLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 27px;\n}\n\
+                SmallButtonLabel[qApp_deviceIsNova=true] {\n  font-size: 27px;\n}\n\
+                SmallButtonLabel[qApp_deviceIsDaylight=true] {\n  font-size: 31px;\n  min-height: 0px;\n}"
+      Replace: "SmallButtonLabel{font-size:37px;min-height:0px;}"
+  - ReplaceZlib:
+      Find:    "TouchLineEdit[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                TouchLineEdit[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                TouchLineEdit[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                TouchLineEdit[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                TouchLineEdit[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                TouchLineEdit[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "TouchLineEdit{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "DisplayLabel {\n  font-family: Georgia;\n  font-size: 50px;\n}\n\
+                DisplayLabel[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}\n\
+                DisplayLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 55px;\n}\n\
+                DisplayLabel[qApp_deviceIsPhoenix=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 45px;\n}\n\
+                DisplayLabel[qApp_deviceIsDragon=true] {\n  font-size: 71px;\n}\n\
+                DisplayLabel[qApp_deviceIsDragon=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 57px;\n}\n\
+                DisplayLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 77px;\n}\n\
+                DisplayLabel[qApp_deviceIsAlyssum=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 62px;\n}\n\
+                DisplayLabel[qApp_deviceIsNova=true] {\n  font-size: 77px;\n}\n\
+                DisplayLabel[qApp_deviceIsNova=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 62px;\n}\n\
+                DisplayLabel[qApp_deviceIsDaylight=true] {\n  font-size: 91px;\n}\n\
+                DisplayLabel[qApp_deviceIsDaylight=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 74px;\n}"
+      Replace: "DisplayLabel{font-family:Georgia;font-size:91px;}\n\
+                DisplayLabel[qApp_localeName=\"ja_JP\"] {font-family:Sans-SerifJP,sans-serif;font-style:normal;font-size:74px;}"
+  - ReplaceZlib:
+      Find:    "HeaderMediumElidedLabel[qApp_deviceIsTrilogy=true],\nHeaderMediumTouchLabel[qApp_deviceIsTrilogy=true],\nHeaderMediumLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 30px;\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsPhoenix=true],\nHeaderMediumTouchLabel[qApp_deviceIsPhoenix=true],\nHeaderMediumLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsDragon=true],\nHeaderMediumTouchLabel[qApp_deviceIsDragon=true],\nHeaderMediumLabel[qApp_deviceIsDragon=true] {\n  font-size: 46px;\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsAlyssum=true],\nHeaderMediumTouchLabel[qApp_deviceIsAlyssum=true],\nHeaderMediumLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 50px;\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsNova=true],\nHeaderMediumTouchLabel[qApp_deviceIsNova=true],\nHeaderMediumLabel[qApp_deviceIsNova=true] {\n  font-size: 50px;\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsDaylight=true],\nHeaderMediumTouchLabel[qApp_deviceIsDaylight=true],\nHeaderMediumLabel[qApp_deviceIsDaylight=true] {\n  font-size: 60px;\n}"
+# Pop-up header (footnotes and alike)
+      Replace: "HeaderMediumElidedLabel,HeaderMediumTouchLabel,HeaderMediumLabel{font-size:64px;}"
+  - ReplaceZlib:
+      Find:    "HeaderSmallLabel {\n  font-family: Georgia;\n  font-size: 23px;\n}\n\
+                HeaderSmallLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 28px;\n}\n\
+                HeaderSmallLabel[qApp_deviceIsDragon=true] {\n  font-size: 36px;\n}\n\
+                HeaderSmallLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 39px;\n}\n\
+                HeaderSmallLabel[qApp_deviceIsNova=true] {\n  font-size: 39px;\n}\n\
+                HeaderSmallLabel[qApp_deviceIsDaylight=true] {\n  font-size: 47px;\n}"
+# Font-size for titles in light menu
+      Replace: "HeaderSmallLabel{font-size:53px;}"
+  - ReplaceZlib:
+      Find:    "HeaderSmallElidedLabel,\nHeaderSmallItalicLabel {\n  font-family: Georgia;\n  font-style: italic;\n  font-size: 23px;\n  padding-left: 12px;\n  padding-right: 12px;\n  qproperty-alignment: 'AlignLeft|AlignVCenter';\n}\n\
+                HeaderSmallElidedLabel[qApp_deviceIsPhoenix=true],\nHeaderSmallItalicLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 28px;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n\
+                HeaderSmallElidedLabel[qApp_deviceIsDragon=true],\nHeaderSmallItalicLabel[qApp_deviceIsDragon=true] {\n  font-size: 36px;\n  padding-left: 20px;\n  padding-right: 20px;\n}\n\
+                HeaderSmallElidedLabel[qApp_deviceIsAlyssum=true],\nHeaderSmallItalicLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 39px;\n}\n\
+                HeaderSmallElidedLabel[qApp_deviceIsNova=true],\nHeaderSmallItalicLabel[qApp_deviceIsNova=true] {\n  font-size: 39px;\n}\n\
+                HeaderSmallElidedLabel[qApp_deviceIsDaylight=true],\nHeaderSmallItalicLabel[qApp_deviceIsDaylight=true] {\n  font-size: 47px;\n  padding-left: 26px;\n  padding-right: 26px;\n}"
+      Replace: "HeaderSmallElidedLabel,HeaderSmallItalicLabel{font-size:53px;padding-left:26px;padding-right:26px;}"
+  - ReplaceZlib:
+      Find:    "RegularAdjustingLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                RegularAdjustingLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                RegularAdjustingLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                RegularAdjustingLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                RegularAdjustingLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                RegularAdjustingLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "RegularAdjustingLabel{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "RegularAdjustingLabel[qApp_deviceIsTrilogy=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 17px;\n}\n\
+                RegularAdjustingLabel[qApp_deviceIsPhoenix=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 20px;\n}\n\
+                RegularAdjustingLabel[qApp_deviceIsDragon=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 27px;\n}\n\
+                RegularAdjustingLabel[qApp_deviceIsAlyssum=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 30px;\n}\n\
+                RegularAdjustingLabel[qApp_deviceIsNova=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 30px;\n}\n\
+                RegularAdjustingLabel[qApp_deviceIsDaylight=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 35px;\n}"
+      Replace: "RegularAdjustingLabel[qApp_localeName=\"ja_JP\"] {font-size:38px;}"
+  - ReplaceZlib:
+      Find:    "RegularLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                RegularLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                RegularLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                RegularLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                RegularLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                RegularLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+# Texts in submenus -> RegularLabel
+      Replace: "RegularLabel{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "RegularLabel[qApp_deviceIsTrilogy=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 17px;\n}\n\
+                RegularLabel[qApp_deviceIsPhoenix=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 20px;\n}\n\
+                RegularLabel[qApp_deviceIsDragon=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 27px;\n}\n\
+                RegularLabel[qApp_deviceIsAlyssum=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 30px;\n}\n\
+                RegularLabel[qApp_deviceIsNova=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 30px;\n}\n\
+                RegularLabel[qApp_deviceIsDaylight=true][qApp_localeName=\"ja_JP\"] {\n  font-size: 35px;\n}"
+      Replace: "DisplayLabel[qApp_localeName=\"ja_JP\"] {font-size:38px;}"
+  - ReplaceZlib:
+      Find:    "HeaderBarLabel[qApp_deviceIsTrilogy=true],\nRegularReversibleLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                HeaderBarLabel[qApp_deviceIsPhoenix=true],\nRegularReversibleLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                HeaderBarLabel[qApp_deviceIsDragon=true],\nRegularReversibleLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                HeaderBarLabel[qApp_deviceIsAlyssum=true],\nRegularReversibleLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                HeaderBarLabel[qApp_deviceIsNova=true],\nRegularReversibleLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                HeaderBarLabel[qApp_deviceIsDaylight=true],\nRegularReversibleLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "HeaderBarLabel,RegularReversibleLabel{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "RegularTouchLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                RegularTouchLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                RegularTouchLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                RegularTouchLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                RegularTouchLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                RegularTouchLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+# Pop-up text (footnotes and alike) -> RegularTouchLabel
+      Replace: "RegularTouchLabel{font-size:46px;}"
+  - ReplaceZlib:
+      Find:    "RegularElidedLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                RegularElidedLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                RegularElidedLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                RegularElidedLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                RegularElidedLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                RegularElidedLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+# More information in Light menu -> RegularElidedLabel
+      Replace: "RegularElidedLabel{font-family:Georgia;font-size:43px;padding-left:28px;}"
+  - ReplaceZlib:
+      Find:    "RegularElidableLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                RegularElidableLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                RegularElidableLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                RegularElidableLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                RegularElidableLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                RegularElidableLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "RegularElidableLabel{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "RegularItalicLabel[qApp_localeName=\"ja_JP\"][qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                RegularItalicLabel[qApp_localeName=\"ja_JP\"][qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                RegularItalicLabel[qApp_localeName=\"ja_JP\"][qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                RegularItalicLabel[qApp_localeName=\"ja_JP\"][qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                RegularItalicLabel[qApp_localeName=\"ja_JP\"][qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                RegularItalicLabel[qApp_localeName=\"ja_JP\"][qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "RegularItalicLabel[qApp_localeName=\"ja_JP\"]{font-size:40px;}"
+  - ReplaceZlib:
+      Find:    "PageLabel[qApp_deviceIsTrilogy=true],\nSmallElidedLabel[qApp_deviceIsTrilogy=true],\nSmallTouchLabel[qApp_deviceIsTrilogy=true],\nSmallLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 17px;\n}\n\
+                PageLabel[qApp_deviceIsPhoenix=true],\nSmallElidedLabel[qApp_deviceIsPhoenix=true],\nSmallTouchLabel[qApp_deviceIsPhoenix=true],\nSmallLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 22px;\n}\n\
+                PageLabel[qApp_deviceIsDragon=true],\nSmallElidedLabel[qApp_deviceIsDragon=true],\nSmallTouchLabel[qApp_deviceIsDragon=true],\nSmallLabel[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                PageLabel[qApp_deviceIsAlyssum=true],\nSmallElidedLabel[qApp_deviceIsAlyssum=true],\nSmallTouchLabel[qApp_deviceIsAlyssum=true],\nSmallLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 30px;\n}\n\
+                PageLabel[qApp_deviceIsNova=true],\nSmallElidedLabel[qApp_deviceIsNova=true],\nSmallTouchLabel[qApp_deviceIsNova=true],\nSmallLabel[qApp_deviceIsNova=true] {\n  font-size: 30px;\n}\n\
+                PageLabel[qApp_deviceIsDaylight=true],\nSmallElidedLabel[qApp_deviceIsDaylight=true],\nSmallTouchLabel[qApp_deviceIsDaylight=true],\nSmallLabel[qApp_deviceIsDaylight=true] {\n  font-size: 34px;\n}"
+      Replace: "PageLabel,SmallElidedLabel,SmallTouchLabel,SmallLabel{font-size:40px;}"
+  - ReplaceZlib:
+      Find:    "MetaDataElidedLabel[qApp_deviceIsTrilogy=true],\nMetaDataLabel[qApp_deviceIsTrilogy=true],\nMetaDataAdjustingLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 13px;\n}\n\
+                MetaDataElidedLabel[qApp_deviceIsPhoenix=true],\nMetaDataLabel[qApp_deviceIsPhoenix=true],\nMetaDataAdjustingLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 16px;\n}\n\
+                MetaDataElidedLabel[qApp_deviceIsDragon=true],\nMetaDataLabel[qApp_deviceIsDragon=true],\nMetaDataAdjustingLabel[qApp_deviceIsDragon=true] {\n  font-size: 21px;\n}\n\
+                MetaDataElidedLabel[qApp_deviceIsAlyssum=true],\nMetaDataLabel[qApp_deviceIsAlyssum=true],\nMetaDataAdjustingLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 23px;\n}\n\
+                MetaDataElidedLabel[qApp_deviceIsNova=true],\nMetaDataLabel[qApp_deviceIsNova=true],\nMetaDataAdjustingLabel[qApp_deviceIsNova=true] {\n  font-size: 23px;\n}\n\
+                MetaDataElidedLabel[qApp_deviceIsDaylight=true],\nMetaDataLabel[qApp_deviceIsDaylight=true],\nMetaDataAdjustingLabel[qApp_deviceIsDaylight=true] {\n  font-size: 27px;\n}"
+# Type of file and file size on My Books menu -> MetaDataElidedLabel
+      Replace: "MetaDataElidedLabel,MetaDataLabel,MetaDataAdjustingLabel{font-size:33px;}"
+
+#4 (nozlib) pos: 306d85
+  - FindReplaceString:
+      Find:    "font-size: 32px"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "font-size: 36px"
+      MustMatchLength: yes
+
+# (nozlib) pos 3074eb - 3175659:
+  - FindReplaceString:
+      Find:    "font-size: 24px"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "font-size: 28px"
+      MustMatchLength: yes
+
+#9 (zlib) pos: 4c2888
+#zlib stream: offset_hex(0x4C2888) offset_int32(4991112) len_int32(6139) sha1(962c7245fc347c13ace9cc38a2afaa00ca286db6)
+  - FindZlib: "#language[qApp"
+  - ReplaceZlib:
+      Find:    "MenuTextItem #menuTextItemLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "MenuTextItem #menuTextItemLabel{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "#settings[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #settings[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #settings[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #settings[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #settings[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #settings[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#settings{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "#language[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #language[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #language[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #language[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #language[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #language[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#language{font-size:43px;}"
+
+#16 (zlib) pos: 4c33be
+#zlib stream: offset_hex(0x4C33BE) offset_int32(4993982) len_int32(2042) sha1(c8e898332f00cbcf2ebf8cfc858710b27e918242)
+  - FindZlib: "RemoveDialog"
+  - ReplaceZlib:
+      Find:    "TouchRadioButton[qApp_deviceIsTrilogy=true] {\n  font-size: 23px;\n}\n\
+                TouchRadioButton[qApp_deviceIsPhoenix=true] {\n  font-size: 29px;\n}\n\
+                TouchRadioButton[qApp_deviceIsDragon=true] {\n  font-size: 36px;\n}\n\
+                TouchRadioButton[qApp_deviceIsDaylight=true] {\n  font-size: 47px;\n}"
+      Replace: "TouchRadioButton{font-size:53px;}"
+
+#22 (zlib) pos: 4c4120
+#zlib stream: offset_hex(0x4C4120) offset_int32(4997408) len_int32(3642) sha1(3e899a3e569a64ff645cdb6f484ef17188e279d4)
+  - FindZlib: "ComboButton"
+  - ReplaceZlib:
+      Find:    "#textButtonContainer TouchLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #textButtonContainer TouchLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #textButtonContainer TouchLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #textButtonContainer TouchLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #textButtonContainer TouchLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #textButtonContainer TouchLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#textButtonContainer TouchLabel{font-size:43px;}"
+
+#23 (zlib) pos: 4c4385
+#zlib stream: offset_hex(0x4C4385) offset_int32(4998021) len_int32(2796) sha1(deb102d49bef09a9ff92382ae16e7ff5c005ea85)
+  - FindZlib: "#topContainerWidget"
+  - ReplaceZlib:
+      Find:    "#numBooks[qApp_deviceIsTrilogy=true] {\n  font-size: 13px;\n  max-height: 46px;\n  min-height: 46px;\n}\n\
+                #numBooks[qApp_deviceIsPhoenix=true] {\n  font-size: 17px;\n  max-height: 56px;\n  min-height: 56px;\n}\n\
+                #numBooks[qApp_deviceIsDragon=true] {\n  font-size: 24px;\n  max-height: 70px;\n  min-height: 70px;\n}\n\
+                #numBooks[qApp_deviceIsDaylight=true] {\n  font-size: 31px;\n  max-height: 90px;\n  min-height: 90px;\n}"
+      Replace: "#numBooks{font-size:37px;max-height:90px;min-height:90px;}"
+
+#24 (zlib) pos: 4c45b0
+#zlib stream: offset_hex(0x4C45B0) offset_int32(4998576) len_int32(3026) sha1(b399667160075a1409046cb321345c767c8dadee)
+  - FindZlib: "#infoWidget"
+  - ReplaceZlib:
+      Find:    "#batteryStatus[qApp_deviceIsTrilogy=true] {\n  font-size: 17px;\n}\n\
+                #batteryStatus[qApp_deviceIsPhoenix=true] {\n  font-size: 22px;\n}\n\
+                #batteryStatus[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                #batteryStatus[qApp_deviceIsAlyssum=true] {\n  font-size: 30px;\n}\n\
+                #batteryStatus[qApp_deviceIsNova=true] {\n  font-size: 30px;\n}\n\
+                #batteryStatus[qApp_deviceIsDaylight=true] {\n  font-size: 34px;\n}"
+# Changing the info panel in full size screensaver -> #infoFrame and #batteryStatus
+# See https://www.mobileread.com/forums/showthread.php?p=3220397&postcount=66
+      Replace: "#batteryStatus{font-size:40px;}"
+
+#25 (zlib) pos: 4c4812
+#zlib stream: offset_hex(0x4C4812) offset_int32(4999186) len_int32(2509) sha1(e34b20ee16033d91ba49ca99c9d8fcf44a0af2dc)
+  - FindZlib: "#homeWidgetTopContainer"
+  - ReplaceZlib:
+      Find:    "RegularElidedLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 21px;\n}\n\
+                RegularElidedLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 26px;\n}\n\
+                RegularElidedLabel[qApp_deviceIsDragon=true] {\n  font-size: 36px;\n}\n\
+                RegularElidedLabel[qApp_deviceIsDaylight=true] {\n  font-size: 47px;\n}"
+# Home screen titles (% read, My books) -> RegularElidedLabel
+      Replace: "RegularElidedLabel{font-size:53px;}"
+  - ReplaceZlib:
+      Find:    "MetaDataLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 13px;\n}\n\
+                MetaDataLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 17px;\n}\n\
+                MetaDataLabel[qApp_deviceIsDragon=true] {\n  font-size: 24px;\n}\n\
+                MetaDataLabel[qApp_deviceIsDaylight=true] {\n  font-size: 31px;\n}"
+# Home screen subtitles -> MetaDataLabel
+      Replace: "MetaDataLabel{font-size:37px;}"
+
+#27 (nozlib) pos: 4c4b37
+  - FindReplaceString:
+      Find:    "#primaryText[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #primaryText[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #primaryText[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #primaryText[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #primaryText[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #primaryText[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "#primaryText {font-size: 40px;}\n                                                                                                                                                                                                                                                                                                                                                      "
+      MustMatchLength: yes
+
+#28 (zlib) pos: 4c5063
+#zlib stream: offset_hex(0x4C5063) offset_int32(5001315) len_int32(3173) sha1(a3fbdd3be3572390c3b6e768a55b2c623e569286)
+  - FindZlib: "DragonMenuBar"
+  - ReplaceZlib:
+      Find:    "#showMenu[qApp_deviceIsTrilogy=true],\n#sortMenu[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #showMenu[qApp_deviceIsPhoenix=true],\n#sortMenu[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #showMenu[qApp_deviceIsDragon=true],\n#sortMenu[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #showMenu[qApp_deviceIsAlyssum=true],\n#sortMenu[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #showMenu[qApp_deviceIsNova=true],\n#sortMenu[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #showMenu[qApp_deviceIsDaylight=true],\n#sortMenu[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+# Sort titles of My Books -> sortMenu
+      Replace: "#showMenu,#sortMenu{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "#view[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #view[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #view[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #view[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #view[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #view[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#view{font-size:43px;}"
+
+#29 (zlib) pos: 4c52a4
+#zlib stream: offset_hex(0x4C52A4) offset_int32(5001892) len_int32(1410) sha1(69a21c3907011240f19655df67e20a253fdf6b1b)
+  - FindZlib: "#OverDriveFilterPopup"
+  - ReplaceZlib:
+      Find:    "#text[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n  padding-top: 40px;\n  max-width: 269px;\n  min-width: 269px;\n}\n\
+                #text[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n  padding-top: 50px;\n  max-width: 319px;\n  min-width: 319px;\n}\n\
+                #text[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n  padding-top: 70px;\n  max-width: 385px;\n  min-width: 385px;\n}\n\
+                #text[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n  padding-top: 90px;\n  max-width: 506px;\n  min-width: 506px;\n}"
+      Replace: "#text{font-size:43px;padding-top:90px;max-width:506px;min-width:506px;}"
+
+#30 (zlib) pos: 4c5445
+#zlib stream: offset_hex(0x4C5445) offset_int32(5002309) len_int32(3954) sha1(96bf038ac6efeade8ec07f01f5f88c4ce8e08ad1)
+  - FindZlib: "#SyncMenuView"
+  - ReplaceZlib:
+      Find:    "#description[qApp_deviceIsTrilogy=true],\n#statusLine1[qApp_deviceIsTrilogy=true],\n#statusLine2[qApp_deviceIsTrilogy=true] {\n  font-size: 21px;\n}\n\
+                #description[qApp_deviceIsPhoenix=true],\n#statusLine1[qApp_deviceIsPhoenix=true],\n#statusLine2[qApp_deviceIsPhoenix=true] {\n  font-size: 26px;\n}\n\
+                #description[qApp_deviceIsDragon=true],\n#statusLine1[qApp_deviceIsDragon=true],\n#statusLine2[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n}\n\
+                #description[qApp_deviceIsDaylight=true],\n#statusLine1[qApp_deviceIsDaylight=true],\n#statusLine2[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n}"
+      Replace: "#description,#statusLine1,#statusLine2{font-size:48px;}"
+  - ReplaceZlib:
+      Find:    "#lastSyncTime[qApp_deviceIsTrilogy=true] {\n  font-size: 14px;\n}\n\
+                #lastSyncTime[qApp_deviceIsPhoenix=true] {\n  font-size: 19px;\n}\n\
+                #lastSyncTime[qApp_deviceIsDragon=true] {\n  font-size: 24px;\n}\n\
+                #lastSyncTime[qApp_deviceIsDaylight=true] {\n  font-size: 32px;\n}"
+# Sync title of home screen main menu -> lastSyncTime
+      Replace: "#lastSyncTime{font-size:34px;}"
+
+#31 (zlib) pos: 4c5744
+#zlib stream: offset_hex(0x4C5744) offset_int32(5003076) len_int32(1951) sha1(0408b527ef3b1b959aa28fb2ed3b7634c778bc21)
+  - FindZlib: "#lblBullet_0,"
+  - ReplaceZlib:
+      Find:    "TouchLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 36px;\n  min-height: 90;\n  max-width: 90;\n  min-width: 90;\n}\n\
+                TouchLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 46px;\n  min-height: 112;\n  max-width: 112;\n  min-width: 112;\n}\n\
+                TouchLabel[qApp_deviceIsDragon=true] {\n  font-size: 66px;\n  min-height: 160;\n  max-width: 160;\n  min-width: 160;\n}\n\
+                TouchLabel[qApp_deviceIsDaylight=true] {\n  font-size: 86px;\n  min-height: 208;\n  max-width: 208;\n  min-width: 208;\n}"
+      Replace: "TouchLabel{font-size:86px;min-height:208;max-width:208;min-width:208;}"
+  - ReplaceZlib:
+      Find:    "#title[qApp_deviceIsTrilogy=true] {\n  font-size: 20px;\n  min-height: 90;\n  qproperty-leading: 10;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  font-size: 25px;\n  min-height: 112;\n  qproperty-leading: 12;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n  min-height: 160;\n  qproperty-leading: 16;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  font-size: 46px;\n  min-height: 208;\n  qproperty-leading: 23;\n}"
+      Replace: "#title{font-size:52px;min-height:208;qproperty-leading:23;}"
+
+#32 (zlib) pos: 4c5961
+#zlib stream: offset_hex(0x4C5961) offset_int32(5003617) len_int32(1427) sha1(432232e4a463b3a4ae1c718134c4824b14a219ca)
+  - FindZlib: "#checkMark"
+  - ReplaceZlib:
+      Find:    "#showFullTitle[qApp_deviceIsTrilogy=true] {\n  font-size: 20px;\n  max-width: 40px;\n  min-width: 40px;\n}\n\
+                #showFullTitle[qApp_deviceIsPhoenix=true] {\n  font-size: 29px;\n  max-width: 55px;\n  min-width: 55px;\n}\n\
+                #showFullTitle[qApp_deviceIsDragon=true] {\n  font-size: 36px;\n  max-width: 72px;\n  min-width: 72px;\n}\n\
+                #showFullTitle[qApp_deviceIsDaylight=true] {\n  font-size: 50px;\n  max-width: 93px;\n  min-width: 93px;\n}"
+      Replace: "#showFullTitle{font-size:55px;max-width:93px;min-width:93px;}"
+
+#33 (zlib) pos: 4c5ac9
+#zlib stream: offset_hex(0x4C5AC9) offset_int32(5003977) len_int32(6177) sha1(26536d27cf60e3ac04bceb63401f0ef33ae8c2a2)
+  - FindZlib: "#DragonSimilarLibraryView"
+  - ReplaceZlib:
+      Find:    "#title[qApp_deviceIsTrilogy=true] {\n  font-size: 23px;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  font-size: 28px;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  font-size: 36px;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  font-size: 47px;\n}\n\
+                #title[qApp_deviceIsAlyssum=true] {\n  font-size: 39px;\n}\n\
+                #title[qApp_deviceIsNova=true] {\n  font-size: 39px;\n}"
+      Replace: "#title{font-size:45px;}"
+
+#35 (nozlib) pos: 4c5fb7
+  - FindReplaceString:
+      Find:    "#label[qApp_deviceIsTrilogy=true] {\n  font-size: 30px;\n  max-width: 264px;\n  min-width: 264px;\n  max-height: 60px;\n  min-height: 60px;\n}\n\
+                #label[qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n  max-width: 331px;\n  min-width: 331px;\n  max-height: 72px;\n  min-height: 72px;\n}\n\
+                #label[qApp_deviceIsDragon=true] {\n  font-size: 46px;\n  max-width: 480px;\n  min-width: 480px;\n  max-height: 110px;\n  min-height: 110px;\n}\n\
+                #label[qApp_deviceIsDaylight=true] {\n  font-size: 60px;\n  max-width: 624px;\n  min-width: 624px;\n  max-height: 140px;\n  min-height: 140px;\n}\n\
+                #label {\n  border-bottom: 1px solid #BBBBBB;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "#label {font-size: 60px; max-width: 624px; min-width: 624px; max-height: 140px; min-height: 140px;}\n\
+                #label {border-bottom: 1px solid #BBBBBB;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "
+      MustMatchLength: yes
+
+#37 (nozlib) pos: 4c6381
+  - FindReplaceString:
+      Find:    "ReadingFooter {\n  qproperty-footerMargin: 105;\n}\n\
+                ReadingFooter[qApp_deviceIsDragon=true] {\n  qproperty-footerMargin: 170;\n}\n\
+                ReadingFooter[qApp_deviceIsDaylight=true] {\n  qproperty-footerMargin: 221;\n}\n\
+                #caption[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #caption[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #caption[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #caption[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #caption[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #caption[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}\n\
+                #caption[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}"
+# Custom reading footer style
+# This patch customises the following properties of the reading footer:
+# * Footer height (the amount of the screen reserved for the footer.)
+# * Caption font size (Caption = page number or other progress indicator)
+# * Caption top margin, which changes its vertical position within the footer.
+# * Caption font family.
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+# If a replacement string is too long you will get an error when making the patch,
+# but if one is too short then there will be no error,
+# but strange things will happen to the reading footer.
+# Optional Replacement caption margin-top value for all devices:
+# A negative top margin moves the caption text upwards,
+# further from the bezel and closer to the page content.
+      Replace: "ReadingFooter {qproperty-footerMargin: 74; min-height: 42px; max-height: 42px;}\n\
+                #caption{font-size: 32px; margin-top: -08px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "
+      MustMatchLength: yes
+
+#38 (zlib) pos: 4c661a
+#zlib stream: offset_hex(0x4C661A) offset_int32(5006874) len_int32(3731) sha1(3567b2fa7adc74d190be182226b80f64e3d52d63)
+  - FindZlib: "#ConfirmationDialog"
+  - ReplaceZlib:
+      Find:    "#ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsTrilogy=true] {\n  font-size: 17px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsPhoenix=true] {\n  font-size: 22px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsAlyssum=true] {\n  font-size: 30px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsNova=true] {\n  font-size: 30px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsDaylight=true] {\n  font-size: 34px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+# Font in pop-up text (footnotes and alike) -> #header,#title,#text
+      Replace: "#ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text{font-size:40px;}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title{font-size:43px;}"
+
+#43 (zlib) pos: 4c7199
+#zlib stream: offset_hex(0x4C7199) offset_int32(5009817) len_int32(1696) sha1(5c2bdb79e1e207e5d708efb498b4aaf88071aa53)
+  - FindZlib: "#connectedPixmap"
+  - ReplaceZlib:
+      Find:    "#title[qApp_deviceIsTrilogy=true] {\n  font-size: 29px;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  font-size: 46px;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  font-size: 60px;\n}"
+      Replace: "#title{font-family:Georgia;font-size:64px;}"
+  - ReplaceZlib:
+      Find:    "#label[qApp_deviceIsTrilogy=true] {\n  font-size: 21px;\n}\n\
+                #label[qApp_deviceIsPhoenix=true] {\n  font-size: 26px;\n}\n\
+                #label[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n}\n\
+                #label[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n}"
+      Replace: "#label{font-family:Avenir;font-size:48px;}"
+
+#44 (zlib) pos: 4c7346
+#zlib stream: offset_hex(0x4C7346) offset_int32(5010246) len_int32(1325) sha1(5854beb48d85a887066a04dd2e8473767eb5eb3c)
+  - FindZlib: "#KoboPlusDetailsWidget"
+  - ReplaceZlib:
+      Find:    "#availableText[qApp_deviceIsTrilogy=true],\n#learnMore[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #availableText[qApp_deviceIsPhoenix=true],\n#learnMore[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #availableText[qApp_deviceIsDragon=true],\n#learnMore[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #availableText[qApp_deviceIsAlyssum=true],\n#learnMore[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #availableText[qApp_deviceIsNova=true],\n#learnMore[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #availableText[qApp_deviceIsDaylight=true],\n#learnMore[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#availableText,#learnMore{padding:0px;font-size:43px;}"
+
+#45 (zlib) pos: 4c74ae
+#zlib stream: offset_hex(0x4C74AE) offset_int32(5010606) len_int32(2628) sha1(b3bd62892b313b97e382e1f461f83460651fa73f)
+  - FindZlib: "#ReadingMenuFontSettingsView"
+  - ReplaceZlib:
+      Find:    "#justificationButton_off {\n  border-top-left-radius: 0px;\n  border-bottom-left-radius: 0px;\n  font-size: 17px;\n  font-family: Avenir;\n  background-color: #D9D9D9;\n}\n\
+                #justificationButton_off[qApp_deviceIsTrilogy=true] {\n  max-height: 50px;\n  min-height: 50px;\n}\n\
+                #justificationButton_off[qApp_deviceIsPhoenix=true] {\n  max-height: 60px;\n  min-height: 60px;\n  font-size: 22px;\n}\n\
+                #justificationButton_off[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                #justificationButton_off[qApp_deviceIsDaylight=true] {\n  font-size: 34px;\n}"
+      Replace: "#justificationButton_off{border-top-left-radius:0px;border-bottom-left-radius:0px;font-family:Avenir;font-size:40px;background-color:lightgrey;}"
+
+#47 (nozlib) pos: 4c7cf4
+  - FindReplaceString:
+      Find:    "#container[qApp_deviceIsTrilogy=true] {\n  qproperty-spacing: 12px;\n}\n\
+                #container[qApp_deviceIsPhoenix=true] {\n  qproperty-spacing: 16px;\n}\n\
+                #container[qApp_deviceIsDragon=true] {\n  qproperty-spacing: 22px;\n}\n\
+                #container[qApp_deviceIsDaylight=true] {\n  qproperty-spacing: 28px;\n}\n\
+                #text {\n  font-family: Avenir;\n  text-transform: uppercase;\n}\n\
+                #text[qApp_deviceIsTrilogy=true] {\n  font-size: 13px;\n}\n\
+                #text[qApp_deviceIsPhoenix=true] {\n  font-size: 16px;\n}\n\
+                #text[qApp_deviceIsDragon=true] {\n  font-size: 21px;\n}\n\
+                #text[qApp_deviceIsAlyssum=true] {\n  font-size: 23px;\n}\n\
+                #text[qApp_deviceIsNova=true] {\n  font-size: 23px;\n}\n\
+                #text[qApp_deviceIsDaylight=true] {\n  font-size: 27px;\n}\n\
+                #text[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n  text-transform: none;\n}\n\
+                #text[qApp_localeName=\"tr_TR\"] {\n  font-family: Georgia;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "#container {qproperty-spacing: 28px;}\n\
+                #text {font-family: Avenir; text-transform: uppercase; font-size: 31px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    "
+      MustMatchLength: yes
+
+#49 (zlib) pos: 4c81fa
+#zlib stream: offset_hex(0x4C81FA) offset_int32(5014010) len_int32(2156) sha1(52a5fc1ad3bf9c7996f57ac0efdc6db7120b5f17)
+  - FindZlib: "#PocketFinishedMenuView"
+  - ReplaceZlib:
+      Find:    "#title[qApp_deviceIsTrilogy=true] {\n  padding-top: 35px;\n  padding-bottom: 15px;\n  padding-left: 10px;\n  font-size: 29px;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  padding-bottom: 15px;\n  padding-left: 15px;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  padding-bottom: 20px;\n  padding-left: 20px;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  padding-bottom: 26px;\n  padding-left: 26px;\n}\n\
+                #title[qApp_deviceIsPixie=true] {\n  font-size: 32px;\n}"
+      Replace: "#title{padding-top:35px;padding-bottom:26px;padding-left:26px;font-size:33px;}"
+
+#53 (zlib) pos: 4c8baf
+#zlib stream: offset_hex(0x4C8BAF) offset_int32(5016495) len_int32(3728) sha1(e73555e12225f8ceeff238582df5cf53036cb27c)
+  - FindZlib: "#lineEdit {"
+  - ReplaceZlib:
+      Find:    "MenuTextItem #menuTextItemLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "MenuTextItem #menuTextItemLabel{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "#label[qApp_deviceIsTrilogy=true] {\n  font-size: 17px;\n}\n\
+                #label[qApp_deviceIsPhoenix=true] {\n  font-size: 22px;\n}\n\
+                #label[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                #label[qApp_deviceIsAlyssum=true] {\n  font-size: 30px;\n}\n\
+                #label[qApp_deviceIsNova=true] {\n  font-size: 30px;\n}\n\
+                #label[qApp_deviceIsDaylight=true] {\n  font-size: 34px;\n}"
+      Replace: "#label,#lineEdit{padding-left:0px;font-size:40px;}"
+
+# (nozlib) pos: 4c93a8 - 5018536
+  - FindReplaceString:
+      Find:    "QLabel {\n  font-family: Avenir;\n  font-size: 34px;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "QLabel {\n  font-family: Avenir;\n  font-size: 37px;\n}"
+      MustMatchLength: yes
+
+#60 (zlib) pos: 4ca3c8
+#zlib stream: offset_hex(0x4CA3C8) offset_int32(5022664) len_int32(3159) sha1(6ea1f8ffb6a83b60a8cdeb3891f37207e23e90ef)
+  - FindZlib: "#barContainer"
+  - ReplaceZlib:
+      Find:    "#tabContainer > N3TabItem[qApp_deviceIsTrilogy=true] {\n  font-size: 16px;\n}\n\
+                #tabContainer > N3TabItem[qApp_deviceIsPhoenix=true] {\n  font-size: 20px;\n}\n\
+                #tabContainer > N3TabItem[qApp_deviceIsDragon=true] {\n  font-size: 28px;\n}\n\
+                #tabContainer > N3TabItem[qApp_deviceIsDaylight=true] {\n  font-size: 36px;\n}"
+# Increase headlines font: -> #tabContainer > N3TabItem
+# Increase the font size in My books, Activity, Bookstore...
+# See https://www.mobileread.com/forums/showpost.php?p=3527188&postcount=53
+      Replace: "#tabContainer > N3TabItem{font-size: 42px;}"
+
+#61 (nozlib) pos: 4ca5f5
+  - FindReplaceString:
+      Find:    "#QFrame {\n  color: #000000;\n}\n\
+                #container {\n  background-color: #D0D0D0;\n}\n\
+                #container[colorTheme=\"LightTheme\"] {\n  background-color: white;\n}\n\
+                #textEdit {\n  font-size: 20px;\n  border: 0px;\n  color: #000000;\n  font-family: Georgia;\n}\n\
+                #textEdit[qApp_deviceIsPhoenix=true] {\n  font-size: 24px;\n}\n\
+                #textEdit[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #textEdit[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #textEdit[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #textEdit[qApp_deviceIsDaylight=true] {\n  font-size: 38px;\n}\n\
+                #textEdit[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}\n\
+                #characterCount {\n  padding: 10px;\n  color: #4d4d4d;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "#QFrame {color: black;}\n\
+                #container {background-color: lightgray;}\n\
+                #container[colorTheme=\"LightTheme\"] {background-color: white;}\n\
+                #textEdit {font-family: Georgia; font-size: 41px; border: 0px; color: black;}\n\
+                #characterCount {padding: 10px; color: dimgray;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                            "
+      MustMatchLength: yes
+
+#64 (zlib) pos: 4cacc9
+#zlib stream: offset_hex(0x4CACC9) offset_int32(5024969) len_int32(6708) sha1(60e69924bee00a34c879be2a85bffdbca15276a0)
+  - FindZlib: "#readPreview"
+  - ReplaceZlib:
+      Find:    "#author[qApp_deviceIsTrilogy=true] {\n  max-width: 336px;\n  min-width: 336px;\n  font-size: 19px;\n}\n\
+                #author[qApp_deviceIsPhoenix=true] {\n  max-width: 420px;\n  min-width: 420px;\n  font-size: 25px;\n}\n\
+                #author[qApp_deviceIsDragon=true] {\n  max-width: 600px;\n  min-width: 600px;\n  font-size: 32px;\n}\n\
+                #author[qApp_deviceIsDaylight=true] {\n  max-width: 780px;\n  min-width: 780px;\n  font-size: 42px;\n}"
+      Replace: "#author{max-width:780px;min-width:780px;font-size:48px;}"
+  - ReplaceZlib:
+      Find:    "#readPreview[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #readPreview[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #readPreview[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #readPreview[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #readPreview[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #readPreview[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#readPreview{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "#upgradeLbl[qApp_deviceIsTrilogy=true] {\n  font-size: 13px;\n}\n\
+                #upgradeLbl[qApp_deviceIsPhoenix=true] {\n  font-size: 16px;\n}\n\
+                #upgradeLbl[qApp_deviceIsDragon=true] {\n  font-size: 21px;\n}\n\
+                #upgradeLbl[qApp_deviceIsAlyssum=true] {\n  font-size: 23px;\n}\n\
+                #upgradeLbl[qApp_deviceIsNova=true] {\n  font-size: 23px;\n}\n\
+                #upgradeLbl[qApp_deviceIsDaylight=true] {\n  font-size: 27px;\n}"
+      Replace: "#upgradeLbl{font-size:34px;}"
+  - ReplaceZlib:
+      Find:    "#subtitle[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #subtitle[qApp_deviceIsPhoenix=true] {\n  font-size: 25px;\n}\n\
+                #subtitle[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n}\n\
+                #subtitle[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n}"
+      Replace: "#subtitle{font-size:48px;}"
+  - ReplaceZlib:
+      Find:    "#title[qApp_deviceIsTrilogy=true] {\n  font-size: 24px;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  font-size: 30px;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  font-size: 40px;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  font-size: 52px;\n}"
+# My book preview title size -> title
+      Replace: "#title{font-size:57px;}"
+  - ReplaceZlib:
+      Find:    "#startTrialLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #startTrialLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 25px;\n}\n\
+                #startTrialLabel[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n}\n\
+                #startTrialLabel[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n}"
+      Replace: "#startTrialLabel{font-size:48px;}"
+
+#66 (zlib) pos: 4cb341
+#zlib stream: offset_hex(0x4CB341) offset_int32(5026625) len_int32(4009) sha1(bc06f4c65e3c8a673d53bacac31532f2b13ba3dd)
+  - FindZlib: "StatusBarMenu"
+  - ReplaceZlib:
+      Find:    "MenuTextItem #menuTextItemLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "MenuTextItem #menuTextItemLabel{font-size:45px;}"
+  - ReplaceZlib:
+      Find:    "MenuTextItem #menuTextItemLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n}"
+# Main menu font size -> MenuTextItem #menuTextItemLabel
+# This value overwrites the above value
+      Replace: "MenuTextItem #menuTextItemLabel{font-size:45px;}"
+
+# (nozlib) pos 4cbc8e - 5029006:
+  - FindReplaceString:
+      Find:    "* {\n  background: none;\n}\n\
+                #loadingLabel {\n  font-family: Georgia;\n}\n\
+                #loadingLabel[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n  qproperty-leading: 0;\n}\n\
+                #loadingLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #loadingLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #loadingLabel[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                #loadingLabel[qApp_deviceIsDaylight=true] {\n  font-size: 34px;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "* {background: none;}\n\
+                #loadingLabel {font-family: Georgia; font-size: 37px;}\n                                                                                                                                                                                                                                                                                                                                                                                        "
+      MustMatchLength: yes
+
+#71 (zlib) pos: 4cbf9c
+#zlib stream: offset_hex(0x4CBF9C) offset_int32(5029788) len_int32(4634) sha1(095b856fc3649571edf632e75331882e8cef4d21)
+  - FindZlib: "#StatusBarView"
+  - ReplaceZlib:
+      Find:    "#message[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #message[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #message[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n}\n\
+                #message[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n}"
+# Actual menu name on Home screen menu bar -> #message
+      Replace: "#message{font-size:48px;}"
+  - ReplaceZlib:
+      Find:    "#message[showIndicators=false][qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #message[showIndicators=false][qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #message[showIndicators=false][qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #message[showIndicators=false][qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #message[showIndicators=false][qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #message[showIndicators=false][qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#message[showIndicators=false]{font-size:42px;}"
+
+#72 (nozlib) pos: 4cc27a
+  - FindReplaceString:
+      Find:    "#topContainer {\n  qproperty-spacing: 0;\n}\n\
+                #pageLabel {\n  padding: 0px;\n}\n\
+                #selectionCountLabel {\n  font-family: Avenir;\n  color: #666666;\n  padding-bottom: 1px;\n}\n\
+                #selectionCountLabel[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}\n\
+                #selectionCountLabel[qApp_localeName=\"tr_TR\"] {\n  font-family: Georgia;\n}\n\
+                #selectionCountLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 16px;\n}\n\
+                #selectionCountLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 20px;\n}\n\
+                #selectionCountLabel[qApp_deviceIsDragon=true] {\n  font-size: 28px;\n}\n\
+                #selectionCountLabel[qApp_deviceIsDaylight=true] {\n  font-size: 36px;\n}\n\
+                #markAsButton,\n#addToButton,\n#removeButton {\n  qproperty-primaryButton: true;\n}\n\
+                #footer[qApp_deviceIsTrilogy=true] {\n  qproperty-spacing: 6px;\n}\n\
+                #footer[qApp_deviceIsPhoenix=true] {\n  qproperty-spacing: 8px;\n}\n\
+                #footer[qApp_deviceIsDragon=true] {\n  qproperty-spacing: 10px;\n}\n\
+                #footer[qApp_deviceIsDaylight=true] {\n  qproperty-spacing: 13px;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "#topContainer {qproperty-spacing: 0;}\n\
+                #pageLabel {padding: 0px;}\n\
+                #selectionCountLabel {font-family: Avenir; color: dimgray; padding-bottom: 1px; font-size: 39px;}\n\
+                #markAsButton, #addToButton, #removeButton {qproperty-primaryButton: true;}\n\
+                #footer {qproperty-spacing: 13px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "
+      MustMatchLength: yes
+
+# (nozlib) pos: 4cc786
+# Custom synopsis DOESN'T WORK WITH `Custom synopsis/details line spacing` and `Custom synopsis/font size`
+# Sets the line spacing for the book's synopsis and details library view.
+  - FindReplaceString:
+      Find:    "* {\n  font-family: Georgia;\n}\n\
+                *[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}\n\
+                body {\n  margin: 0px;\n  padding: 0px;\n}\n\
+                body[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                body[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                body[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                body[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                body[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                body[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}\n\
+                body[qApp_deviceIsTrilogy=true] {\n  line-height: 1.45em;\n}\n\
+                body[qApp_deviceIsPhoenix=true] {\n  line-height: 1.4em;\n}\n\
+                body[qApp_deviceIsDragon=true] {\n  line-height: 1.35em;\n}\n\
+                body[qApp_deviceIsDaylight=true] {\n  line-height: 1.35em;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "* {font-family: Georgia;}\n\
+                body {margin: 0px; padding: 0px; font-size: 40px; line-height: 1.30em;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   "
+      MustMatchLength: yes
+
+#76 (zlib) pos: 4ccbea
+#zlib stream: offset_hex(0x4CCBEA) offset_int32(5032938) len_int32(3125) sha1(d838c176d811126fda8939596be2dd583e75fa50)
+  - FindZlib: "#ReviewWidget"
+  - ReplaceZlib:
+      Find:    "#title {\n  font-family: Georgia;\n  font-style: italic;\n  font-size: 20px;\n}\n\
+                #title[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  font-size: 25px;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n}"
+      Replace: "#title{font-size:48px;}"
+  - ReplaceZlib:
+      Find:    "#content[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #content[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #content[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #content[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #content[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #content[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#content{font-size:43px;}"
+
+#78 (zlib) pos: 4ccf3b
+#zlib stream: offset_hex(0x4CCF3B) offset_int32(5033787) len_int32(7975) sha1(5f9db71fdf88829ec35b8ccd53c26bd8be9c896b)
+  - FindZlib: "body.koboplus"
+  - ReplaceZlib:
+      Find:    "body.trilogy,\np.trilogy {\n  font-size: 18px;\n}\n\
+                body.phoenix,\np.phoenix {\n  font-size: 21px;\n}\n\
+                body.dragon,\np.dragon {\n  font-size: 29px;\n}\n\
+                body.alyssum,\np.alyssum {\n  font-size: 32px;\n}\n\
+                body.daylight,\np.daylight {\n  font-size: 37px;\n}"
+      Replace: "body.daylight,p.daylight{font-size:40px;}"
+  - ReplaceZlib:
+      Find:    ".title.trilogy {\n  font-size: 32px !important;\n  padding-top: 12px;\n  padding-bottom: 8px;\n}\n\
+                .title.phoenix {\n  font-size: 40px !important;\n  padding-top: 30px;\n  padding-bottom: 20px;\n}\n\
+                .title.dragon {\n  font-size: 50px !important;\n  padding-top: 60px;\n  padding-bottom: 25px;\n}\n\
+                .title.alyssum {\n  font-size: 56px !important;\n}\n\
+                .title.daylight {\n  font-size: 65px !important;\n  padding-top: 78px;\n  padding-bottom: 32px;\n}"
+      Replace: ".title.daylight{font-size:65px !important;padding-top:78px;padding-bottom:32px;}"
+  - ReplaceZlib:
+      Find:    "h1.trilogy {\n  font-size: 30px;\n}\n\
+                h1.phoenix {\n  font-size: 36px;\n}\n\
+                h1.dragon {\n  font-size: 46px;\n}\n\
+                h1.alyssum {\n  font-size: 50px;\n}\n\
+                h1.daylight {\n  font-size: 60px;\n}"
+      Replace: "h1.daylight{font-size:62px;}"
+  - ReplaceZlib:
+      Find:    "h2.trilogy {\n  font-size: 23px;\n}\n\
+                h2.phoenix {\n  font-size: 28px;\n}\n\
+                h2.dragon {\n  font-size: 36px;\n}\n\
+                h2.alyssum {\n  font-size: 39px;\n}\n\
+                h2.daylight {\n  font-size: 46px;\n}"
+      Replace: "h2.daylight{font-size:49px;}"
+  - ReplaceZlib:
+      Find:    "h1 + p.trilogy {\n  font-size: 23px !important;\n}\n\
+                h1 + p.phoenix {\n  font-size: 28px !important;\n}\n\
+                h1 + p.dragon {\n  font-size: 36px !important;\n}\n\
+                h1 + p.alyssum {\n  font-size: 39px !important;\n}\n\
+                h1 + p.daylight {\n  font-size: 46px !important;\n}"
+      Replace: "h1 + p.daylight{font-size:46px !important;}"
+  - ReplaceZlib:
+      Find:    ".OverDriveAboutItems td div.trilogy {\n  font-size: 21px !important;\n  width: 110px;\n  margin: 15px 15px 0px;\n}\n\
+                .OverDriveAboutItems td div.phoenix {\n  font-size: 25px !important;\n  width: 130px;\n  margin: 15px 25px 0px;\n}\n\
+                .OverDriveAboutItems td div.dragon {\n  font-size: 36px !important;\n  width: 185px;\n  margin: 35px 17px 0px;\n}\n\
+                .OverDriveAboutItems td div.daylight {\n  font-size: 46px !important;\n  width: 240px;\n  margin: 40px 20px 0px;\n}"
+      Replace: ".OverDriveAboutItems td div.daylight{font-size:46px !important;width:240px;margin:40px 20px 0px;}"
+  - ReplaceZlib:
+      Find:    ".koboLoveDisclaimer.trilogy {\n  font-size: 17px;\n}\n\
+                .koboLoveDisclaimer.phoenix {\n  margin-top: 30px;\n  font-size: 22px;\n}\n\
+                .koboLoveDisclaimer.dragon {\n  margin-top: 90px;\n  font-size: 26px;\n}\n\
+                .koboLoveDisclaimer.daylight {\n  margin-top: 117px;\n  font-size: 34px;\n}"
+      Replace: ".koboLoveDisclaimer.daylight{margin-top:117px;font-size:37px;}"
+  - ReplaceZlib:
+      Find:    ".koboplus.nl h1.dragon {\n  font-size: 41px;\n}\n\
+                .koboplus.nl h1.alyssum {\n  font-size: 45px;\n}\n\
+                .koboplus.nl h1.daylight {\n  font-size: 54px;\n}\n\
+                .koboplus.nl h2.dragon {\n  font-size: 32px;\n}\n\
+                .koboplus.nl h2.alyssum {\n  font-size: 35px;\n}\n\
+                .koboplus.nl h2.daylight {\n  font-size: 41px;\n}"
+      Replace: ".koboplus.nl h1.daylight{font-size:56px;}\n\
+                .koboplus.nl h2.daylight{font-size:44px;}"
+  - ReplaceZlib:
+      Find:    ".koboplus.nl h1 + p.dragon {\n  font-size: 32px !important;\n}\n\
+                .koboplus.nl h1 + p.alyssum {\n  font-size: 35px !important;\n}\n\
+                .koboplus.nl h1 + p.daylight {\n  font-size: 41px !important;\n}"
+      Replace: ".koboplus.nl h1 + p.daylight{font-size:41px !important;}"
+
+#79 (zlib) pos: 4cd510
+#zlib stream: offset_hex(0x4CD510) offset_int32(5035280) len_int32(3257) sha1(62f60e773b8c4022d9a3a0b6955e1a03e1713095)
+  - FindZlib: "N3DeleteOptions"
+  - ReplaceZlib:
+      Find:    "TouchRadioButton[qApp_deviceIsTrilogy=true] {\n  font-size: 23px;\n}\n\
+                TouchRadioButton[qApp_deviceIsPhoenix=true] {\n  font-size: 29px;\n}\n\
+                TouchRadioButton[qApp_deviceIsDragon=true] {\n  font-size: 36px;\n}\n\
+                TouchRadioButton[qApp_deviceIsDaylight=true] {\n  font-size: 47px;\n}"
+      Replace: "TouchRadioButton{font-size:53px;}"
+
+#82 (zlib) pos: 4cda94
+#zlib stream: offset_hex(0x4CDA94) offset_int32(5036692) len_int32(2297) sha1(a42a54551435808fd522310c23e2af144e74f3b3)
+  - FindZlib: "IconPowerView"
+  - ReplaceZlib:
+      Find:    "#batteryStatus[qApp_deviceIsTrilogy=true] {\n  font-size: 18px;\n}\n\
+                #batteryStatus[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #batteryStatus[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                #batteryStatus[qApp_deviceIsAlyssum=true] {\n  font-size: 29px;\n}\n\
+                #batteryStatus[qApp_deviceIsNova=true] {\n  font-size: 29px;\n}\n\
+                #batteryStatus[qApp_deviceIsDaylight=true] {\n  font-size: 32px;\n}"
+      Replace: "#batteryStatus{font-size:38px;}"
+
+#84 (zlib) pos: 4ce03e
+#zlib stream: offset_hex(0x4CE03E) offset_int32(5038142) len_int32(3812) sha1(e391a76654fac48696f964c22518e31396e724ea)
+  - FindZlib: "html"
+  - ReplaceZlib:
+      Find:    "html {\n  font-family: Georgia;\n  margin-left: 2px;\n  margin-right: 2px;\n}\n\
+                html[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                html[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                html[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                html[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                html[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                html[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "html{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "html[qApp_deviceIsPhoenix=true] div.note {\n  margin-top: 25px;\n  padding: 25px;\n}\n\
+                html[qApp_deviceIsPhoenix=true] div.highlight {\n  margin-left: 15px;\n  margin-right: 15px;\n  font-size: 23px;\n}\n\
+                html[qApp_deviceIsPhoenix=true] div.chapter {\n  margin-top: 15px;\n  font-size: 16px;\n}\n\
+                html[qApp_deviceIsPhoenix=true] div.annotation + div.annotation {\n  margin-top: 25px;\n  padding-top: 25px;\n}\n\
+                html[qApp_deviceIsPhoenix=true] div.dogear {\n  background-position: 0px 4px;\n  padding-left: 45px;\n}\n\
+                html[qApp_deviceIsDragon=true] div.note {\n  margin-top: 35px;\n  padding: 35px;\n}\n\
+                html[qApp_deviceIsDragon=true] div.highlight {\n  margin-left: 20px;\n  margin-right: 20px;\n  font-size: 29px;\n}\n\
+                html[qApp_deviceIsDragon=true] div.chapter {\n  margin-top: 20px;\n  font-size: 21px;\n}\n\
+                html[qApp_deviceIsDragon=true] div.annotation + div.annotation {\n  margin-top: 35px;\n  padding-top: 35px;\n}\n\
+                html[qApp_deviceIsDragon=true] div.dogear {\n  background-position: 0px 4px;\n  padding-left: 61px;\n}\n\
+                html[qApp_deviceIsAlyssum=true] div.note {\n  margin-top: 35px;\n  padding: 35px;\n}\n\
+                html[qApp_deviceIsAlyssum=true] div.highlight {\n  margin-left: 20px;\n  margin-right: 20px;\n  font-size: 32px;\n}\n\
+                html[qApp_deviceIsAlyssum=true] div.chapter {\n  margin-top: 20px;\n  font-size: 23px;\n}\n\
+                html[qApp_deviceIsAlyssum=true] div.annotation + div.annotation {\n  margin-top: 35px;\n  padding-top: 35px;\n}\n\
+                html[qApp_deviceIsAlyssum=true] div.dogear {\n  background-position: 0px 4px;\n  padding-left: 61px;\n}\n\
+                html[qApp_deviceIsDaylight=true] div.note {\n  margin-top: 46px;\n  padding: 46px;\n}\n\
+                html[qApp_deviceIsDaylight=true] div.highlight {\n  margin-left: 26px;\n  margin-right: 26px;\n  font-size: 37px;\n}\n\
+                html[qApp_deviceIsDaylight=true] div.chapter {\n  margin-top: 26px;\n  font-size: 27px;\n}\n\
+                html[qApp_deviceIsDaylight=true] div.annotation + div.annotation {\n  margin-top: 46px;\n  padding-top: 46px;\n}\n\
+                html[qApp_deviceIsDaylight=true] div.dogear {\n  background-position: 0px 4px;\n  padding-left: 79px;\n}"
+      Replace: "html div.note{margin-top:46px;padding:46px;\n}\n\
+                html div.highlight{margin-left:26px;margin-right:26px;font-size:43px;}\n\
+                html div.chapter{margin-top:26px;font-size:33px;}\n\
+                html div.annotation + div.annotation{margin-top:46px;padding-top:46px;}\n\
+                html div.dogear{background-position: 0px 4px;padding-left:79px;}"
+  - ReplaceZlib:
+      Find:    "div.highlight {\n  background-color: #FFFFFF;\n  margin-left: 10px;\n  margin-right: 10px;\n  font-size: 19px;\n}"
+      Replace: "div.highlight{margin-left:10px;margin-right:10px;font-size:23px;background-color:white;}"
+
+#85 (zlib) pos: 4ce328
+#zlib stream: offset_hex(0x4CE328) offset_int32(5038888) len_int32(8154) sha1(87ffce74ef3018e3cef040b416c08fc11dca8195)
+  - FindZlib: "#page1"
+  - ReplaceZlib:
+      Find:    "#fullTitleLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 30px;\n}\n\
+                #fullTitleLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n}\n\
+                #fullTitleLabel[qApp_deviceIsDragon=true] {\n  font-size: 46px;\n}\n\
+                #fullTitleLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 50px;\n}\n\
+                #fullTitleLabel[qApp_deviceIsNova=true] {\n  font-size: 50px;\n}\n\
+                #fullTitleLabel[qApp_deviceIsDaylight=true] {\n  font-size: 60px;\n}\n\
+                #fullTitleLabel[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}\n\
+                #fullTitleLabel[qApp_deviceIsTrilogy=true] {\n  max-width: 340px;\n  min-width: 340px;\n}\n\
+                #fullTitleLabel[qApp_deviceIsPhoenix=true] {\n  max-width: 430px;\n  min-width: 430px;\n  font-size: 40px;\n}\n\
+                #fullTitleLabel[qApp_deviceIsDragon=true] {\n  max-width: 600px;\n  min-width: 600px;\n}\n\
+                #fullTitleLabel[qApp_deviceIsDaylight=true] {\n  max-width: 780px;\n  min-width: 780px;\n}"
+      Replace: "#fullTitleLabel{font-size:64px;max-width:780px;min-width:780px;}"
+  - ReplaceZlib:
+      Find:    "#writeReview[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #writeReview[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #writeReview[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #writeReview[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #writeReview[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #writeReview[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#writeReview{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "#relatedViewAll[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #relatedViewAll[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #relatedViewAll[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #relatedViewAll[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #relatedViewAll[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #relatedViewAll[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#relatedViewAll{font-size:43px;}"
+
+#86 (nozlib) pos: 4ce76c
+  - FindReplaceString:
+      Find:    "#title[qApp_deviceIsTrilogy=true] {\n  font-size: 16px;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  font-size: 20px;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  font-size: 28px;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  font-size: 36px;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "#title{font-size:39px;}\n                                                                                                                                                                                                           "
+      MustMatchLength: yes
+
+#91 (zlib) pos: 4cf400
+#zlib stream: offset_hex(0x4CF400) offset_int32(5043200) len_int32(1352) sha1(2528580fe5f5e19356c8a3e18d430e74f894804a)
+  - FindZlib: "#lblForgotPin"
+  - ReplaceZlib:
+      Find:    "#lblForgotPin[qApp_deviceIsTrilogy=true],\n#lblSignout[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #lblForgotPin[qApp_deviceIsPhoenix=true],\n#lblSignout[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #lblForgotPin[qApp_deviceIsDragon=true],\n#lblSignout[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                #lblForgotPin[qApp_deviceIsDaylight=true],\n#lblSignout[qApp_deviceIsDaylight=true] {\n  font-size: 38px;\n}"
+      Replace: "#lblForgotPin,#lblSignout{font-size:41px;}"
+
+#97 (zlib) pos: 4cfefb
+#zlib stream: offset_hex(0x4CFEFB) offset_int32(5046011) len_int32(5210) sha1(2c50fc5b9649d7e7899cdc82c8a92617c6ce243b)
+  - FindZlib: "#ListBookStoreWidget[qApp_is"
+  - ReplaceZlib:
+      Find:    "#syncWarning[qApp_deviceIsTrilogy=true] {\n  font-size: 14px;\n  padding-left: 5px;\n  padding-right: 5px;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\
+                #syncWarning[qApp_deviceIsPhoenix=true] {\n  font-size: 19px;\n  padding-left: 7px;\n  padding-right: 7px;\n  padding-top: 12px;\n  padding-bottom: 12px;\n}\n\
+                #syncWarning[qApp_deviceIsDragon=true] {\n  font-size: 24px;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-top: 15px;\n  padding-bottom: 15px;\n}\n\
+                #syncWarning[qApp_deviceIsAlyssum=true] {\n  font-size: 27px;\n}\n\
+                #syncWarning[qApp_deviceIsNova=true] {\n  font-size: 27px;\n}\n\
+                #syncWarning[qApp_deviceIsDaylight=true] {\n  font-size: 31px;\n  padding-left: 13px;\n  padding-right: 13px;\n  padding-top: 20px;\n  padding-bottom: 20px;\n}"
+      Replace: "#syncWarning{font-size:36px;padding-left:13px;padding-right:13px;padding-top:20px;padding-bottom:20px;}"
+
+#108 (nozlib) pos: 4d1565
+  - FindReplaceString:
+      Find:    "#unlockLabel {\n  color: white;\n  font-family: Avenir;\n}\n\
+                #unlockLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 30px;\n}\n\
+                #unlockLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n}\n\
+                #unlockLabel[qApp_deviceIsDragon=true] {\n  font-size: 46px;\n}\n\
+                #unlockLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 50px;\n}\n\
+                #unlockLabel[qApp_deviceIsNova=true] {\n  font-size: 50px;\n}\n\
+                #unlockLabel[qApp_deviceIsDaylight=true] {\n  font-size: 60px;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "#unlockLabel {color: white; font-family: Avenir; font-size: 60px;}\n                                                                                                                                                                                                                                                                                                                                                                           "
+      MustMatchLength: yes
+
+#109 (zlib) pos: 4d1a62
+#zlib stream: offset_hex(0x4D1A62) offset_int32(5053026) len_int32(1914) sha1(cdcb529a893fe78b1f23b216b855f7135811e114)
+  - FindZlib: "TouchLabel[imeStyle"
+  - ReplaceZlib:
+      Find:    "TouchLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                TouchLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                TouchLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                TouchLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                TouchLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                TouchLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "TouchLabel{font-size:43px;}"
+  - ReplaceZlib:
+      Find:    "TouchLabel[imeStyle=\"kanji\"][qApp_deviceIsTrilogy=true] {\n  font-size: 30px;\n}\n\
+                TouchLabel[imeStyle=\"kanji\"][qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n}\n\
+                TouchLabel[imeStyle=\"kanji\"][qApp_deviceIsDragon=true] {\n  font-size: 46px;\n}\n\
+                TouchLabel[imeStyle=\"kanji\"][qApp_deviceIsAlyssum=true] {\n  font-size: 50px;\n}\n\
+                TouchLabel[imeStyle=\"kanji\"][qApp_deviceIsNova=true] {\n  font-size: 50px;\n}\n\
+                TouchLabel[imeStyle=\"kanji\"][qApp_deviceIsDaylight=true] {\n  font-size: 60px;\n}"
+      Replace: "TouchLabel[imeStyle=\"kanji\"]{font-size:64px;}"
+
+#110 (nozlib) pos: 4d1bf9
+  - FindReplaceString:
+      Find:    "body[qApp_deviceIsTrilogy=true] {\n  font-size: 20px;\n}\n\
+                body[qApp_deviceIsPhoenix=true] {\n  font-size: 24px;\n}\n\
+                body[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                body[qApp_deviceIsDaylight=true] {\n  font-size: 38px;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "body{font-size:41px;}\n                                                                                                                                                                                                     "
+      MustMatchLength: yes
+
+#111 (nozlib) pos: 4d1fb1
+  - FindReplaceString:
+      Find:    "#newLabel {\n  font-family: Avenir;\n  color: #ffffff;\n  background-color: #808080;\n  padding-left: 5px;\n  padding-right: 5px;\n  padding-top: 2px;\n  font-size: 17px;\n}\n\
+                #newLabel[qApp_deviceIsDaylight=true] {\n  font-size: 22px;\n}\n\
+                #newLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 16px;\n}\n"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "#newLabel {font-family: Avenir; padding-left: 5px; padding-right: 5px; padding-top: 2px; font-size: 26px; color: white; background-color: grey;}\n                                                                                                                                              "
+      MustMatchLength: yes
+
+#112 (zlib) pos: 4d2239
+#zlib stream: offset_hex(0x4D2239) offset_int32(5055033) len_int32(2722) sha1(1fdb60a7fba1f5daf9ce650c4491626fcb81b4fb)
+  - FindZlib: "#page[notebookView"
+  - ReplaceZlib:
+      Find:    "#label[qApp_deviceIsTrilogy=true] {\n  font-size: 30px;\n}\n\
+                #label[qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n}\n\
+                #label[qApp_deviceIsDragon=true] {\n  font-size: 46px;\n}\n\
+                #label[qApp_deviceIsAlyssum=true] {\n  font-size: 50px;\n}\n\
+                #label[qApp_deviceIsNova=true] {\n  font-size: 50px;\n}\n\
+                #label[qApp_deviceIsDaylight=true] {\n  font-size: 60px;\n}"
+      Replace: "#label{font-family:Georgia;font-style:italic;font-size:64px;}"
+
+#118 (zlib) pos: 4d2db5
+#zlib stream: offset_hex(0x4D2DB5) offset_int32(5057973) len_int32(2416) sha1(54ba4236c46ce83dc474ddb515b4c8be88dace58)
+  - FindZlib: "#BatteryMenuView"
+  - ReplaceZlib:
+      Find:    "#statusWidget[qApp_deviceIsTrilogy=true] {\n  font-size: 21px;\n}\n\
+                #statusWidget[qApp_deviceIsPhoenix=true] {\n  font-size: 26px;\n}\n\
+                #statusWidget[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n}\n\
+                #statusWidget[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n}"
+      Replace: "#statusWidget{font-size:48px;}"
+
+#121 (zlib) pos: 4d36aa
+#zlib stream: offset_hex(0x4D36AA) offset_int32(5060266) len_int32(2348) sha1(44009c50ff6d3af3f0c64832957ef398fc2fa457)
+  - FindZlib: "#FramedDragonPowerView"
+  - ReplaceZlib:
+      Find:    "#batteryStatus[qApp_deviceIsTrilogy=true] {\n  font-size: 18px;\n}\n\
+                #batteryStatus[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #batteryStatus[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                #batteryStatus[qApp_deviceIsDaylight=true] {\n  font-size: 34px;\n}"
+      Replace: "#batteryStatus{font-size:40px;}"
+  - ReplaceZlib:
+      Find:    "#title[qApp_deviceIsTrilogy=true] {\n  font-size: 36px;\n}\n\
+                #title[qApp_deviceIsTrilogy=true][bigTitle=true] {\n  font-size: 72px;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n}\n\
+                #title[qApp_deviceIsPhoenix=true][bigTitle=true] {\n  font-size: 72px;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  font-size: 56px;\n}\n\
+                #title[qApp_deviceIsDragon=true][bigTitle=true] {\n  font-size: 116px;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  font-size: 72px;\n}\n\
+                #title[qApp_deviceIsDaylight=true][bigTitle=true] {\n  font-size: 116px;\n}"
+      Replace: "#title{font-size:72px;}\n\
+                #title[bigTitle=true]{font-size:116px;}"
+
+#127 (nozlib) pos: 4d4459
+  - FindReplaceString:
+      Find:    "TouchLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 23px;\n}\n\
+                TouchLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 26px;\n}\n\
+                TouchLabel[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n}\n\
+                TouchLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 35px;\n}\n\
+                TouchLabel[qApp_deviceIsNova=true] {\n  font-size: 35px;\n}\n\
+                TouchLabel[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n}\n\
+                TouchLabel[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "TouchLabel{font-size:45px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                     "
+      MustMatchLength: yes
+
+#129 (zlib) pos: 4d485e
+#zlib stream: offset_hex(0x4D485E) offset_int32(5064798) len_int32(2074) sha1(24ab6ed0ed3d0331956d5db145ab50fadbd7da2c)
+  - FindZlib: "BulkMarkAsDialog"
+  - ReplaceZlib:
+      Find:    "TouchRadioButton[qApp_deviceIsTrilogy=true] {\n  font-size: 23px;\n}\n\
+                TouchRadioButton[qApp_deviceIsPhoenix=true] {\n  font-size: 29px;\n}\n\
+                TouchRadioButton[qApp_deviceIsDragon=true] {\n  font-size: 36px;\n}\n\
+                TouchRadioButton[qApp_deviceIsDaylight=true] {\n  font-size: 47px;\n}"
+      Replace: "TouchRadioButton{font-size:53px;}"
+
+#134 (zlib) pos: 4d5258
+#zlib stream: offset_hex(0x4D5258) offset_int32(5067352) len_int32(4491) sha1(6b5bbf157906d759ce66a3de93dfcb0684cced16)
+  - FindZlib: "#header #headerTitle"
+  - ReplaceZlib:
+      Find:    "#header #headerTitle[qApp_deviceIsTrilogy=true] {\n  font-size: 16px;\n}\n\
+                #header #headerTitle[qApp_deviceIsPhoenix=true] {\n  font-size: 20px;\n}\n\
+                #header #headerTitle[qApp_deviceIsDragon=true] {\n  font-size: 28px;\n}\n\
+                #header #headerTitle[qApp_deviceIsDaylight=true] {\n  font-size: 36px;\n}"
+# Custom font to collection and author titles: -> #header #headerTitle
+# See https://www.mobileread.com/forums/showpost.php?p=3520879&postcount=42
+      Replace: "#header #headerTitle{font-size:42px;}"
+
+#136 (zlib) pos: 4d56fb
+#zlib stream: offset_hex(0x4D56FB) offset_int32(5068539) len_int32(2974) sha1(ab43764cea9e50ecf6a6b0b7982fde51ca4b1baf)
+  - FindZlib: "#topVerticalSpacer"
+  - ReplaceZlib:
+      Find:    "#title[qApp_deviceIsTrilogy=true] {\n  font-size: 29px;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  font-size: 46px;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  font-size: 60px;\n}"
+      Replace: "#title{font-family:Georgia;font-size:64px;}"
+  - ReplaceZlib:
+      Find:    "#label[qApp_deviceIsTrilogy=true] {\n  font-size: 21px;\n}\n\
+                #label[qApp_deviceIsPhoenix=true] {\n  font-size: 26px;\n}\n\
+                #label[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n}\n\
+                #label[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n}"
+      Replace: "#label{font-family:Avenir;font-size:48px;}"
+  - ReplaceZlib:
+      Find:    "#progressLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 21px;\n  margin-top: 13px;\n}\n\
+                #progressLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 26px;\n  margin-top: 16px;\n}\n\
+                #progressLabel[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n  margin-top: 20px;\n}\n\
+                #progressLabel[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n  margin-top: 26px;\n}"
+      Replace: "#progressLabel{font-size:48px;margin-top:26px;}"
+
+#144 (zlib) pos: 4d6501
+#zlib stream: offset_hex(0x4D6501) offset_int32(5072129) len_int32(2650) sha1(9076ec07b08be874b578d6533c7b4e0b7668067d)
+  - FindZlibHash: 9076ec07b08be874b578d6533c7b4e0b7668067d
+  - ReplaceZlib:
+      Find:    "MenuTextItem #menuTextItemLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                MenuTextItem #menuTextItemLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+# Context menu font size -> MenuTextItem #menuTextItemLabel
+      Replace: "MenuTextItem #menuTextItemLabel{font-size:43px;}"
+
+#145 (zlib) pos: 4d6723
+#zlib stream: offset_hex(0x4D6723) offset_int32(5072675) len_int32(1016) sha1(269b1e5a33a4279bc20aaf73839d8992b7b9173b)
+  - FindZlib: "SearchBox"
+  - ReplaceZlib:
+      Find:    "SearchBox[qApp_deviceIsTrilogy=true] {\n  font-size: 23px;\n}\n\
+                SearchBox[qApp_deviceIsTrilogy=true][qApp_localeName=\"tr_TR\"] {\n  font-size: 20px;\n}\n\
+                SearchBox[qApp_deviceIsPhoenix=true] {\n  font-size: 28px;\n}\n\
+                SearchBox[qApp_deviceIsDragon=true] {\n  font-size: 36px;\n}\n\
+                SearchBox[qApp_deviceIsAlyssum=true] {\n  font-size: 39px;\n}\n\
+                SearchBox[qApp_deviceIsNova=true] {\n  font-size: 39px;\n}\n\
+                SearchBox[qApp_deviceIsDaylight=true] {\n  font-size: 47px;\n}\n\
+                SearchBox[regularFontSize=true][qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                SearchBox[regularFontSize=true][qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                SearchBox[regularFontSize=true][qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                SearchBox[regularFontSize=true][qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                SearchBox[regularFontSize=true][qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                SearchBox[regularFontSize=true][qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "SearchBox{font-size:53px;}\n\
+                SearchBox[regularFontSize=true]{font-size:43px;}"
+
+#146 (zlib) pos: 4d6832
+#zlib stream: offset_hex(0x4D6832) offset_int32(5072946) len_int32(2115) sha1(8d1a1e1ee8b4f230c06032b7ca71b97d92441dca)
+  - FindZlib: "#ReadingMenuScrubberView"
+  - ReplaceZlib:
+      Find:    "#tocButton[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #tocButton[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #tocButton[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #tocButton[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #tocButton[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #tocButton[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "#tocButton{text-decoration:underline;font-size:43px;}"

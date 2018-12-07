@@ -1,0 +1,16 @@
+# The following patch is ported from GeoffR's patch
+sickel reboot timeout (20 sec):
+  - Enabled: no
+  - Description: increases sickel reboot time if no ping from 10s to 20s
+  - PatchGroup: sickel reboot timeout
+  - ReplaceBytes: {Offset: 0x003498, FindH: 42 F2 10 71, ReplaceH: 44 F6 20 61}
+  - ReplaceBytes: {Offset: 0x0034AA, FindH: 42 F2 10 71, ReplaceH: 44 F6 20 61}
+  - ReplaceBytes: {Offset: 0x0036F6, FindH: 44 F6 20 61, ReplaceH: 49 F6 40 41}
+      
+sickel reboot timeout (30 sec):
+  - Enabled: no
+  - Description: increases sickel reboot time if no ping from 10s to 30s
+  - PatchGroup: sickel reboot timeout
+  - ReplaceBytes: {Offset: 0x003498, FindH: 42 F2 10 71, ReplaceH: 47 F2 30 51}
+  - ReplaceBytes: {Offset: 0x0034AA, FindH: 42 F2 10 71, ReplaceH: 47 F2 30 51}
+  - ReplaceBytes: {Offset: 0x0036F6, FindH: 44 F6 20 61, ReplaceH: 4E F6 60 21}
