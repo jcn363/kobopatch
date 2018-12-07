@@ -206,7 +206,50 @@ IMPORTANTE: no hay que modificar NUNCA nada que no esté entre "" después de Re
                   #coverArea[qApp_deviceIsDaylight=true] {\n  qproperty-spacing: 39;\n}"
         Replace: "#coverArea{qproperty-spacing:30;}"
 
+Ref.: https://www.mobileread.com/forums/showthread.php?t=297338
+
 # Cambiar o Instalar NUEVOS DICCIONARIOS
 
 http://kobo.lectoreselectronicos.com/subweb/diccionarios.html
+
 https://www.mobileread.com/forums/showpost.php?p=3312320&postcount=1
+
+https://www.mobileread.com/forums/showthread.php?t=272762
+
+# nickel GUI not displaying certain characters
+
+https://www.mobileread.com/forums/showthread.php?t=278392
+
+# Kute File Monitor (kfmon)
+
+https://www.mobileread.com/forums/showpost.php?p=3319170&postcount=1
+
+# KSM 09
+
+https://www.mobileread.com/forums/showthread.php?t=293804
+
+# KoReader
+
+https://github.com/koreader/koreader/wiki
+
+# Plato
+
+https://github.com/baskerville/plato
+
+https://www.mobileread.com/forums/showthread.php?t=292914
+
+# Vlasovsoft (cr3)
+
+http://www.pbchess.vlasovsoft.net/en/index.html
+
+# Random Screensaver Image
+
+https://www.mobileread.com/forums/showthread.php?t=255238
+
+# FBInk
+
+https://www.mobileread.com/forums/showthread.php?t=299110
+
+# Miniclock
+
+https://www.mobileread.com/forums/showpost.php?p=3762123&postcount=6
