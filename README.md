@@ -206,9 +206,7 @@ IMPORTANTE: no hay que modificar NUNCA nada que no esté entre "" después de Re
                   #coverArea[qApp_deviceIsDaylight=true] {\n  qproperty-spacing: 39;\n}"
         Replace: "#coverArea{qproperty-spacing:30;}"
 
-Preguntas, aclaraciones y demás... en la ventanilla de siempre.
-
-Suerte 
 # Cambiar o Instalar NUEVOS DICCIONARIOS
+
 http://kobo.lectoreselectronicos.com/subweb/diccionarios.html
 https://www.mobileread.com/forums/showpost.php?p=3312320&postcount=1
