@@ -208,7 +208,7 @@ IMPORTANTE: no hay que modificar NUNCA nada que no esté entre "" después de Re
 
 Ref.: https://www.mobileread.com/forums/showthread.php?t=297338
 
-# Cambiar o Instalar NUEVOS DICCIONARIOS
+# DICCIONARIOS
 
 http://kobo.lectoreselectronicos.com/subweb/diccionarios.html
 
