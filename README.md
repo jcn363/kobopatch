@@ -257,3 +257,9 @@ https://www.mobileread.com/forums/showthread.php?t=299110
 # Miniclock
 
 https://www.mobileread.com/forums/showpost.php?p=3762123&postcount=6
+
+# Conectar kobo a la nube
+
+http://www.lectoreselectronicos.com/foro/showthread.php?18327-SOLUCIONADO-Conectar-kobo-a-la-nube-Varios-m%C3%A9todos&p=252630&viewfull=1#post252630
+
+
