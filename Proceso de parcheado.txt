@@ -1,0 +1,34 @@
+Proceso de parcheado
+====================
+
+Para la versión actual (4.10.11655):
+
+0.- Comprobar en Menú/Configuración qué versión tienes instalada. (Si no te aparece 4.10.11655 prosigue en 1, en caso contrario ve al 6).
+1.- Descargar el firmware (kobo-update-4.10.11655.zip) de tu disposistivo desde https://pgaskin.net/KoboStuff/kobofirmware.html
+2.- Comprobar que la batería está por encima del 70%. Conectar tu dispositivo al ordenador mediante el cable USB.
+3.- Descomprimir el contenido (la carpeta upgrade y los ficheros KoboRoot.tgz y manifest.md5sum) del zip (kobo-update-4.10.11655.zip) dentro de la carpeta .kobo (que se encuentra en el directorio raiz) de tu dispositivo.
+4.- Desmontar y expulsar el lector del ordenador. Desconectar el cable USB de tu disposistivo. El dispositivo se reiniciará para instalar el nuevo firmware.
+5.- Comprobar en Menú/Configuración qué versión tienes instalada. Si no ha pasado nada raro, aparecerá 4.10.11655.
+
+6.- Descargar los parches (kobopatch_4.10.11655.zip) desde https://github.com/geek1011/kobopatch-patches/releases (a día de hoy https://github.com/geek1011/kobopatch-patches/releases/download/v16/kobopatch_4.10.11655.zip)
+7.- Descomprimir el fichero anterior. Se crea una carpeta kobopatch_4.10.11655 dentro de la cual verás un fichero kobopatch.yaml. Abre el fichero con un editor de texto (si tu sistema operativo es Windows usa Notepad++ u otro que pueda usar los cambios de línea tipo UNIX. Con Linux no tendrás problema alguno y con Mac es altamente improbable que los tengas).
+8.- Modifica el fichero para que te quede a tu gusto. Guardar los cambios. (Si quieres modificar algún parche continúa en 9, de lo contrario en 10).
+9.- Los ficheros con extensión yaml que se encuentran en la carpeta src son los que contienen los parches. Hay uno para cada archivo a parchear, pero se pueden añadir más.
+    Es decir, si quieres ver/modificar el parche "Custom reading footer style" tendrás que abrir el fichero kobopatch_4.10.11655/src/nickel.yaml.
+    (Si has descomprimido (7) en el escritorio de Windows será algo así: C:\users\nombre_de_tu_usuario\desktop\kobopatch_4. 10.11655\src\nickel.yaml).
+
+    IMPORTANTE: Modifica únicamente los valores que haya entre las comillas que se encuentran después de Replace: 
+    Ejemplo:
+    Con la siguiente línea estarías cambiando un tamaño de letra de 29px por uno más pequeño de 26px.
+    Código:
+
+  - ReplaceString: {Offset: 357, Find: "font-size:29px", Replace: "font-size:26px"} # Replacement caption font size value for AuraHD/H2O:
+
+10. Tras haber modificado los parches deseados (y haber guardado los cambios realizados) ejecuta kobopatch.sh (si tienes Linux), o kobopatch.bat (si tienes Windows).
+    Si no hay problemas, se creará un fichero KoboRoot.tgz, dentro de la carpeta out, que deberás copiar dentro de la carpeta .kobo de tu dispositivo.
+    Si los hay, dentro de la carpeta out, se habrá creado un archivo log.txt donde encontrarás la(s) causa(s).
+11.- Expulsar el lector del ordenador. Desconectar el cable USB de tu disposistivo. El dispositivo se reiniciará para instalar tus modificaciones.
+
+Preguntas, aclaraciones y demás... en la ventanilla de siempre.
+
+Suerte 

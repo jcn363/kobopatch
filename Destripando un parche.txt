@@ -1,0 +1,50 @@
+Destripando un parche
+=====================
+
+· Los sangrados/espacios (siempre que no estén en un comentario) importan.
+· Todo lo que va a continuación del símbolo # es un comentario.
+· Un parche comienza con una palabra o frase al comienzo de una línea y termina cuando comienza el siguiente parche o finaliza el fichero.
+· El nombre del parche termina con :. (Disable reading footer)
+· Las partes del parche están precedidas por 2 espacios y -.
+· Enabled indica si el parche está activado o no. No es importante lo que pongamos si usamos (y tenemos bien configurado) el fichero kobopatch.yaml. La recomendación es dejarlo desactivado aquí y activarlo o desactivarlo en kobopatch.yaml, aunque no es obligatorio.
+· PatchGroup se usa para indicar que un parche pertenece a un grupo de parches autoexcluyentes (sólo uno de ellos se puede aplicar al mismo tiempo).
+· Description es una descripción (más o menos larga) de lo que hace el parche. Si es larga es mejor utilizar | y comenzar en la siguiente línea (añadiendo un sangrado más de 2 espacios).
+· A continuación están las órdenes.
+
+IMPORTANTE: no hay que modificar NUNCA nada que no esté entre "" después de Replace.
+
+Disable reading footer:
+  - Enabled: no
+  - PatchGroup: Reading footer alternatives
+  - Description: |
+      Removes the reading footer for both ePub and KePub books, leaving a
+      15px bottom margin which matches the 15px built-in top margin of ePub
+      books.
+  - FindReplaceString: {Find: "ReadingFooter {\n  qproperty-footerMargin: 105;\n}\n", Replace: "ReadingFooter {min-height:15px;max-height:15px;}\n"}
+  - FindReplaceString: {Find: "#caption[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n", Replace: "#caption {font-size:1px;color:transparent;}\n\0"}
+
+· Se pueden organizar las órdenes en diferentes líneas. De esta manera evitaremos, más facilmente, modificar lo que no se encuentre trás Replace.
+  - FindReplaceString:
+      Find:    "ReadingFooter {\n  qproperty-footerMargin: 105;\n}\n"
+      Replace: "ReadingFooter {min-height:15px;max-height:15px;}\n"
+  - FindReplaceString:
+      Find:    "#caption[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n"
+      Replace: "#caption {font-size:1px;color:transparent;}\n\0"
+
+· En las órdenes que contengan "Zlib" (como ReplaceZlib) la diferencia de longitud entre el texto a cambiar y del texto modificado no es importante (dentro de unos límites, es un comprimido, pero... tiene sus límites).
+· Las órdenes que no contienen "Zlib" (como FindReplaceString) deben respetar la igualdad de longitud entre las cadenas de caracteres.
+  Si el texto que pongamos en Replace es más corto que el que teníamos en Find, probablemente ocurran cosas raras.
+  Si el texto de Replace es más largo dará error.
+· Hay que tener en cuenta que los caracteres de escape (los que comienzan por \ como \n -cambio de línea-) aunque están compuestos por 2 caracteres, en realidad es uno sólo y se cuantifica como tal.
+· Se puede alterar/eliminar todo lo que no corresponda a tu dispositivo para ahorrar espacio y hacer más eficiente el sistema.
+· Una \ al final de la línea indica que la orden continúa en la siguiente.
+  - ReplaceZlib:
+      Find:    "#coverArea[qApp_deviceIsPhoenix=true] {\n  qproperty-spacing: 20;\n}\n\
+                #coverArea[qApp_deviceIsTrilogy=true] {\n  qproperty-spacing: 10;\n}\n\
+                #coverArea[qApp_deviceIsDragon=true] {\n  qproperty-spacing: 30;\n}\n\
+                #coverArea[qApp_deviceIsDaylight=true] {\n  qproperty-spacing: 39;\n}"
+      Replace: "#coverArea{qproperty-spacing:30;}"
+
+Preguntas, aclaraciones y demás... en la ventanilla de siempre.
+
+Suerte 
