@@ -1,0 +1,566 @@
+@page {
+  margin: 0;
+  }
+* {
+  -webkit-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  hyphens: auto !important;
+  -ms-hyphens: auto;
+  -epub-hyphens: auto;
+  -webkit-hyphenate-after: 3 !important;
+  -webkit-hyphenate-before: 3 !important;
+  -webkit-hyphenate-lines: 2 !important;
+  hyphenate-after: 3 !important;
+  hyphenate-before: 3 !important;
+  hyphenate-lines: 2 !important;
+  adobe-text-layout: optimizeSpeed !important;
+  text-rendering: optimizeSpeed !important;
+}
+a {
+  cursor: pointer;
+  font-weight: inherit;
+  color: inherit;
+  font-style: inherit;
+  text-decoration: inherit !important;
+}
+b, strong, .negrita {
+  font-weight: bold;
+}
+big, .clase, .grade, .subtit {
+  font-size: x-large;
+}
+blockquote, blockquote p, .cita {
+  text-indent: 1.5em;
+  margin: 0 0 0 1.5em;
+}
+body {
+  margin: 0 0 0 0 !important;
+  padding: 0 0 0 0 !important;
+  border: 0;
+  orphans: 0;
+  widows: 0;
+  word-spacing: 0.1em !important;
+  letter-spacing: -1px !important;
+  -webkit-font-smoothing: antialiased !important;
+  -webkit-text-stroke: 0.025em rgba(51, 51, 51, 0.5);
+  -webkit-backface-visibility: hidden;
+  adobe-text-layout: optimizeSpeed;
+  text-rendering: optimizeSpeed !important;
+  text-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.005);
+}
+cite, dfn, em, i, .cita, .citainicio, .cursiva, .dedicatoria, .firma, .italic, .italica, .nota, [lang=de], [lang=en], [lang=fr], [lang=la], .citainicio p, div.citainicio, div.poema {
+  font-style: italic;
+}
+code, kbd, .mono, .mono big, .mono em, .mono p, .mono small, .mono strong {
+  font-family: monospace;
+}
+del, strikethrough, .line-through, .strike, .tachado {
+  text-decoration: line-through;
+}
+div, p {
+  widows: 0;
+  orphans: 0;
+}
+h1, h2, h3, h4, h5, h6, h7 {
+  color: black;
+  font-weight: normal;
+}
+h1, h2, h3, td, th, .clase, .oculto, .sans, .tautor, .tlogo, .ttitulo {
+  -moz-hyphens: none !important;
+  -webkit-hyphens: none !important;
+  adobe-hyphenate: none !important;
+  hyphenate: none !important;
+  hyphens: none !important;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+h1, h2, h3, td, th, .autorimg, .banner, .centrado, .ilustra, .imagencentrada, .subtit, .tautor, .tlogo, .tsubtitulo, .ttitulo, .banner p, .centrado p, div.contcentrado, div.imgypie p, div.tautor p {
+  text-align: center;
+  text-indent: 0;
+}
+h1, .ttitulo {
+  font-size: 1.6em;
+  margin: 20% 0 5%;
+}
+h2, .subtit, p.tsubtitulo {
+  font-size: 1.4em;
+  margin: 10% 0 5%;
+}
+h3, th, .tautor {
+  font-size: 1.25em;
+  margin: 5% 0 4%;
+  font-family: "IBM Plex Mono", monospace;
+}
+h4, h5, h6, .izquierda, .izquierda p, div.poema, div.poema p {
+  text-align: left;
+  text-indent: 0;
+}
+h4, .tsubtitulo {
+  font-size: 1.2em;
+  margin: 4% 0 4%;
+}
+h5 {
+  font-size: 1.15em;
+  margin: 3% 0 3%;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  font-variant: small-caps;
+}
+h6 {
+  font-size: 1.1em;
+  margin: 2% 0 2%;
+}
+hr {
+  display: none;
+  border: 0 solid;
+  margin: 1em 10% 1em 10%;
+}
+img {
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: 100%;
+  text-align: center;
+  page-break-inside: avoid;
+  overflow: hidden;
+  clear: both;
+  /*vertical-align: middle;*/
+  vertical-align: sub;
+  /* removes descender gap beneath images */
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+}
+ins, u, underline, .subrayado, .underline {
+  text-decoration: underline;
+}
+li, li p, p p.cita {
+  margin: 0;
+  padding-top: 0.5em;
+  text-align: justify;
+}
+ol, ul {
+  margin-left: 1em;
+}
+overline, .overline {
+  text-decoration: overline;
+}
+p, .justificado, .justificado p {
+  text-align: justify;
+  text-indent: 1.5em;
+  margin: 0;
+  padding-top: 0.2em;
+}
+rp, rt, rtc {
+  user-select: none;
+}
+small, sub, sup, .copy, .versal, .versalita {
+  font-size: small;
+}
+sub, .subindice {
+  vertical-align: sub;
+}
+sup, .superindice {
+  vertical-align: super;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 2px;
+  display: table;
+  margin: 0 auto;
+  text-indent: 0;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+td, th, h1 + p, h2 + p, .arras, .asangre, .lista, .arras p, .asangre p, .lista br, p.first-para {
+  text-indent: 0;
+}
+td {
+  display: table-cell;
+  padding: 1px;
+  text-align: left;
+}
+td, th {
+  vertical-align: middle;
+}
+tr {
+  display: table-row;
+  vertical-align: middle;
+}
+blockquote p {
+  margin-left: 0;
+  margin-right: 0;
+}
+.autorimg {
+  height: 40%;
+  margin: 0 1.5em;
+}
+.avoid {
+  page-break-after: avoid;
+  page-break-before: avoid;
+}
+.banner {
+  margin: 1.5em 12%;
+  padding: 0.5em 1em;
+  border: 2px solid black;
+  border-left: none;
+  border-right: none;
+}
+.break {
+  page-break-after: always;
+}
+.carta, .citainicio, .citainicio p {
+  font-style: italic;
+  margin: 0.2em 1em;
+}
+.cartainicio {
+  margin-bottom: 3%;
+  font-style: italic;
+}
+.centrado, .centrado p {
+  text-align: center;
+  text-indent: 0;
+}
+.cita {
+  border-bottom: 0;
+  border-top: 0;
+  display: block;
+  padding-bottom: 0;
+  padding-top: 0;
+  text-indent: 1.5em;
+  margin: 0 1.5em;
+}
+.citainicio, .comentario, .dedicatoria, .derecha, .firma, .citainicio p, .dedicatoria p, .derecha p, div.citainicio {
+  text-align: right;
+  text-indent: 0;
+}
+.comentario {
+  margin: 30% 0 0 30%;
+}
+.copy, .info, .salto20, .sinopsis, .tautor, .tlogo, .ttitulo {
+  padding-top: 2em;
+}
+.copy, .info, .izquierda, .copy p, .info p, .izquierda p {
+  text-align: left;
+}
+.dedicatoria {
+  margin: 3em 0 0 40%;
+}
+.dedicatoria, .salto25 {
+  padding-top: 2.5em;
+}
+.epigraph {
+  display: block;
+  margin-bottom: 1em;
+  margin-left: 35%;
+  margin-right: 0.2em;
+  margin-top: 1em;
+  width: 50%;
+}
+.firma, .salto {
+  padding-top: 1em;
+}
+.ilustra {
+  height: 2em;
+  width: auto;
+  margin: 0.5em 0;
+  padding: 0;
+  border: 0;
+  vertical-align: sub;
+  /* removes descender gap beneath images */
+}
+.imagencentrada {
+  height: auto;
+  width: auto;
+  border: currentColor solid 1px;
+  margin: 0;
+  padding: 0;
+  vertical-align: sub;
+  /* removes descender gap beneath images */
+}
+.imgypie {
+  font-style: italic;
+  display: block;
+  margin: 1em;
+  text-align: center;
+  text-indent: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: sub;
+  /* removes descender gap beneath images */
+}
+.info, .info p {
+  font-size: small;
+  text-indent: 0;
+  width: 90%;
+  margin: 0 0 0 1em;
+}
+.nopagebreak {
+  page-break-after: avoid;
+}
+.normal {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+}
+.nosep {
+  white-space: nowrap;
+  display: inline-block;
+  text-indent: 0;
+}
+.nota {
+  text-indent: 0.5em;
+}
+.oculto {
+  visibility: hidden;
+  display: none;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+.pagebreak, .pnueva {
+  page-break-before: always;
+}
+.pagecenter {
+  margin-top: 50%;
+  margin-bottom: 50%;
+  text-align: center;
+  text-indent: 0;
+}
+.salto, .softbreak, .whitespace {
+  display: block;
+  padding-top: 1em;
+}
+.salto15 {
+  padding-top: 1.5em;
+}
+.salto50 {
+  margin-top: 50%;
+}
+.saltoinicio {
+  margin-top: 33%;
+}
+.sangf, .sangf p, div.sangf, div.sangf p {
+  text-indent: -1.5em;
+  margin: 1em 0 1em 1.5em;
+}
+.sans, .sans big, .sans em, .sans p, .sans small, .sans strong, .sinopsis p, div.sinopsis {
+  font-family: sans-serif;
+}
+.scenebreak {
+  page-break-before: avoid;
+  text-align: center;
+  text-indent: 0%;
+  margin: 0.5em 0;
+}
+.serif, .serif big, .serif em, .serif p, .serif small, .serif strong {
+  font-family: serif;
+}
+.sinopsis {
+  display: block;
+  text-indent: 1.5em;
+}
+.tautor {
+  color: #595959;
+}
+.td {
+  vertical-align: top;
+  width: 12em;
+}
+.td4 {
+  width: 8em;
+}
+.td5 {
+  width: 6em;
+}
+.ilustra img {
+  display: block;
+  /* include this explicit CSS property for older reading systems like Nook */
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: sub;
+  /* removes descender gap beneath images */
+}
+b.cap {
+  font-size: x-large;
+  font-weight: bold;
+}
+b.char, strong.char {
+  font-size: 1.1em;
+  color: #666;
+  font-weight: normal;
+  font-style: italic;
+}
+b.par {
+  font-size: xx-large;
+  font-weight: bold;
+}
+div.caption {
+  width: 100%;
+  margin-top: 0.5em;
+  padding: 0;
+  page-break-before: avoid;
+  page-break-inside: avoid;
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 1.3em;
+}
+div.centra {
+  display: inline-block;
+  /* Poner
+                           <div class="contcentrado">
+                           <div class="centra cursiva">
+                        para centrar un bloque de texto en pantalla */
+}
+div.contcentrado {
+  display: block;
+}
+div.dropcap, img.dropcap, span.dropcap, p span.dropcap {
+  float: left;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 5em;
+  line-height: 1em;
+  margin-top: -0.1em;
+  margin-right: 0.1em;
+}
+div.dropcaps, img.dropcaps, span.dropcaps, p span.dropcaps {
+  float: left;
+  font-weight: bold;
+  font-size: 3em;
+  line-height: 0.75em;
+}
+div.floatbox_left {
+  position: relative;
+  font-size: 80%;
+  font-style: italic;
+  text-align: left;
+  width: 25%;
+  margin: 0 2em 2em 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 3px 3px 2px #ddd;
+  background-color: rgb(240, 240, 240);
+  float: left;
+}
+div.floatbox_right {
+  position: relative;
+  font-size: 80%;
+  font-style: italic;
+  text-align: left;
+  width: 25%;
+  margin: 0 0 2em 2em;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 3px 3px 2px #ddd;
+  background-color: rgb(240, 240, 240);
+  float: right;
+}
+div.floatimage_left {
+  position: relative;
+  float: left;
+  margin: 1em 2em 0.7em 0;
+  text-align: center;
+  width: 35%;
+  page-break-inside: avoid;
+  overflow: hidden;
+}
+div.floatimage_right {
+  position: relative;
+  float: right;
+  margin: 1em 0 0.7em 2em;
+  text-align: center;
+  width: 35%;
+  page-break-inside: avoid;
+  overflow: hidden;
+}
+div.image {
+  margin: 1em 0 0.7em 0;
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+h1.chapter {
+  font-size: 1.4em;
+  margin: 20% 30% 5%;
+  color: #900;
+  border-bottom: 1px solid #999;
+  font-weight: normal;
+}
+h1.section {
+  font-size: 1.5em;
+  margin: 33% 10% 5%;
+  color: #900;
+  font-weight: normal;
+}
+h2.chapter {
+  font-size: 1.3em;
+  margin: 5% 10% 5%;
+  color: #666;
+  border-bottom: 1px solid #595959;
+  font-weight: normal;
+}
+h2.section {
+  font-size: 1.3em;
+  margin: 20% 10% 0%;
+  color: #900;
+  border-bottom: 1px solid #999;
+  font-weight: normal;
+}
+img.a {
+  vertical-align: middle;
+  /*  vertical-align: baseline|length|sub|super|top|text-top|middle|bottom|text-bottom|initial|inherit;  */
+}
+ol.alfa, ol.lower-alpha {
+  list-style-type: lower-alpha;
+}
+ol.Alfa, ol.upper-alpha {
+  list-style-type: upper-alpha;
+}
+ol.Iroma, ol.upper-roman {
+  list-style-type: upper-roman;
+}
+ol.iroma, ol.lower-roman {
+  list-style-type: lower-roman;
+}
+table.marco {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+td.b, th.b {
+  border: 1px solid black;
+}
+blockquote.lista p, div.lista p {
+  text-indent: -1em;
+  width: 90%;
+  margin: 0 1.5em;
+}
+div.floatimage_left img, div.floatimage_right img {
+  page-break-inside: avoid;
+  width: 100%;
+}
+div.image img {
+  margin: 0 0 0 0;
+  max-width: 100%;
+  display: inline-block;
+}
+.ilustra img.autor {
+  max-height: 100%;
+  max-width: 60%;
+  height: 40%;
+  display: block;
+  /* include this explicit CSS property for older reading systems like Nook */
+}
+body > div#book-columns > div#book-inner {
+  font-size: 1.5em;
+}
