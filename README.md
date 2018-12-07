@@ -209,3 +209,6 @@ IMPORTANTE: no hay que modificar NUNCA nada que no esté entre "" después de Re
 Preguntas, aclaraciones y demás... en la ventanilla de siempre.
 
 Suerte 
+# Cambiar o Instalar NUEVOS DICCIONARIOS
+http://kobo.lectoreselectronicos.com/subweb/diccionarios.html
+https://www.mobileread.com/forums/showpost.php?p=3312320&postcount=1
