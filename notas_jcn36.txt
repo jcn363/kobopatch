@@ -1,0 +1,232 @@
+version: 4.10.11655
+
+libnickel.so.1.0.0:
+
+    Always display chapter name on navigation menu
+
+ kobopatch_4.10.11655]$ objdump -S libnickel.so.1.0.0 | c++filt | grep -C10 "ReadingMenuScrubberController::setChapterAndProgressText(QString const&, QString const&)@@Base+0x2f4>"
+
+  9f42ae: d1f6        bne.n 9f429e <ReadingMenuScrubberController::setChapterAndProgressText(QString const&, QString const&)@@Base+0xf6>
+  9f42b0: 2b00        cmp r3, #0
+  9f42b2: d1df        bne.n 9f4274 <ReadingMenuScrubberController::setChapterAndProgressText(QString const&, QString const&)@@Base+0xcc>
+  9f42b4: 68b8        ldr r0, [r7, #8]
+  9f42b6: e7d9        b.n 9f426c <ReadingMenuScrubberController::setChapterAndProgressText(QString const&, QString const&)@@Base+0xc4>
+  9f42b8: f107 0810   add.w r8, r7, #16
+  9f42bc: f62e e252   blx 422764 <Device::getCurrentDevice()@plt>
+  9f42c0: 4601        mov r1, r0
+  9f42c2: 4640        mov r0, r8
+  9f42c4: f627 e572   blx 41bdac <Settings::Settings(Device const&)@plt>
+  9f42c8: 4b74        ldr r3, [pc, #464]  ; (9f449c <ReadingMenuScrubberController::setChapterAndProgressText(QString const&, QString const&)@@Base+0x2f4>)
+  9f42ca: 4640        mov r0, r8
+  9f42cc: 58ee        ldr r6, [r5, r3]
+  9f42ce: f106 0308   add.w r3, r6, #8
+  9f42d2: 613b        str r3, [r7, #16]
+  9f42d4: f61e e7de   blx 413294 <ReadingSettings::getBookProgressType()@plt>
+  9f42d8: f624 e1e8   blx 4186ac <progressTypeIsBookBased(BookProgressType)@plt>
+  9f42dc: f080 0101   eor.w r1, r0, #1
+  9f42e0: f106 0308   add.w r3, r6, #8
+  9f42e4: 4640        mov r0, r8
+  9f42e6: b2ce        uxtb  r6, r1
+
+Update:
+    offset -> 9f42d8
+    data -> 24 F6 E8 E1
+
+    About: replace function call progressTypeIsBookBased with 'MOVS R0, #0' (0020) twice
+
+  - ReplaceBytes: {Offset: 0x9F42D8, FindH: 24 F6 E8 E1, ReplaceH: 00 20 00 20}
+
+version: 4.11.11911
+
+a01fa4:	f61d e40a -> 1D F6 0A E4
+
+------------------------------------------------------------------------------------------
+
+    Clock display duration
+
+ kobopatch_4.10.11655]$ objdump -S libnickel.so.1.0.0 | c++filt | grep -C10 "StatusBarController::setStatusMessage(QString const&, bool)@plt+0x4"
+
+  9dab76: 4640        mov r0, r8
+  9dab78: 2301        movs  r3, #1
+  9dab7a: 4629        mov r1, r5
+  9dab7c: f63b e1ee   blx 415f5c <QLocale::toString(QTime const&, QLocale::FormatType) const@plt>
+  9dab80: 4628        mov r0, r5
+  9dab82: f62a e4e8   blx 405554 <QLocale::~QLocale()@plt>
+  9dab86: f63f e11e   blx 419dc4 <MainWindowController::sharedInstance()@plt>
+  9dab8a: f640 e7e0   blx 41bb4c <MainWindowController::statusBarController() const@plt>
+  9dab8e: 2201        movs  r2, #1
+  9dab90: 4641        mov r1, r8
+  9dab92: f627 e280   blx 402094 <StatusBarController::setStatusMessage(QString const&, bool)@plt+0x4>
+  9dab96: f640 31b8   movw  r1, #3000 ; 0xbb8
+  9dab9a: f8d4 0090   ldr.w r0, [r4, #144]  ; 0x90
+  9dab9e: f648 e6c4   blx 423928 <PowerTimer::fireIn(int)@plt+0x4>
+  9daba2: f63f e110   blx 419dc4 <MainWindowController::sharedInstance()@plt>
+  9daba6: f640 e7d2   blx 41bb4c <MainWindowController::statusBarController() const@plt>
+  9dabaa: f629 e1e8   blx 403f7c <StatusBarController::showStatusBar()@plt>
+  9dabae: f63f e10a   blx 419dc4 <MainWindowController::sharedInstance()@plt>
+  9dabb2: f640 e7cc   blx 41bb4c <MainWindowController::statusBarController() const@plt>
+  9dabb6: f652 e336   blx 42d224 <StatusBarController::showBottomLine()@plt>
+  9dabba: 6ce3        ldr r3, [r4, #76] ; 0x4c
+
+Update:
+    offset -> 9dab96
+    data -> 40 F6 B8 31
+
+    About: replace word (MOVW r1, #3000) in register 1 for function PowerTimer::fireIn
+
+  - ReplaceBytes: {Offset: 0x9DAB96, FindH: 40 F6 B8 31, ReplaceH: 03 21 89 02}
+  - ReplaceInt: {Offset: 0x9DAB96, Find: 3, Replace: 5} # Replacement value: Clock display duration in seconds
+
+version: 4.11.11911
+
+9e7b28:	f640 31b8 -> 40 F6 B8 31
+------------------------------------------------------------------------------------------
+
+    Brightness fine control
+
+ kobopatch_4.10.11655]$ objdump -S libnickel.so.1.0.0 | c++filt | grep -C10 "ValueDisplaySlider::setStep"
+
+  a6b65e: 215d        movs  r1, #93 ; 0x5d
+  a6b660: 4620        mov r0, r4
+  a6b662: f5c2 e6a0   blx 42e3a4 <QWidget::setAttribute(Qt::WidgetAttribute, bool)@plt+0x4>
+  a6b666: 2201        movs  r2, #1
+  a6b668: 2195        movs  r1, #149  ; 0x95
+  a6b66a: 4620        mov r0, r4
+  a6b66c: f5c2 e69a   blx 42e3a4 <QWidget::setAttribute(Qt::WidgetAttribute, bool)@plt+0x4>
+  a6b670: 69a3        ldr r3, [r4, #24]
+  a6b672: 2101        movs  r1, #1
+  a6b674: 6b18        ldr r0, [r3, #48] ; 0x30
+  a6b676: f5c1 e702   blx 42d47c <ValueDisplaySlider::setStep(int)@plt>
+  a6b67a: 69a3        ldr r3, [r4, #24]
+  a6b67c: 6b18        ldr r0, [r3, #48] ; 0x30
+  a6b67e: f5aa e232   blx 415ae4 <ValueDisplaySlider::slider()@plt>
+  a6b682: 4606        mov r6, r0
+  a6b684: f6ed fba4   bl  958dd0 <RGBWChannelMixer::~RGBWChannelMixer()@@Base+0xbb0>
+  a6b688: f6ec fde6   bl  958258 <RGBWChannelMixer::~RGBWChannelMixer()@@Base+0x38>
+  a6b68c: 4601        mov r1, r0
+  a6b68e: 4630        mov r0, r6
+  a6b690: f59d e316   blx 408cc0 <QAbstractSlider::setMinimum(int)@plt+0x4>
+  a6b694: 69a3        ldr r3, [r4, #24]
+
+  - ReplaceInt: {Offset: 0xa6b672, Find: 1, Replace: 2}
+
+version: 4.11.11911
+
+a7db32:	2101
+==========================================================================================
+
+libadobe.so:
+
+    Remove PDF map widget shown during panning
+
+ kobopatch_4.10.11655]$ 
+
+00032dac <N3AdobeReader::showMapWidget()@@Base>:
+   32dac: b598        push  {r3, r4, r7, lr}
+   32dae: af00        add r7, sp, #0
+   32db0: f8d0 3118   ldr.w r3, [r0, #280]  ; 0x118
+   32db4: b1d3        cbz r3, 32dec <N3AdobeReader::showMapWidget()@@Base+0x40>
+   32db6: 685b        ldr r3, [r3, #4]
+   32db8: b1c3        cbz r3, 32dec <N3AdobeReader::showMapWidget()@@Base+0x40>
+   32dba: f8d0 311c   ldr.w r3, [r0, #284]  ; 0x11c
+   32dbe: 695a        ldr r2, [r3, #20]
+   32dc0: 6852        ldr r2, [r2, #4]
+   32dc2: 03d2        lsls  r2, r2, #15
+   32dc4: d514        bpl.n 32df0 <N3AdobeReader::showMapWidget()@@Base+0x44>
+   32dc6: 4604        mov r4, r0
+   32dc8: 4618        mov r0, r3
+   32dca: f7e4 e90e   blx 16fe8 <QWidget::show()@plt>
+   32dce: f8d4 0118   ldr.w r0, [r4, #280]  ; 0x118
+   32dd2: b118        cbz r0, 32ddc <N3AdobeReader::showMapWidget()@@Base+0x30>
+   32dd4: 6840        ldr r0, [r0, #4]
+   32dd6: b108        cbz r0, 32ddc <N3AdobeReader::showMapWidget()@@Base+0x30>
+   32dd8: f8d4 011c   ldr.w r0, [r4, #284]  ; 0x11c
+   32ddc: f7e4 e922   blx 17024 <QWidget::raise()@plt>
+   32de0: 4620        mov r0, r4
+   32de2: 46bd        mov sp, r7
+   32de4: e8bd 4098   ldmia.w sp!, {r3, r4, r7, lr}
+   32de8: f7e5 ba34   b.w 18254 <N3AdobeReader::updatePanningMap()@plt>
+   32dec: 695b        ldr r3, [r3, #20]
+   32dee: deff        udf #255  ; 0xff
+   32df0: bd98        pop {r3, r4, r7, pc}
+   32df2: bf00        nop
+
+Update:
+    offset -> 32dae
+    data -> 00 AF
+
+  - ReplaceBytes: {Offset: 0x032DAE, FindH: 00 AF, ReplaceH: 19 E0}
+
+==========================================================================================
+
+librmsdk.so.1.0.0:
+
+    Disable orphans/widows avoidance
+
+ kobopatch_4.10.11655]$ objdump -S librmsdk.so.1.0.0 | c++filt | grep -C10 "layout::FlowProcessor::getPageBreakScore(bool, bool, bool, bool, float)@@Base+0x20"
+
+  295dbc: eeb0 0a08   vmovne.f32  s0, #8  ; 0x40400000  3.0
+  295dc0: ed9f 0a0b   vldreq  s0, [pc, #44] ; 295df0 <layout::FlowProcessor::getPageBreakScore(bool, bool, bool, bool, float)@@Base+0x64>
+  295dc4: ee87 0a00   vdivne.f32  s0, s14, s0
+  295dc8: ee37 0ac0   vsub.f32  s0, s15, s0
+  295dcc: 46bd        mov sp, r7
+  295dce: bc90        pop {r4, r7}
+  295dd0: 4770        bx  lr
+  295dd2: eddf 7a07   vldr  s15, [pc, #28]  ; 295df0 <layout::FlowProcessor::getPageBreakScore(bool, bool, bool, bool, float)@@Base+0x64>
+  295dd6: ee30 0a67   vsub.f32  s0, s0, s15
+  295dda: 2a00        cmp r2, #0
+  295ddc: d0e6        beq.n 295dac <layout::FlowProcessor::getPageBreakScore(bool, bool, bool, bool, float)@@Base+0x20>
+  295dde: eddf 7a04   vldr  s15, [pc, #16]  ; 295df0 <layout::FlowProcessor::getPageBreakScore(bool, bool, bool, bool, float)@@Base+0x64>
+  295de2: e7e5        b.n 295db0 <layout::FlowProcessor::getPageBreakScore(bool, bool, bool, bool, float)@@Base+0x24>
+  295de4: ed9f 0a03   vldr  s0, [pc, #12] ; 295df4 <layout::FlowProcessor::getPageBreakScore(bool, bool, bool, bool, float)@@Base+0x68>
+  295de8: 46bd        mov sp, r7
+  295dea: bc90        pop {r4, r7}
+  295dec: 4770        bx  lr
+  295dee: bf00        nop
+  295df0: 0000        movs  r0, r0
+  295df2: 0000        movs  r0, r0
+  295df4: ffff ff7f   vcvt.u32.f32  <illegal reg q15.5>, <illegal reg q15.5>, #1
+
+Update:
+    offset -> 295ddc
+    data -> E6 D0
+
+  - ReplaceBytes: {Offset: 0x295DDC, FindH: E6 D0, ReplaceH: E6 E7}
+# - ReplaceBytes: {Offset: 0x295DDC, FindH: E6 D0, ReplaceH: 00 46} # Alternative method
+
+==========================================================================================
+
+sickel:
+
+    sickel reboot timeout
+
+ kobopatch_4.10.11655]$ objdump -dCF sickel | grep SickelService::Ping | grep ":$"
+0001348c <SickelService::Ping()@@Base> (Desplazamiento Fichero: 0x348c):
+ kobopatch_4.10.11655]$ objdump -S sickel | c++filt | grep -C10 "SickelService::Ping"
+0001348c <SickelService::Ping()@@Base>:
+   1348c: b598        push  {r3, r4, r7, lr}
+   1348e: af00        add r7, sp, #0
+   13490: 6903        ldr r3, [r0, #16]
+   13492: 2b00        cmp r3, #0
+   13494: db07        blt.n 134a6 <SickelService::Ping()@@Base+0x1a>
+   13496: 4604        mov r4, r0
+   13498: f242 7110   movw  r1, #10000  ; 0x2710
+   1349c: 3008        adds  r0, #8
+   1349e: f7ff ed62   blx 12f64 <QTimer::start(int)@plt>
+   134a2: 2300        movs  r3, #0
+   134a4: 6223        str r3, [r4, #32]
+   134a6: bd98        pop {r3, r4, r7, pc}
+
+Update:
+    offset -> 13498
+    data -> 42 F2 10 71
+
+    About: replace word (MOVW r1, #10000) in register 1 for function QTimer::start
+
+# 10sec --> 30sec
+  - ReplaceBytes:
+      FindH:    42 F2 10 71
+      ReplaceH: 47 F2 30 51
+  - ReplaceBytes:
+      FindH:    44 F6 20 61
+      ReplaceH: 4E F6 60 21
