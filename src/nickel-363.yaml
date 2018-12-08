@@ -41,31 +41,45 @@ Reduce reading footer and quit caption:
                 #caption{qproperty-visible:false;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "
       MustMatchLength: yes
       
-# font-size bulk change
-#
-# Only my personal () make me do something like this.
-# This is against my thinking, need, want... even will.
-#
-# This is only for those who want to change the font-size
+# This is only for those who want to change font-family and/or the font-size
 # without bother on the look.
 #
-Custom font-size nozlib:
+Font-family and font-size bulk change (part 1 of 2):
   - Enabled: no
   - Description: |
       Based on tshering's BAD EYES
       source: tshering/KBPatcher17_4.4.9995/4_plus_source/nickel
       When editing the replacement values (into the NOZLIB) below,
       BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
-      If a replacement string is too long you will get an error when making the patch,
-      but if one is too short then there will be no error,
-      but strange things will happen.
-# KNOWN PROBLEMS:
-# If you use any patch which alter the font-size you are in troubles with this
-#   
-# or you'd increase it twice:
+      If a replacement string is too long or short you will get an error when making the patch.
+# KNOWN ISSUES:
+# If you use any patch which alter the font-fanily and/or font-size you are in troubles with this:
+#   Changing the info panel in full size screensaver- beta 1
+#   Custom font to collection and author titles
+#   Increase headlines font
+#   New home screen subtitle custom font
+# or you'd increase it twice if you activate:
 #   Reading footer alternatives
 #   Custom synopsis/font size
 #
+  - FindReplaceString:
+      Find:    "\n  font-family: Avenir;\n"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "font-family:\"Gill Sans\";"
+      MustMatchLength: yes
+  - FindReplaceString:
+      Find:    "\n  font-family: Georgia;\n"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "font-family: Bookerly   ;"
+      MustMatchLength: yes
+  - FindReplaceString:
+      Find:    "Sans-SerifJP, sans-serif"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "\"Gill Sans\"             "
+      MustMatchLength: yes
   - FindReplaceString: {Find: "font-size: 50px", Replace: "font-size: 53px", MustMatchLength: yes}
   - FindReplaceString: {Find: "font-size: 46px", Replace: "font-size: 49px", MustMatchLength: yes}
   - FindReplaceString: {Find: "font-size: 42px", Replace: "font-size: 45px", MustMatchLength: yes}
@@ -90,19 +104,6 @@ Custom font-size nozlib:
   - FindReplaceString: {Find: "font-size: 16px", Replace: "font-size: 20px", MustMatchLength: yes}
   - FindReplaceString: {Find: "font-size: 13px", Replace: "font-size: 17px", MustMatchLength: yes}
 
-Custom font-size zlib:
-  - Enabled: no
-  - Description: |
-      Based on tshering's BAD EYES
-      source: tshering/KBPatcher17_4.4.9995/4_plus_source/nickel
-# KNOWN PROBLEMS:
-# If you use any patch which alter the font-size you are in troubles with this.
-#   Changing the info panel in full size screensaver- beta 1
-#   Custom font to collection and author titles
-#   Increase headlines font
-#   New home screen subtitle custom font
-# or you'd increase it twice:
-#
 #1 (zlib) pos: 1504d
   - FindZlib: "reader_head"
   - ReplaceZlibGroup:
@@ -112,23 +113,27 @@ Custom font-size zlib:
         - {Find: "font-size: 28px", Replace: "font-size: 32px"}
         - {Find: "font-size: 23px", Replace: "font-size: 27px"}
 #2 (zlib) pos: 252ac1
+#zlib stream: offset_hex(0x252AC1) offset_int32(2435777) len_int32(57344) sha1(da62721d3ebc43e60e0221f16f2f7c4c1b98154b)
   - FindZlib: "QWidget[small"
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 91px", Replace: "font-size: 91px"}
         - {Find: "font-size: 77px", Replace: "font-size: 77px"}
         - {Find: "font-size: 74px", Replace: "font-size: 74px"}
         - {Find: "font-size: 71px", Replace: "font-size: 71px"}
         - {Find: "font-size: 62px", Replace: "font-size: 62px"}
         - {Find: "font-size: 60px", Replace: "font-size: 60px"}
-        - {Find: "font-size: 57px", Replace: "font-size: 59px"}
-        - {Find: "font-size: 55px", Replace: "font-size: 57px"}
-        - {Find: "font-size: 50px", Replace: "font-size: 53px"}
   - FindZlib: "QWidget[small"
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "font-size: 57px", Replace: "font-size: 59px"}
+        - {Find: "font-size: 55px", Replace: "font-size: 57px"}
+        - {Find: "font-size: 50px", Replace: "font-size: 53px"}
         - {Find: "font-size: 47px", Replace: "font-size: 50px"}
         - {Find: "font-size: 46px", Replace: "font-size: 49px"}
         - {Find: "font-size: 45px", Replace: "font-size: 48px"}
@@ -136,13 +141,13 @@ Custom font-size zlib:
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 36px", Replace: "font-size: 39px"}
         - {Find: "font-size: 35px", Replace: "font-size: 38px"}
-        - {Find: "font-size: 34px", Replace: "font-size: 37px"}
-        - {Find: "font-size: 32px", Replace: "font-size: 36px"}
-        - {Find: "font-size: 31px", Replace: "font-size: 35px"}
   - FindZlib: "QWidget[small"
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "font-size: 34px", Replace: "font-size: 37px"}
+        - {Find: "font-size: 32px", Replace: "font-size: 36px"}
+        - {Find: "font-size: 31px", Replace: "font-size: 35px"}
         - {Find: "font-size: 30px", Replace: "font-size: 34px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
         - {Find: "font-size: 28px", Replace: "font-size: 32px"}
@@ -150,23 +155,31 @@ Custom font-size zlib:
         - {Find: "font-size: 26px", Replace: "font-size: 30px"}
         - {Find: "font-size: 24px", Replace: "font-size: 28px"}
         - {Find: "font-size: 23px", Replace: "font-size: 27px"}
-        - {Find: "font-size: 22px", Replace: "font-size: 26px"}
-        - {Find: "font-size: 21px", Replace: "font-size: 25px"}
-        - {Find: "font-size: 20px", Replace: "font-size: 24px"}
   - FindZlib: "QWidget[small"
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "font-size: 22px", Replace: "font-size: 26px"}
+        - {Find: "font-size: 21px", Replace: "font-size: 25px"}
+        - {Find: "font-size: 20px", Replace: "font-size: 24px"}
         - {Find: "font-size: 19px", Replace: "font-size: 23px"}
         - {Find: "font-size: 17px", Replace: "font-size: 21px"}
         - {Find: "font-size: 16px", Replace: "font-size: 20px"}
         - {Find: "font-size: 14px", Replace: "font-size: 18px"}
         - {Find: "font-size: 13px", Replace: "font-size: 17px"}
+#7 (zlib) pos: 4c2551
+  - FindZlib: "#QuickTourPage"
+  - ReplaceZlib:
+      Find:    "Avenir"
+      Replace: "\"Gill Sans\""
 #9 (zlib) pos: 4c2888
   - FindZlib: "#language[qApp"
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
@@ -177,6 +190,9 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 47px", Replace: "font-size: 50px"}
         - {Find: "font-size: 36px", Replace: "font-size: 39px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
@@ -186,6 +202,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
@@ -201,11 +219,12 @@ Custom font-size zlib:
         - {Find: "font-size: 17px", Replace: "font-size: 21px"}
         - {Find: "font-size: 13px", Replace: "font-size: 17px"}
 #24 (zlib) pos: 4c45b0
-# `Changing the info panel in full size screensaver- beta 1`
   - FindZlib: "#infoWidget"
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 34px", Replace: "font-size: 37px"}
         - {Find: "font-size: 30px", Replace: "font-size: 34px"}
         - {Find: "font-size: 26px", Replace: "font-size: 30px"}
@@ -230,6 +249,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
@@ -240,6 +261,7 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
         - {Find: "font-size: 23px", Replace: "font-size: 27px"}
@@ -261,6 +283,9 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 86px", Replace: "font-size: 86px"}
         - {Find: "font-size: 66px", Replace: "font-size: 66px"}
         - {Find: "font-size: 46px", Replace: "font-size: 49px"}
@@ -273,6 +298,7 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
         - {Find: "font-size: 50px", Replace: "font-size: 53px"}
         - {Find: "font-size: 36px", Replace: "font-size: 39px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
@@ -282,6 +308,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 47px", Replace: "font-size: 50px"}
         - {Find: "font-size: 39px", Replace: "font-size: 42px"}
         - {Find: "font-size: 36px", Replace: "font-size: 39px"}
@@ -292,6 +320,9 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 34px", Replace: "font-size: 37px"}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
@@ -307,6 +338,9 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 60px", Replace: "font-size: 60px"}
         - {Find: "font-size: 46px", Replace: "font-size: 49px"}
         - {Find: "font-size: 42px", Replace: "font-size: 45px"}
@@ -330,6 +364,7 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 34px", Replace: "font-size: 37px"}
         - {Find: "font-size: 26px", Replace: "font-size: 30px"}
         - {Find: "font-size: 22px", Replace: "font-size: 26px"}
@@ -346,6 +381,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 34px", Replace: "font-size: 37px"}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
@@ -357,11 +394,14 @@ Custom font-size zlib:
         - {Find: "font-size: 19px", Replace: "font-size: 23px"}
         - {Find: "font-size: 17px", Replace: "font-size: 21px"}
 #60 (zlib) pos: 4ca3c8
-# `Increase headlines font`
   - FindZlib: "#barContainer"
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+# `Increase headlines font`
         - {Find: "font-size: 36px", Replace: "font-size: 39px"}
         - {Find: "font-size: 28px", Replace: "font-size: 32px"}
         - {Find: "font-size: 20px", Replace: "font-size: 24px"}
@@ -371,6 +411,9 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 52px", Replace: "font-size: 54px"}
         - {Find: "font-size: 42px", Replace: "font-size: 45px"}
         - {Find: "font-size: 40px", Replace: "font-size: 43px"}
@@ -391,6 +434,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 42px", Replace: "font-size: 45px"}
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
@@ -413,6 +458,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 42px", Replace: "font-size: 45px"}
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
@@ -426,6 +473,9 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "\"Avenir Next\"", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 65px", Replace: "font-size: 65px"}
         - {Find: "font-size: 60px", Replace: "font-size: 60px"}
         - {Find: "font-size: 56px", Replace: "font-size: 58px"}
@@ -456,6 +506,9 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 47px", Replace: "font-size: 50px"}
         - {Find: "font-size: 36px", Replace: "font-size: 39px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
@@ -465,6 +518,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
         - {Find: "font-size: 26px", Replace: "font-size: 30px"}
@@ -475,6 +530,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
@@ -488,6 +545,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 60px", Replace: "font-size: 60px"}
         - {Find: "font-size: 50px", Replace: "font-size: 53px"}
         - {Find: "font-size: 46px", Replace: "font-size: 49px"}
@@ -523,6 +582,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 60px", Replace: "font-size: 60px"}
         - {Find: "font-size: 50px", Replace: "font-size: 53px"}
         - {Find: "font-size: 46px", Replace: "font-size: 49px"}
@@ -538,6 +599,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 60px", Replace: "font-size: 60px"}
         - {Find: "font-size: 50px", Replace: "font-size: 53px"}
         - {Find: "font-size: 46px", Replace: "font-size: 49px"}
@@ -548,6 +611,9 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 42px", Replace: "font-size: 45px"}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
         - {Find: "font-size: 26px", Replace: "font-size: 30px"}
@@ -557,6 +623,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 116px", Replace: "font-size: 116px"}
         - {Find: "font-size: 72px", Replace: "font-size: 72px"}
         - {Find: "font-size: 56px", Replace: "font-size: 58px"}
@@ -565,21 +633,33 @@ Custom font-size zlib:
         - {Find: "font-size: 26px", Replace: "font-size: 30px"}
         - {Find: "font-size: 23px", Replace: "font-size: 27px"}
         - {Find: "font-size: 18px", Replace: "font-size: 22px"}
+#128 (zlib) pos: 4d46f8
+  - FindZlib: "#orText"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
 #129 (zlib) pos: 4d485e
   - FindZlib: "BulkMarkAsDialog"
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 47px", Replace: "font-size: 50px"}
         - {Find: "font-size: 36px", Replace: "font-size: 39px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
         - {Find: "font-size: 23px", Replace: "font-size: 27px"}
 #134 (zlib) pos: 4d5258
-# `Custom font to collection and author titles`
   - FindZlib: "#header #headerTitle"
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+# `Custom font to collection and author titles`
         - {Find: "font-size: 36px", Replace: "font-size: 39px"}
         - {Find: "font-size: 28px", Replace: "font-size: 32px"}
         - {Find: "font-size: 20px", Replace: "font-size: 24px"}
@@ -589,6 +669,9 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 60px", Replace: "font-size: 60px"}
         - {Find: "font-size: 46px", Replace: "font-size: 49px"}
         - {Find: "font-size: 42px", Replace: "font-size: 45px"}
@@ -602,6 +685,8 @@ Custom font-size zlib:
   - ReplaceZlibGroup:
       Offset: 0
       Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
         - {Find: "font-size: 37px", Replace: "font-size: 40px"}
         - {Find: "font-size: 32px", Replace: "font-size: 36px"}
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
@@ -632,4 +717,3 @@ Custom font-size zlib:
         - {Find: "font-size: 29px", Replace: "font-size: 33px"}
         - {Find: "font-size: 23px", Replace: "font-size: 27px"}
         - {Find: "font-size: 19px", Replace: "font-size: 23px"}
-

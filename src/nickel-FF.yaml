@@ -1,0 +1,333 @@
+Font-Family bulk change:
+  - Enabled: no
+  - Description: |
+      When editing the replacement values (into the NOZLIB) below,
+      BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      If a replacement string is too long, or short, you will get an error when making the patch.
+#
+# This patch will NOT WORK with:
+#
+# If you use any patch which alter the font-family you are in troubles with this
+#   
+# nozlib
+  - FindReplaceString:
+      Find:    "\n  font-family: Avenir;\n"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "font-family:\"Gill Sans\";"
+      MustMatchLength: yes
+  - FindReplaceString:
+      Find:    "\n  font-family: Georgia;\n"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "font-family: Bookerly   ;"
+      MustMatchLength: yes
+  - FindReplaceString:
+      Find:    "Sans-SerifJP, sans-serif"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "\"Gill Sans\"             "
+      MustMatchLength: yes
+
+#2 (zlib) pos: 252ac1
+#zlib stream: offset_hex(0x252AC1) offset_int32(2435777) len_int32(57344) sha1(da62721d3ebc43e60e0221f16f2f7c4c1b98154b)
+  - FindZlib: "QWidget[small"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#7 (zlib) pos: 4c2551
+#zlib stream: offset_hex(0x4C2551) offset_int32(4990289) len_int32(2085) sha1(35012b8f92ca78960567873155213d51e28b7fdb)
+  - FindZlib: "#QuickTourPage"
+  - ReplaceZlib:
+      Find:    "Avenir"
+      Replace: "\"Gill Sans\""
+
+#9 (zlib) pos: 4c2888
+#zlib stream: offset_hex(0x4C2888) offset_int32(4991112) len_int32(6139) sha1(962c7245fc347c13ace9cc38a2afaa00ca286db6)
+  - FindZlib: "#language[qApp"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#16 (zlib) pos: 4c33be
+#zlib stream: offset_hex(0x4C33BE) offset_int32(4993982) len_int32(2042) sha1(c8e898332f00cbcf2ebf8cfc858710b27e918242)
+  - FindZlib: "RemoveDialog"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#22 (zlib) pos: 4c4120
+#zlib stream: offset_hex(0x4C4120) offset_int32(4997408) len_int32(3642) sha1(3e899a3e569a64ff645cdb6f484ef17188e279d4)
+  - FindZlib: "ComboButton"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#24 (zlib) pos: 4c45b0
+#zlib stream: offset_hex(0x4C45B0) offset_int32(4998576) len_int32(3026) sha1(b399667160075a1409046cb321345c767c8dadee)
+  - FindZlib: "#infoWidget"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#28 (zlib) pos: 4c5063
+#zlib stream: offset_hex(0x4C5063) offset_int32(5001315) len_int32(3173) sha1(a3fbdd3be3572390c3b6e768a55b2c623e569286)
+  - FindZlib: "DragonMenuBar"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#29 (zlib) pos: 4c52a4
+#zlib stream: offset_hex(0x4C52A4) offset_int32(5001892) len_int32(1410) sha1(69a21c3907011240f19655df67e20a253fdf6b1b)
+  - FindZlib: "#OverDriveFilterPopup"
+  - ReplaceZlib:
+      Find:    "Avenir"
+      Replace: "\"Gill Sans\""
+
+#31 (zlib) pos: 4c5744
+#zlib stream: offset_hex(0x4C5744) offset_int32(5003076) len_int32(1951) sha1(0408b527ef3b1b959aa28fb2ed3b7634c778bc21)
+  - FindZlib: "#lblBullet_0,"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#32 (zlib) pos: 4c5961
+#zlib stream: offset_hex(0x4C5961) offset_int32(5003617) len_int32(1427) sha1(432232e4a463b3a4ae1c718134c4824b14a219ca)
+  - FindZlib: "#checkMark"
+  - ReplaceZlib:
+      Find:    "Georgia"
+      Replace: "Bookerly"
+
+#33 (zlib) pos: 4c5ac9
+#zlib stream: offset_hex(0x4C5AC9) offset_int32(5003977) len_int32(6177) sha1(26536d27cf60e3ac04bceb63401f0ef33ae8c2a2)
+  - FindZlib: "#DragonSimilarLibraryView"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#38 (zlib) pos: 4c661a
+#zlib stream: offset_hex(0x4C661A) offset_int32(5006874) len_int32(3731) sha1(3567b2fa7adc74d190be182226b80f64e3d52d63)
+  - FindZlib: "#ConfirmationDialog"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#43 (zlib) pos: 4c7199
+#zlib stream: offset_hex(0x4C7199) offset_int32(5009817) len_int32(1696) sha1(5c2bdb79e1e207e5d708efb498b4aaf88071aa53)
+  - FindZlib: "#connectedPixmap"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#45 (zlib) pos: 4c74ae
+#zlib stream: offset_hex(0x4C74AE) offset_int32(5010606) len_int32(2628) sha1(b3bd62892b313b97e382e1f461f83460651fa73f)
+  - FindZlib: "#ReadingMenuFontSettingsView"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#53 (zlib) pos: 4c8baf
+#zlib stream: offset_hex(0x4C8BAF) offset_int32(5016495) len_int32(3728) sha1(e73555e12225f8ceeff238582df5cf53036cb27c)
+  - FindZlib: "#lineEdit {"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#60 (zlib) pos: 4ca3c8
+#zlib stream: offset_hex(0x4CA3C8) offset_int32(5022664) len_int32(3159) sha1(6ea1f8ffb6a83b60a8cdeb3891f37207e23e90ef)
+  - FindZlib: "#barContainer"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#64 (zlib) pos: 4cacc9
+#zlib stream: offset_hex(0x4CACC9) offset_int32(5024969) len_int32(6708) sha1(60e69924bee00a34c879be2a85bffdbca15276a0)
+  - FindZlib: "#readPreview"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#66 (zlib) pos: 4cb341
+#zlib stream: offset_hex(0x4CB341) offset_int32(5026625) len_int32(4009) sha1(bc06f4c65e3c8a673d53bacac31532f2b13ba3dd)
+  - FindZlib: "StatusBarMenu"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#76 (zlib) pos: 4ccbea
+#zlib stream: offset_hex(0x4CCBEA) offset_int32(5032938) len_int32(3125) sha1(d838c176d811126fda8939596be2dd583e75fa50)
+  - FindZlib: "#ReviewWidget"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#78 (zlib) pos: 4ccf3b
+#zlib stream: offset_hex(0x4CCF3B) offset_int32(5033787) len_int32(7975) sha1(5f9db71fdf88829ec35b8ccd53c26bd8be9c896b)
+  - FindZlib: "body.koboplus"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "\"Avenir Next\"", Replace: "\"Gill Sans\""}
+
+#79 (zlib) pos: 4cd510
+#zlib stream: offset_hex(0x4CD510) offset_int32(5035280) len_int32(3257) sha1(62f60e773b8c4022d9a3a0b6955e1a03e1713095)
+  - FindZlib: "N3DeleteOptions"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#82 (zlib) pos: 4cda94
+#zlib stream: offset_hex(0x4CDA94) offset_int32(5036692) len_int32(2297) sha1(a42a54551435808fd522310c23e2af144e74f3b3)
+  - FindZlib: "IconPowerView"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#84 (zlib) pos: 4ce03e
+#zlib stream: offset_hex(0x4CE03E) offset_int32(5038142) len_int32(3812) sha1(e391a76654fac48696f964c22518e31396e724ea)
+  - FindZlib: "html"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "sans-serif", Replace: "\"Gill Sans\""}
+
+#85 (zlib) pos: 4ce328
+#zlib stream: offset_hex(0x4CE328) offset_int32(5038888) len_int32(8154) sha1(87ffce74ef3018e3cef040b416c08fc11dca8195)
+  - FindZlib: "#page1"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#109 (zlib) pos: 4d1a62
+#zlib stream: offset_hex(0x4D1A62) offset_int32(5053026) len_int32(1914) sha1(cdcb529a893fe78b1f23b216b855f7135811e114)
+  - FindZlib: "TouchLabel[imeStyle"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#112 (zlib) pos: 4d2239
+#zlib stream: offset_hex(0x4D2239) offset_int32(5055033) len_int32(2722) sha1(1fdb60a7fba1f5daf9ce650c4491626fcb81b4fb)
+  - FindZlib: "#page[notebookView"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#118 (zlib) pos: 4d2db5
+#zlib stream: offset_hex(0x4D2DB5) offset_int32(5057973) len_int32(2416) sha1(54ba4236c46ce83dc474ddb515b4c8be88dace58)
+  - FindZlib: "#BatteryMenuView"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#121 (zlib) pos: 4d36aa
+#zlib stream: offset_hex(0x4D36AA) offset_int32(5060266) len_int32(2348) sha1(44009c50ff6d3af3f0c64832957ef398fc2fa457)
+  - FindZlib: "#FramedDragonPowerView"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+
+#128 (zlib) pos: 4d46f8
+#zlib stream: offset_hex(0x4D46F8) offset_int32(5064440) len_int32(1193) sha1(16abec93812809047c04ff091afe6fbcfde476cc)
+  - FindZlib: "#orText"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#129 (zlib) pos: 4d485e
+#zlib stream: offset_hex(0x4D485E) offset_int32(5064798) len_int32(2074) sha1(24ab6ed0ed3d0331956d5db145ab50fadbd7da2c)
+  - FindZlib: "BulkMarkAsDialog"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#134 (zlib) pos: 4d5258
+#zlib stream: offset_hex(0x4D5258) offset_int32(5067352) len_int32(4491) sha1(6b5bbf157906d759ce66a3de93dfcb0684cced16)
+  - FindZlib: "#header #headerTitle"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#136 (zlib) pos: 4d56fb
+#zlib stream: offset_hex(0x4D56FB) offset_int32(5068539) len_int32(2974) sha1(ab43764cea9e50ecf6a6b0b7982fde51ca4b1baf)
+  - FindZlib: "#topVerticalSpacer"
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
+        - {Find: "Avenir", Replace: "\"Gill Sans\""}
+
+#144 (zlib) pos: 4d6501
+#zlib stream: offset_hex(0x4D6501) offset_int32(5072129) len_int32(2650) sha1(9076ec07b08be874b578d6533c7b4e0b7668067d)
+  - FindZlibHash: 9076ec07b08be874b578d6533c7b4e0b7668067d
+  - ReplaceZlibGroup:
+      Offset: 0
+      Replacements:
+        - {Find: "Georgia", Replace: "Bookerly"}
+        - {Find: "Sans-SerifJP, sans-serif", Replace: "\"Gill Sans\""}
