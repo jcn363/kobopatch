@@ -89,7 +89,7 @@ overrides:
     Remove Footer and Recommendations: no
 # END GROUP
     Reduce reading footer and quit caption: no
-    Font-family and font-size bulk change (part 1 of 2): #yes
+    Font-family and font-size bulk change (part 1 of 2): #yes # PART 2 in libnickel-PROGRESIVE.yaml
   src/sickel.yaml:
 # PATCH GROUP - DON'T EANBLE MORE THAN 1
     sickel reboot timeout (20 sec): no
@@ -109,7 +109,7 @@ overrides:
     Add orientation dropdown to developer options on all devices: yes
     Use inverted portrait in rotation popup: no
     Use inverted landscape in rotation popup: yes
-    Font-family and font-size bulk change (part 2 of 2): #yes
+    Font-family and font-size bulk change (part 2 of 2): #yes # PART 1 in nickel-363.yaml
   src/libnickel.so.1.0.0.yaml:
     Rename new home screen footer: no
     Set slide to unlock: yes #10
