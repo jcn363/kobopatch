@@ -1,0 +1,41 @@
+applying the patterns
+.in1 b2l2 4edi b4le.
+
+•	patterns: short strings with integer values
+•	odd values: valid breakpoints
+•	even values: forbidden breakpoints
+•	lower values are overwritten by higher values
+•	points mark begin/end of the word
+
+applying the patterns (example)
+incredible
+. i n c r e d i b l e .
+. i n1
+                b2l2
+         4e d i
+              i1b l
+    n1c r
+                b4l e .
+     5c r e d
+          e d3i b
+       2r2e d
+   ––––––––––––-
+. i n5c2r4e d3i1b4l2e .
+  in-cred-i-ble
+
+applying the patterns – example 2
+
+hyphenation
+. h y p h e n a t i o n .
+                 2i o
+           1n a
+                    o2n
+        h e2n
+            n2a t
+               1t i o
+        h e n a4
+  h y3p h
+        h e n5a t
+––––––––––––--------------
+. h y3p h e2n5a4t2i o2n .
+  hy-phen-ation
