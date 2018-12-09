@@ -4,7 +4,7 @@
    * Los números más bajos tienen mayor prioridad.
    * Los puntos indican los extremos, inicio o final de palabra.
    * El orden de las reglas importa, se leen secuencialmente.
-   * NOHYPHEN caracteres (separados por comas) tras los que no se pone guión. Es decir, si tenemos NOHYPHEN - si se separa ab-cd será ab- cd y no ab-- cd.
+   * NOHYPHEN caracteres (separados por comas) tras los que no se pone guión. Es decir, si tenemos NOHYPHEN - si se separa `ab-cd` será `ab-` `cd` y no ab-- cd.
    * NEXTLEVEL indica la finalización de un nivel de reglas y el inicio del siguiente. No se procesa un nivel sin haber procesado completamente el anterior.
    * LEFTHYPHENMIN n -> número mínimo de caracteres a la izquierda de la separación.
    * RIGHTHYPHENMIN n-> número mínimo de caracteres a la derecha de la separación.
@@ -32,11 +32,11 @@ Luego sólo se puede dividir por cualquiera de estos puntos `abcd`/e/f/g/h/`ijk`
 
 Esto es, ~~a/b/c/d~~efgh~~i/j/k~~ no son opciones válidas.
 
-LEFTHYPHENMIN=3
-RIGHTHYPHENMIN=2
+    LEFTHYPHENMIN=3
+    RIGHTHYPHENMIN=2
 es como mejor aprovechamiento/regularidad se obtiene con este fichero en los Kobo debido a un error (LEFTHYPHENMIN=3 es interpretado como 2).
 
- ¿De qué estamos hablando?
+ ### ¿De qué estamos hablando?
 
     Pequeño experimento
     Datos:
@@ -70,19 +70,19 @@ es como mejor aprovechamiento/regularidad se obtiene con este fichero en los Kob
         Caso Adobe-2010 (LEFTHYPHENMIN=5 y RIGHTHYPHENMIN=5)
             285.839 palabras tienen 10 caracteres o menos.
             184.421 palabras tienen 11 caracteres o más. 
-        Es decir, que (sin otras consideraciones) se tratarían unas 2 palabras por cada 3 que se obviarían.
+Es decir, que (sin otras consideraciones) se tratarían unas 2 palabras por cada 3 que se obviarían.
 
         Caso Propuesta_RAE (LEFTHYPHENMIN=3 y RIGHTHYPHENMIN=3)
             32.569 palabras tienen 6 caracteres o menos.
             437.691 palabras tienen 7 caracteres o más. 
-        Es decir, que (sin otras consideraciones) se tratarían unas 40 palabras por cada 3 que se obviarían.
+Es decir, que (sin otras consideraciones) se tratarían unas 40 palabras por cada 3 que se obviarían.
 
         Caso Agresivo (LEFTHYPHENMIN=2 y RIGHTHYPHENMIN=2)
             2.965 palabras tienen 4 caracteres o menos.
             467.295 palabras tienen 5 caracteres o más. 
-        Es decir, que (sin otras consideraciones) se tratarían unas 472 palabras por cada 3 que se obviarían.
+Es decir, que (sin otras consideraciones) se tratarían unas 472 palabras por cada 3 que se obviarían.
 
-La cosa debería funcionar así:
+###### La cosa debería funcionar así:
 * Si el epub (lo mismo se aplica a cualquiera de los ficheros y/o tag que contine) está codificado como lang="es_ES" y en el dispositivo tan sólo existe hyph_es.dic, cojerá éste y no habrá ningún problema.
 * Si en el dispositivo se encuentran tanto hyph_es.dic como hyph_es_ES.dic, debería ejecutarlos en ese orden, o, como mal menor, ejecutar únicamente el último.
 * Si el epub está codificado como lang="es" y en el dispositivo tan sólo existe hyph_es_ES.dic, aplicará éste o, como mal menor, no hará nada.
@@ -96,7 +96,7 @@ En cuanto a los xenismos (palabras de idiomas diferentes al castellano y que, po
 
 Es tu fichero, son tus reglas. Quiero decir que pongo el fichero a disposición para que cada cual lo use como buenamente quiera.
 
-El proceso de mezcla, de dos o más archivos de reglas, que se me ocurre, sería:
+###### El proceso de mezcla, de dos o más archivos de reglas, que se me ocurre, sería:
    1. Separar las reglas de cada archivo
    2. Agruparlas en una columna de una hoja de cálculo
    3. Duplicar la columna al lado
