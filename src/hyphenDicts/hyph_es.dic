@@ -7,7 +7,7 @@ COMPOUNDRIGHTHYPHENMIN 2
 %%%%%%%%%%%%%%%%%%%
 %                 %
 % hyph-es j3  6.3 %
-%   2018-12-07    %
+%   2018-12-10    %
 %                 %
 %%%%%%%%%%%%%%%%%%%
 NOHYPHEN -,–,',’,/,:,.
@@ -413,10 +413,29 @@ z2r
 .in1e
 .in1o
 .in1s
-.in6s1c
-.in6s1p
-.in6s1t
-.inter1r
+.in8s1c
+.in8s1p
+.in8s1t
+.inter1
+.in1te3rac5
+.in1te3re5sa
+.in1te3re5sá
+.in1te3re5se
+.in1te3re5sé
+.in1te3rés
+.in1te3re5so
+.in1te3re5só
+.in1te3ria
+.in1te3ri5na
+.in1te3ri5ná
+.in1te3ri5ne
+.in1te3ri5né
+.in1te3ri5ni
+.in1te3ri5no
+.in1te3ri5nó
+.in1te3rio
+.in1te3rro
+.in1te3rru
 .in1u
 .inun1
 .ja
@@ -809,11 +828,11 @@ z2r
 .tó
 .tra
 .trá
-.tran8s1al
-.tran8s1an
-.tran8s1at
-.tran8s1oce
-.tran8s1ur
+.trans1al
+.trans1an
+.trans1at
+.trans1oce
+.trans1ur
 .tras1al
 .tras1an
 .tras1at
