@@ -24,7 +24,7 @@ Para la versión actual (4.10.11655):
 
   - ReplaceString: {Offset: 357, Find: "font-size:29px", Replace: "font-size:26px"} # Replacement caption font size value for AuraHD/H2O:
 
-10. Tras haber modificado los parches deseados (y haber guardado los cambios realizados) ejecuta kobopatch.sh (si tienes Linux), o kobopatch.bat (si tienes Windows).
+10.- Tras haber modificado los parches deseados (y haber guardado los cambios realizados) ejecuta kobopatch.sh (si tienes Linux), o kobopatch.bat (si tienes Windows).
     Si no hay problemas, se creará un fichero KoboRoot.tgz, dentro de la carpeta out, que deberás copiar dentro de la carpeta .kobo de tu dispositivo.
     Si los hay, dentro de la carpeta out, se habrá creado un archivo log.txt donde encontrarás la(s) causa(s).
 11.- Expulsar el lector del ordenador. Desconectar el cable USB de tu disposistivo. El dispositivo se reiniciará para instalar tus modificaciones.
