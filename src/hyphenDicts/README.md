@@ -22,8 +22,7 @@ La primera intención era buscar una solución de compromiso que pudiera servir 
 
 Nunca he entendido lo de las terminaciones _"malsonantes"_ (y en otros idiomas tienen lo mismo).
 
-Ejemplo:
-
+###### Ejemplo:
 En un idioma dado existe una palabra `abcdefghijk`, que según las normas de ese idioma, puede tener punto de ruptura entre dos culesquiera de sus letras.
 
 El fichero de guionado usado indica `LEFTHYPHENMIN 4` y `RIGHTHYPHENMIN 3`.
@@ -32,6 +31,7 @@ Luego sólo se puede dividir por cualquiera de estos puntos `abcd`/e/f/g/h/`ijk`
 
 Esto es, ~~a/b/c/d~~efgh~~i/j/k~~ no son opciones válidas.
 
+##### NOTA:
     LEFTHYPHENMIN=3
     RIGHTHYPHENMIN=2
 es como mejor aprovechamiento/regularidad se obtiene con este fichero en los Kobo debido a un error (`LEFTHYPHENMIN=3` es interpretado como `LEFTHYPHENMIN=2`).
