@@ -82,12 +82,12 @@ Es decir, que (sin otras consideraciones) se tratarían unas 40 palabras por cad
             467.295 palabras tienen 5 caracteres o más. 
 Es decir, que (sin otras consideraciones) se tratarían unas 472 palabras por cada 3 que se obviarían.
 
-###### La cosa debería funcionar así:
+#### La cosa debería funcionar así:
 * Si el epub (lo mismo se aplica a cualquiera de los ficheros y/o tag que contine) está codificado como `lang="es_ES"` y en el dispositivo tan sólo existe `hyph_es.dic`, cojerá éste y no habrá ningún problema.
 * Si en el dispositivo se encuentran tanto `hyph_es.dic` como `hyph_es_ES.dic`, debería ejecutarlos en ese orden, o, como mal menor, ejecutar únicamente el último.
 * Si el epub está codificado como `lang="es"` y en el dispositivo tan sólo existe `hyph_es_ES.dic`, aplicará éste o, como mal menor, no hará nada.
 * Si en el dispositivo se encuentran 2 o más diccionarios (p. ej. `hyph_es_MX.dic` y `hyph_es_ES.dic`), no hará nada o cojerá el de la localización (si es cualquiera de las dos inidcadas, en este caso México o España).
-* Y si no se encuentra un diccionario, para una codificación lingüística determinada, no hará nada. Así, algo como `<span lang="la">"Ave, Imperator, morituri te salutant"</span>` se quedará sin dividir, si no existe un hyph_la.dic en el dispositivo.
+* Y si no se encuentra un diccionario, para una codificación lingüística determinada, no hará nada. Así, algo como `<span lang="la">"Ave, Imperator, morituri te salutant"</span>` se quedará sin dividir, si no existe un `hyph_la.dic` en el dispositivo.
 
 En cuanto a los xenismos (palabras de idiomas diferentes al castellano y que, por lo tanto, pueden atenerse a reglas de silabeo diferentes), hay tres posibilidades:
 1. están declaradas expresamente en el libro mediante `<tag lang="cod_lang">palabra_o_expresión</tag>` (p.ej. `<i lang="la">ad hoc</i>`) con lo que serán tratadas por el fichero de silabeo de ese idioma (`hyphen_la.dic`), si existe, y serán buscadas en el diccionario correspondiente. Este sistema sería el más aconsejable, ya que tiene la ventaja añadida de que, si se convierte en audio, cojerá la voz del idioma correspondiente.
@@ -96,7 +96,7 @@ En cuanto a los xenismos (palabras de idiomas diferentes al castellano y que, po
 
 Es tu fichero, son tus reglas. Quiero decir que pongo el fichero a disposición para que cada cual lo use como buenamente quiera.
 
-###### El proceso de mezcla, de dos o más archivos de reglas, que se me ocurre, sería:
+#### El proceso de mezcla, de dos o más archivos de reglas, que se me ocurre, sería:
    1. Separar las reglas de cada archivo
    2. Agruparlas en una columna de una hoja de cálculo
    3. Duplicar la columna al lado
