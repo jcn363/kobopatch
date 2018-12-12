@@ -93,7 +93,7 @@ Es decir, que (sin otras consideraciones) se tratarían unas 472 palabras por ca
 En cuanto a los xenismos (palabras de idiomas diferentes al castellano y que, por lo tanto, pueden atenerse a reglas de silabeo diferentes), hay tres posibilidades:
 1. están declaradas expresamente en el libro mediante `<tag lang="cod_lang">palabra_o_expresión</tag>` (p.ej. `<i lang="la">ad hoc</i>`) con lo que serán tratadas por el fichero de silabeo de ese idioma (`hyphen_la.dic`), si existe, y serán buscadas en el diccionario correspondiente. Este sistema sería el más aconsejable, ya que tiene la ventaja añadida de que, si se convierte en audio, cojerá la voz del idioma correspondiente.
 2. se controlan con un archivo de silabeo universal (mi pobre intento) al que se han añadido reglas de otros idiomas que no entren en conflicto con las del idioma base.
-3. sólo se ha definido el atributo `lang` a nivel de libro o de archivo, con lo que el programa aplica las mismas normas a todas las palabras del libro o archivo. Es decir, si el libro tiene `lang="en"` en el `opf`, aunque esté escrito en castellano, las reglas que se aplicarán serán las del idioma inglés (`hyphen_en.dic`). 
+3. sólo se ha definido el atributo `lang` a nivel de libro o de archivo, con lo que el programa aplica las mismas normas a todas las palabras del libro o archivo. Es decir, si el libro tiene `lang="en"` en el fichero `opf`, aunque esté escrito en castellano, las reglas que se aplicarán serán las del idioma inglés (`hyphen_en.dic`). 
 
 Es tu fichero, son tus reglas. Quiero decir que pongo el fichero a disposición para que cada cual lo use como buenamente quiera.
 
