@@ -2,7 +2,7 @@
 
    * Las vocales están unidas _por defecto_.
    * Números pares unen, números impares separan.
-   * Los números más bajos tienen mayor prioridad.
+   * Los números más bajos tienen menor prioridad.
    * Los puntos indican los extremos, inicio o final de palabra.
    * El orden de las reglas importa, se leen secuencialmente.
    * `NOHYPHEN` caracteres (separados por comas) tras los que no se pone guión. Es decir, si tenemos `NOHYPHEN -` si se separa `ab-cd` será como `ab-` `cd` y no como _ab-- cd_.
