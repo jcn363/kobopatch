@@ -125,7 +125,19 @@ Es tu fichero, son tus reglas. Quiero decir que pongo el fichero a disposición 
 * Una vocal abierta (`a, e, o`) seguida de una vocal cerrada (`i`,`u`) no acentuada.
 * Una vocal cerrada (`i`,`u`) no acentuada seguida de una vocal abierta (`a, e, o`).
 * Dos vocales cerradas (`i`,`u`) seguidas.
-    
+
+#### Triptongos:
+
+* Una vocal cerrada átona + vocal abierta + vocal cerrada átona (Es posible formar doce combinaciones de triptongos, aunque algunas de ellas no se presentan en ninguna palabra del español. Los más frecuentes son: `iai`, `iei`, `ioi`, `uai`, `uei`.)
+
+#### Los hiatos se producen cuando se da una de las siguientes combinaciones:
+
+* Vocal abierta átona + vocal abierta tónica.
+* Vocal cerrada tónica + vocal abierta átona.
+* Dos vocales iguales.
+* Dos vocales abiertas distintas.
+
+
 # BIBLIOGRAFÍA
 
 Ignacio Bosque y Violeta Demonte, Gramática descriptiva de la lengua española, Madrid, Espasa-Calpe, 1999.
