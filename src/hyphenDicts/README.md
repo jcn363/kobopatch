@@ -1,5 +1,6 @@
 # Cursillo acelerado.
 
+   * Las vocales están unidas _por defecto_.
    * Números pares unen, números impares separan.
    * Los números más bajos tienen mayor prioridad.
    * Los puntos indican los extremos, inicio o final de palabra.
