@@ -1,17 +1,5 @@
-# Cursillo acelerado.
+# ¿A qué viene esto?
 
-   * Las vocales están unidas _por defecto_.
-   * Números pares unen, números impares separan.
-   * Los números más bajos tienen menor prioridad y son sobreescritos por los números más altos.
-   * Los puntos indican los extremos, inicio o final de palabra.
-   * El orden de las reglas importa, se leen secuencialmente.
-   * `NOHYPHEN` caracteres (separados por comas) tras los que no se pone guión. Es decir, si tenemos `NOHYPHEN -` si se separa `ab-cd` será como `ab-` `cd` y no como _ab-- cd_.
-   * `NEXTLEVEL` indica la finalización de un nivel de reglas y el inicio del siguiente. No se procesa un nivel sin haber procesado completamente el anterior.
-   * `LEFTHYPHENMIN n` -> número mínimo de caracteres a la izquierda de la separación.
-   * `RIGHTHYPHENMIN n` -> número mínimo de caracteres a la derecha de la separación.
-   * `COMPOUNDLEFTHYPHENMIN n` -> número mínimo de caracteres a la izquierda de la separación en palabras compuestas.
-   * `COMPOUNDRIGHTHYPHENMIN n`-> número mínimo de caracteres a la derecha de la separación en palabras compuestas.
-    
 La base está en la regla de oro: **_si siempre haces lo mismo, siempre obtendrás el mismo resultado_**.
 
 Yo quería algo que funcionara siempre igual. Es decir, lo mejor posible, teniendo que hacer las menores modificaciones posibles, sin depender de lo que existe ni de lo que se pueda inventar... Pretencioso pero... estoy en ello.
@@ -21,7 +9,51 @@ El número de letras a dejar, antes y depués del guión de división, depende d
 
 La primera intención era buscar una solución de compromiso que pudiera servir para todos los idiomas, de ahí que haya normas para alemán, pero también para euskara o inglés, en este fichero. El problema es que hay normas contradictorias: `nst` en castellano se dividiría `ns/t` pero en alemán `n/st`.
 
-Nunca he entendido lo de las terminaciones _"malsonantes"_ (y en otros idiomas tienen lo mismo).
+[Nunca he entendido lo de las terminaciones _"malsonantes"_ (y en otros idiomas tienen lo mismo).]
+
+## Reglas para dividir en sílabas:
+   1. Toda sílaba debe contener por lo menos una vocal.
+   2. Los grupos consonánticos: `br, bl, ch, cl, cn, cr, dr, fl, fr, gl, gr, ll, pl, pr, tr, rr` no pueden separarse al dividir en sílabas.
+   3. Cuando una consonante se encuentra entre dos vocales, se une a la segunda vocal (la de su derecha).
+   4. Cuando hay dos consonantes entre dos vocales, cada vocal se une a una consonante, excepto los grupos consonánticos inseparables.
+   5. Si hay tres consonantes entre dos vocales, las dos primeras consonantes se unen a la primera vocal mientras que la tercera consonante se une a la segunda vocal, excepto los grupos consonánticos inseparables.
+   6. h seguida o precedida de consonante, se divide separando ambas letras, excepto los grupos consonánticos inseparables.
+   7. Los diptongos son inseparables, son diptongos las siguientes parejas de vocales: `ai, au, ay, ei, eu, ey, ia, ie, io, iu, oi, ou, oy, ua, ue, ui, uo`.
+   8. La `h` entre dos vocales no destruye un diptongo.
+   9. Un diptongo se destruye si se acentúa la vocal cerrada (`i, u`).
+   10. Los triptóngos son la unión inseparable de tres vocales, son triptóngos los siguientes grupos de vocales: `iai, iau, iei, uai, uay, uei, uey, uau`.
+
+#### Existen tres posibles combinaciones para formar un diptongo:
+
+* Una vocal abierta (`a, e, o`) seguida de una vocal cerrada (`i, u`) no acentuada.
+* Una vocal cerrada (`i, u`) no acentuada seguida de una vocal abierta (`a, e, o`).
+* Dos vocales cerradas (`i, u`) seguidas.
+
+#### Triptongos:
+
+* Una vocal cerrada átona + vocal abierta + vocal cerrada átona (Es posible formar doce combinaciones de triptongos, aunque algunas de ellas no se presentan en ninguna palabra del español. Los más frecuentes son: `iai`, `iei`, `ioi`, `uai`, `uei`.)
+
+#### Los hiatos se producen cuando se da una de las siguientes combinaciones:
+
+* Vocal abierta átona + vocal abierta tónica.
+* Vocal cerrada tónica + vocal abierta átona.
+* Dos vocales iguales.
+* Dos vocales abiertas distintas.    
+
+# Cursillo acelerado.
+
+   * Las **vocales** están **unidas _por defecto_**. Con lo que, no hace falta especificar ni los diptongos ni los triptongos. A menos que quieras otorgarles una prioridad expecífica, claro está.
+El tema de los hiatos es peliagudo, y hay veces que los incluyo y otras que los soslayo para que las vocales vayan simpre unidas, independientemente de que pertenezcan a sílabas diferentes, ya que hay recomendaciones al respecto para aumentar la legibilidad de los textos.
+   * Números **pares unen**, números **impares separan**.
+   * Los **números** más **bajos** tienen **menor prioridad** y son sobreescritos por los números más altos.
+   * Los **puntos** indican los **extremos**, inicio o final de palabra.
+   * **El orden** de las reglas **importa**, se leen secuencialmente.
+   * `NOHYPHEN` caracteres (separados por comas) tras los que no se pone guión. Es decir, si tenemos `NOHYPHEN -` si se separa `ab-cd` será como `ab-` `cd` y no como _ab-- cd_.
+   * `NEXTLEVEL` indica la finalización de un nivel de reglas y el inicio del siguiente. No se procesa un nivel sin haber procesado completamente el anterior.
+   * `LEFTHYPHENMIN n` -> número mínimo de caracteres a la izquierda de la separación.
+   * `RIGHTHYPHENMIN n` -> número mínimo de caracteres a la derecha de la separación.
+   * `COMPOUNDLEFTHYPHENMIN n` -> número mínimo de caracteres a la izquierda de la separación en palabras compuestas.
+   * `COMPOUNDRIGHTHYPHENMIN n`-> número mínimo de caracteres a la derecha de la separación en palabras compuestas.
 
 ###### Ejemplo:
 En un idioma dado existe una palabra `abcdefghijk`, que según las normas de ese idioma, puede tener punto de ruptura entre dos culesquiera de sus letras.
@@ -108,36 +140,6 @@ Es tu fichero, son tus reglas. Quiero decir que pongo el fichero a disposición 
    8. Eliminar las reglas duplicadas
    9. Eliminar las reglas redundantes (aquellas con las mismas letras y diferentes números)
    10. Copiar las reglas a tu archivo de silabeo. 
-
-## Reglas para dividir en sílabas:
-   1. Toda sílaba debe contener por lo menos una vocal.
-   2. Los grupos consonánticos: `br, bl, ch, cl, cn, cr, dr, fl, fr, gl, gr, ll, pl, pr, tr, rr` no pueden separarse al dividir en sílabas.
-   3. Cuando una consonante se encuentra entre dos vocales, se une a la segunda vocal (la de su derecha).
-   4. Cuando hay dos consonantes entre dos vocales, cada vocal se une a una consonante, excepto los grupos consonánticos inseparables.
-   5. Si hay tres consonantes entre dos vocales, las dos primeras consonantes se unen a la primera vocal mientras que la tercera consonante se une a la segunda vocal, excepto los grupos consonánticos inseparables.
-   6. h seguida o precedida de consonante, se divide separando ambas letras, excepto los grupos consonánticos inseparables.
-   7. Los diptongos son inseparables, son diptongos las siguientes parejas de vocales: `ai, au, ay, ei, eu, ey, ia, ie, io, iu, oi, ou, oy, ua, ue, ui, uo`.
-   8. La `h` entre dos vocales no destruye un diptongo.
-   9. Un diptongo se destruye si se acentúa la vocal cerrada (`i, u`).
-   10. Los triptóngos son la unión inseparable de tres vocales, son triptóngos los siguientes grupos de vocales: `iai, iau, iei, uai, uay, uei, uey, uau`.
-
-#### Existen tres posibles combinaciones para formar un diptongo:
-
-* Una vocal abierta (`a, e, o`) seguida de una vocal cerrada (`i, u`) no acentuada.
-* Una vocal cerrada (`i, u`) no acentuada seguida de una vocal abierta (`a, e, o`).
-* Dos vocales cerradas (`i, u`) seguidas.
-
-#### Triptongos:
-
-* Una vocal cerrada átona + vocal abierta + vocal cerrada átona (Es posible formar doce combinaciones de triptongos, aunque algunas de ellas no se presentan en ninguna palabra del español. Los más frecuentes son: `iai`, `iei`, `ioi`, `uai`, `uei`.)
-
-#### Los hiatos se producen cuando se da una de las siguientes combinaciones:
-
-* Vocal abierta átona + vocal abierta tónica.
-* Vocal cerrada tónica + vocal abierta átona.
-* Dos vocales iguales.
-* Dos vocales abiertas distintas.
-
 
 # BIBLIOGRAFÍA
 
