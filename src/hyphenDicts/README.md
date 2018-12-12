@@ -117,9 +117,15 @@ Es tu fichero, son tus reglas. Quiero decir que pongo el fichero a disposición 
    6. h seguida o precedida de consonante, se divide separando ambas letras, excepto los grupos consonánticos inseparables.
    7. Los diptongos son inseparables, son diptongos las siguientes parejas de vocales: `ai, au, ay, ei, eu, ey, ia, ie, io, iu, oi, ou, oy, ua, ue, ui, uo`.
    8. La `h` entre dos vocales no destruye un diptongo.
-   9. Un diptongo se destruye si se acentúa la vocal cerrada.
+   9. Un diptongo se destruye si se acentúa la vocal cerrada (`i`,`u`).
    10. Los triptóngos son la unión inseparable de tres vocales, son triptóngos los siguientes grupos de vocales: `iai, iau, iei, uai, uay, uei, uey, uau`.
 
+#### Existen tres posibles combinaciones para formar un diptongo:
+
+* Una vocal abierta (`a, e, o`) seguida de una vocal cerrada (`i`,`u`) no acentuada.
+* Una vocal cerrada (`i`,`u`) no acentuada seguida de una vocal abierta (`a, e, o`).
+* Dos vocales cerradas (`i`,`u`) seguidas.
+    
 # BIBLIOGRAFÍA
 
 Ignacio Bosque y Violeta Demonte, Gramática descriptiva de la lengua española, Madrid, Espasa-Calpe, 1999.
