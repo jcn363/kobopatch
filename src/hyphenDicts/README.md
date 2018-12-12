@@ -17,7 +17,7 @@ La primera intención era buscar una solución de compromiso que pudiera servir 
    3. Cuando una consonante se encuentra entre dos vocales, se une a la segunda vocal (la de su derecha).
    4. Cuando hay dos consonantes entre dos vocales, cada vocal se une a una consonante, excepto los grupos consonánticos inseparables.
    5. Si hay tres consonantes entre dos vocales, las dos primeras consonantes se unen a la primera vocal mientras que la tercera consonante se une a la segunda vocal, excepto los grupos consonánticos inseparables.
-   6. h seguida o precedida de consonante, se divide separando ambas letras, excepto los grupos consonánticos inseparables.
+   6. La `h` seguida o precedida de consonante, se divide separando ambas letras, excepto los grupos consonánticos inseparables.
    7. Los diptongos son inseparables, son diptongos las siguientes parejas de vocales: `ai, au, ay, ei, eu, ey, ia, ie, io, iu, oi, ou, oy, ua, ue, ui, uo`.
    8. La `h` entre dos vocales no destruye un diptongo.
    9. Un diptongo se destruye si se acentúa la vocal cerrada (`i, u`).
