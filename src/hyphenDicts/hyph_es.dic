@@ -7,7 +7,7 @@ COMPOUNDRIGHTHYPHENMIN 2
 %%%%%%%%%%%%%%%%%%%
 %                 %
 % hyph-es j3  6.3 %
-%   2018-12-10    %
+%   2018-12-12    %
 %                 %
 %%%%%%%%%%%%%%%%%%%
 NOHYPHEN -,–,',’,/,:,.
@@ -222,6 +222,28 @@ z2r
 .d2d
 .de
 .dé
+.des1a
+.de1sa3bi
+.de1sa3bor.
+.de1sa3bo5ra
+.de1sa3bo5ri
+.de1sa3bri5d
+.de1sa3cr
+.de1sa3in
+.de1sa3la
+.de1sa3li5n
+.de1sa3li5v
+.de1sas3tr
+.de1sa3zo
+.de1sa3zó
+.des1e3ch
+.des1e3d
+.des1e3le
+.des1em3
+.de1sem3bl
+.de1se3me5j
+.des1en
+.des1es
 .des1h
 .des1ideo
 .des1igu
