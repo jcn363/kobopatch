@@ -35,7 +35,7 @@ Esto es, ~~a/b/c/d~~efgh~~i/j/k~~ no son opciones válidas.
 ##### NOTA:
     LEFTHYPHENMIN=3
     RIGHTHYPHENMIN=2
-es como mejor aprovechamiento/regularidad se obtiene con este fichero en los Kobo debido a un error (`LEFTHYPHENMIN=3` es interpretado como `LEFTHYPHENMIN=2`).
+es como mejor aprovechamiento/regularidad se obtiene con este fichero en los Kobo. Debido a un error `LEFTHYPHENMIN=3` es interpretado como `LEFTHYPHENMIN=2`.
 
  ### ¿De qué estamos hablando?
 
