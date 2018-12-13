@@ -4,10 +4,9 @@ La base está en la regla de oro: **_si siempre haces lo mismo, siempre obtendr�
 
 Yo quería algo que funcionara siempre igual. Es decir, lo mejor posible, teniendo que hacer las menores modificaciones posibles, sin depender de lo que existe ni de lo que se pueda inventar... Pretencioso pero... estoy en ello.
 
-Obviamente cada lenguaje tiene sus particularidades y, por lo tanto, sus propias reglas.
 El número de letras a dejar, antes y depués del guión de división, depende del usuario. Izquierda y derecha son independientes. Puedes poner 2 y 5 ó 5 y 4, lo que más te guste. En general, cuanto más bajos los números más se aprovechará el espacio.
 
-La primera intención era buscar una solución de compromiso que pudiera servir para todos los idiomas, de ahí que haya normas para alemán, pero también para euskara o inglés, en este fichero. El problema es que hay normas contradictorias: `nst` en castellano se dividiría `ns/t` pero en alemán `n/st`.
+La primera intención fué buscar una solución de compromiso que pudiera servir para todos los idiomas, de ahí que haya normas para alemán, pero también para euskara o inglés, en este fichero. Obviamente cada lenguaje tiene sus particularidades y, por lo tanto, sus propias reglas, y... hay normas contradictorias: `nst` en castellano se dividiría `ns/t` pero en alemán `n/st`.
 
 [Nunca he entendido lo de las terminaciones _"malsonantes"_ (y en otros idiomas tienen lo mismo).]
 
