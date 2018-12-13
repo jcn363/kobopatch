@@ -11,6 +11,9 @@ La primera intención era buscar una solución de compromiso que pudiera servir 
 
 [Nunca he entendido lo de las terminaciones _"malsonantes"_ (y en otros idiomas tienen lo mismo).]
 
+## ¿Quieres instalarlo en tu dispositivo Kobo?
+Copia [este archivo](KoboRoot.tgz) en el directorio **.kobo** de tu dispositivo. Desconecta _con ambabilidad_ y espera a que se reinicie.
+
 ## Reglas para dividir en sílabas:
    1. Toda sílaba debe contener por lo menos una vocal.
    2. Los grupos consonánticos: `br, bl, ch, cl, cn, cr, dr, fl, fr, gl, gr, ll, pl, pr, tr, rr` no pueden separarse al dividir en sílabas.
