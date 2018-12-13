@@ -66,7 +66,7 @@ Luego sólo se puede dividir por cualquiera de estos puntos `abcd`/e/f/g/h/`ijk`
 
 Esto es, ~~a/b/c/d~~efgh~~i/j/k~~ no son opciones válidas.
 
-[Ejemplos de funcionamiento](Ejemplos%20y%20reglas%20silabeo.txt)
+[Ejemplos de funcionamiento (en inglés)](Ejemplos%20y%20reglas%20silabeo.txt)
 
 ##### NOTA:
     LEFTHYPHENMIN=3
