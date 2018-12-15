@@ -6,6 +6,8 @@ Ref.: https://www.mobileread.com/forums/showthread.php?t=297338
 
 # [Destripando un parche](https://github.com/jcn363/kobopatch/blob/master/Destripando%20un%20parche.txt)
 
+# [YAML](http://yaml.org/spec/1.2/spec.html)
+
 # [DICCIONARIOS](http://kobo.lectoreselectronicos.com/subweb/diccionarios.html)
 
 https://www.mobileread.com/forums/showpost.php?p=3312320&postcount=1
