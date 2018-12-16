@@ -109,7 +109,7 @@ PROGRESIVE:
                 #content .wrapper.active{display:block;}\n\
                 .reader_head{text-align:left !important;word-wrap:break-word;}\n\
                 .reader_head h1{text-align:left !important;-webkit-hyphens:none !important;line-height:1.2em;font-weight:normal;-webkit-text-size-adjust:none !important;}\n\
-                .reader_head.dragon h1 {\n\tfont-size: 39px !important;\n\tpadding-bottom: 30px;\n}\n\n\
+                .reader_head.dragon h1 {\n\tfont-size: 46px !important;\n\tpadding-bottom: 30px;\n}\n\n\
                 .reader_head.dragon hr {\n\tborder-bottom: 50px;\n}\n\n\
                 .reader_head.dragon .article_metadata {\n\tpadding-bottom: 30px;\n}\n\n\
                 .text_body h1,.text_body h2,.text_body h3,.text_body h4,.text_body h5,.text_body h6,.text_body h7{color:black;font-weight:normal;}\n\
@@ -756,12 +756,12 @@ PROGRESIVE:
                 QWidget[hugeFixedHeight=true]{min-height:150px;max-height:150px;}\n\
                 QWidget[largeFixedHeight=true]{min-height:140px;max-height:140px;}\n\
                 QWidget[footerFixedHeight=true]{min-height:120px;max-height:120px;}\n\
-                QCheckBox{font-family:Georgia;font-style:italic;font-size:32px;padding-left:22px;padding-right:22px;spacing:22px;}\n\
+                QCheckBox{font-family:Georgia;font-style:italic;font-size:37px;padding-left:22px;padding-right:22px;spacing:22px;}\n\
                 QCheckBox::indicator:unchecked{image:url(:/images/widgets/settings_checkbox_off.png);}\n\
                 QCheckBox::indicator:unchecked:disabled{image:url(:/images/widgets/settings_checkbox_off_disabled.png);}\n\
                 QCheckBox::indicator:checked{image:url(:/images/widgets/settings_checkbox_on.png);}\n\
                 QCheckBox::indicator:checked:disabled{image:url(:/images/widgets/settings_checkbox_on_disabled.png);}\n\
-                QRadioButton{font-family:Georgia;font-style:italic;font-size:32px;padding-left:22px;padding-right:22px;spacing:10px;}\n\
+                QRadioButton{font-family:Georgia;font-style:italic;font-size:37px;padding-left:22px;padding-right:22px;spacing:10px;}\n\
                 QRadioButton::indicator:unchecked{image:url(:/images/widgets/radio_btn_off.png);}\n\
                 QRadioButton::indicator:checked{image:url(:/images/widgets/radio_btn_on.png);}\n\
                 QSlider{min-height:70px;max-height:70px;background-color:white;}\n\
@@ -775,40 +775,40 @@ PROGRESIVE:
                 QProgressBar{min-height:15px;max-height:15px;}\n\
                 QFrame[hasPadding=true]{padding:50px;padding-top:70px;}\n\
                 QFrame[hugeHMargin=true]{margin-left:150px;margin-right:150px;}\n\
-                N3ButtonLabel{font-family:Georgia;font-style:italic;font-size:32px;margin:0px;qproperty-forceRepaintOnInvert:true;qproperty-highQualityInvert:true;padding-left:22px;padding-right:22px;min-height:70px;max-height:70px;}\n\
+                N3ButtonLabel{font-family:Georgia;font-style:italic;font-size:37px;margin:0px;qproperty-forceRepaintOnInvert:true;qproperty-highQualityInvert:true;padding-left:22px;padding-right:22px;min-height:70px;max-height:70px;}\n\
                 N3ButtonLabel[primaryButton=true]{qproperty-alignment:AlignCenter;min-width:140px;}\n\
                 N3ButtonLabel[borderedButton=true]{border:1px solid black;qproperty-alignment:AlignCenter;}\n\
-                N3ButtonLabel[labelSize=\"medium\"]{font-size:50px;}\n\
-                N3ButtonLabel[labelSize=\"small\"]{font-size:39px;}\n\
+                N3ButtonLabel[labelSize=\"medium\"]{font-size:60px;}\n\
+                N3ButtonLabel[labelSize=\"small\"]{font-size:46px;}\n\
                 N3ButtonLabel[fontStyle=\"normal\"]{font-style:normal;}\n\
                 TextHeader N3ButtonLabel{padding-left:5px;padding-right:5px;}\n\
                 SmallButtonLabel{font-family:Avenir;font-style:normal;text-transform:uppercase;qproperty-indent:0;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:10px;font-size:27px;min-height:0px;}\n\
-                TouchLineEdit{font-family:Georgia;font-style:normal;border:1px solid black;margin:2px;color:black;font-size:32px;padding-left:22px;padding-right:22px;min-height:70px;max-height:70px;}\n\
+                TouchLineEdit{font-family:Georgia;font-style:normal;border:1px solid black;margin:2px;color:black;font-size:37px;padding-left:22px;padding-right:22px;min-height:70px;max-height:70px;}\n\
                 TouchLineEdit:focus{border:3px solid black;margin:0px;}\n\
                 BlockTouchDropDown{min-height:70px;max-height:70px;}\n\
-                DisplayLabel{font-family:Georgia;font-size:77px;}\n\
+                DisplayLabel{font-family:Georgia;font-size:91px;}\n\
                 SmallIconLabel{min-width:21px;max-width:21px;min-height:21px;max-height:21px;}\n\
-                HeaderMediumElidedLabel,HeaderMediumTouchLabel,HeaderMediumLabel{font-family:Georgia;qproperty-alignment:'AlignLeft|AlignVCenter';font-size:50px;padding-left:20px;padding-right:20px;padding-bottom:20px;}\n\
-                HeaderSmallLabel{font-family:Georgia;font-size:39px;}\n\
-                HeaderSmallElidedLabel,HeaderSmallItalicLabel{font-family:Georgia;font-style:italic;font-size:39px;padding-left:26px;padding-right:26px;qproperty-alignment:'AlignLeft|AlignVCenter';}\n\
-                RegularAdjustingLabel,RegularLabel{font-family:Georgia;font-size:29px;padding-left:22px;}\n\
-                RegularLabel{font-family:Georgia;font-size:32px;padding-left:22px;}\n\
+                HeaderMediumElidedLabel,HeaderMediumTouchLabel,HeaderMediumLabel{font-family:Georgia;qproperty-alignment:'AlignLeft|AlignVCenter';font-size:60px;padding-left:20px;padding-right:20px;padding-bottom:20px;}\n\
+                HeaderSmallLabel{font-family:Georgia;font-size:47px;}\n\
+                HeaderSmallElidedLabel,HeaderSmallItalicLabel{font-family:Georgia;font-style:italic;font-size:47px;padding-left:26px;padding-right:26px;qproperty-alignment:'AlignLeft|AlignVCenter';}\n\
+                RegularAdjustingLabel,RegularLabel{font-family:Georgia;font-size:37px;padding-left:22px;}\n\
+                RegularLabel{font-family:Georgia;font-size:37px;padding-left:22px;}\n\
                 RegularLabelVPadded{padding-top:22px;padding-bottom:22px;}\n\
-                HeaderBarLabel,RegularReversibleLabel{font-family:Georgia;font-size:32px;padding-left:22px;padding-right:22px;}\n\
-                RegularTouchLabel{font-family:Georgia;font-style:italic;font-size:32px;padding-left:22px;}\n\
+                HeaderBarLabel,RegularReversibleLabel{font-family:Georgia;font-size:37px;padding-left:22px;padding-right:22px;}\n\
+                RegularTouchLabel{font-family:Georgia;font-style:italic;font-size:37px;padding-left:22px;}\n\
                 RegularTouchLabel[underline=true]{text-decoration:underline;}\n\
                 RegularTouchLabelVPadded{padding-top:22px;padding-bottom:22px;}\n\
                 RegularTouchLabelVPadded[qApp_isFontScaleLarge=true]{padding-top:18px;padding-bottom:18px;}\n\
                 RegularBorderTouchLabel{border:2px solid #d9d9d9;qproperty-alignment:AlignCenter;padding-right:22px;min-height:70px;max-height:70px;}\n\
-                RegularElidedLabel{font-family:Georgia;font-size:32px;padding-left:22px;}\n\
-                RegularElidableLabel{font-family:Georgia;font-size:32px;min-height:70px;max-height:70px;padding-top:4px;padding-bottom:4px;background-color:white;}\n\
+                RegularElidedLabel{font-family:Georgia;font-size:37px;padding-left:22px;}\n\
+                RegularElidableLabel{font-family:Georgia;font-size:37px;min-height:70px;max-height:70px;padding-top:4px;padding-bottom:4px;background-color:white;}\n\
                 RegularElidableLabel[italics=true],RegularItalicLabel{font-style:italic;}\n\
                 RegularSansSerifLabel,RegularSansSerifElidedLabel{font-family:Avenir;}\n\
-                PageLabel,SmallElidedLabel,SmallTouchLabel,SmallLabel{font-family:Georgia;font-size:30px;padding-left:22px;padding-right:22px;}\n\
+                PageLabel,SmallElidedLabel,SmallTouchLabel,SmallLabel{font-family:Georgia;font-size:34px;padding-left:22px;padding-right:22px;}\n\
                 SmallSansSerifLabel,SmallSansSerifElidedLabel{font-family:Avenir;}\n\
                 PageLabel{font-style:normal;}\n\
                 PageLabel[goToPageEnabled=true]{font-style:italic;}\n\
-                MetaDataElidedLabel,MetaDataLabel,MetaDataAdjustingLabel{font-family:Avenir;text-transform:uppercase;font-size:23px;}\n\
+                MetaDataElidedLabel,MetaDataLabel,MetaDataAdjustingLabel{font-family:Avenir;text-transform:uppercase;font-size:27px;}\n\
                 MetaDataHeaderLabel{border-top:1px solid black;padding-top:5px;padding-bottom:5px;padding-left:22px;padding-right:22px;background-color:lightgray;}\n\
                 SettingContainer{qproperty-topMargin:5;qproperty-bottomMargin:5;qproperty-leftMargin:0;qproperty-rightMargin:0;qproperty-spacing:0;min-height:80px;}\n\
                 SettingContainer[showBottomLine=true]{border-bottom:1px solid black;min-height:81px;}\n\
@@ -913,7 +913,7 @@ PROGRESIVE:
       Replace: "#checkMark{max-width:45;min-width:45;margin-left:15px;margin-right:15px;}\n\
                 #text{min-width:1020px;padding-left:0px;padding-right:0px;}\n\
                 #text[enableText=false]{color:gray;}\n\
-                #showFullTitle{font-family:Georgia;font-size:42px;max-width:72px;min-width:72px;}\n\
+                #showFullTitle{font-family:Georgia;font-size:50px;max-width:72px;min-width:72px;}\n\
                 #bottomLine{border-bottom:1px solid darkslategrey;}"
 
 #6 (nozlib) pos: 4cca08
@@ -935,7 +935,7 @@ PROGRESIVE:
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
       Replace: "#titleContainer {qproperty-spacing: 36; max-height: 70px; min-height: 70px;}\n\
-                #title {font-family: Avenir; text-transform: uppercase; font-size: 32px;}\n\
+                #title {font-family: Avenir; text-transform: uppercase; font-size: 36px;}\n\
                 #link {font-style: italic;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   "
       MustMatchLength: yes
 
@@ -1116,7 +1116,7 @@ PROGRESIVE:
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
       Replace: "* {font-family: Georgia;}\n\
-                body {margin: 0px; padding: 0px; font-size: 32px; line-height: 1.30em;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   "
+                body {margin: 0px; padding: 0px; font-size: 37px; line-height: 1.30em;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   "
       MustMatchLength: yes
 
 #14 (zlib) pos: 4ce23d sha1(bd8415881cc0e651f9bd39668c370e720edff94b)
@@ -1170,7 +1170,7 @@ PROGRESIVE:
                 MenuTextItem,MenuImageItem{min-width:300px;background-color:white;}\n\
                 MenuTextItem{min-height:70px;max-height:70px;}\n\
                 MenuTextItem[qApp_isFontScaleLarge=true]{min-height:87px;max-height:87px;}\n\
-                MenuTextItem #menuTextItemLabel{font-size:32px;padding-top:4px;padding-bottom:4px;color:black;background-color:white;}\n\
+                MenuTextItem #menuTextItemLabel{font-size:37px;padding-top:4px;padding-bottom:4px;color:black;background-color:white;}\n\
                 MenuTextItem[italics=false] #menuTextItemLabel{font-family:Georgia;font-style:italic;}\n\
                 MenuTextItem[enabled=false] #menuTextItemLabel{color:grey;}"
 
@@ -1336,21 +1336,21 @@ PROGRESIVE:
                 .koboplus.nl.bol .image.dragon {\n  padding-top: 10px;\n  padding-bottom: 24px;\n}\n\
                 .koboplus.nl.bol .image.daylight {\n  padding-top: 15px;\n  padding-bottom: 30px;\n}"
       Replace: "body{line-height:1.4;font-family:\"Avenir Next\";}\n\
-                body.dragon,p.dragon{font-size:32px;}\n\
+                body.dragon,p.dragon{font-size:37px;}\n\
                 .center{text-align:center;margin-left:auto;margin-right:auto;}\n\
                 hr{border:none;border-bottom:2px solid black;background:black;}\n\
                 hr.dragon{margin-bottom:50px;width:100px;}\n\
                 body.koboplus hr.dragon{margin-bottom:33px;width:100px;}\n\
                 .ja h1,.ja h2,.ja body,.ja p{font-style:normal !important;font-family:sans-serif;}\n\
                 .title{font-style:italic;line-height:1.2em;}\n\
-                .title.dragon{font-size:56px !important;padding-top:60px;padding-bottom:25px;}\n\
+                .title.dragon{font-size:65px !important;padding-top:60px;padding-bottom:25px;}\n\
                 h1{font-weight:normal;font-family:Georgia;}\n\
-                h1.dragon{font-size:50px;}\n\
+                h1.dragon{font-size:60px;}\n\
                 h2{font-weight:normal;font-family:Georgia;}\n\
-                h2.dragon{font-size:39px;}\n\
+                h2.dragon{font-size:46px;}\n\
                 p.dragon{margin-bottom:50px;}\n\
                 p:last-child{margin-bottom:0px !important;}\n\
-                h1 + p.dragon{font-size:39px !important;}\n\
+                h1 + p.dragon{font-size:46px !important;}\n\
                 ul{list-style:none;padding:0px;padding-left:1em;text-indent:-1em;}\n\
                 ul li:before{content:\"\\2219\";}\n\
                 ul li.dragon:before{margin-right:21px;}\n\
@@ -1374,15 +1374,15 @@ PROGRESIVE:
                 .OverDriveAboutItems td{text-align:center;}\n\
                 .OverDriveAboutItems td img.dragon{width:77px;}\n\
                 .OverDriveAboutItems td div{font-weight:normal;font-family:Georgia;line-height:1.2;}\n\
-                .OverDriveAboutItems td div.dragon{font-size:41px !important;width:185px;margin:35px 17px 0px;}\n\
+                .OverDriveAboutItems td div.dragon{font-size:46px !important;width:185px;margin:35px 17px 0px;}\n\
                 .koboLoveVipByline.dragon{margin-bottom:40px;}\n\
                 .koboLoveDisclaimer{color:dimgray;}\n\
-                .koboLoveDisclaimer.dragon{margin-top:90px;font-size:30px;}\n\
+                .koboLoveDisclaimer.dragon{margin-top:90px;font-size:34px;}\n\
                 .hidden{display:none;}\n\
-                .koboplus.nl h1.dragon{font-size:45px;}\n\
-                .koboplus.nl h2.dragon{font-size:36px;}\n\
+                .koboplus.nl h1.dragon{font-size:54px;}\n\
+                .koboplus.nl h2.dragon{font-size:41px;}\n\
                 .koboplus.nl p.dragon,.koboplus.nl hr.dragon{margin-bottom:45px;}\n\
-                .koboplus.nl h1 + p.dragon{font-size:35px !important;}\n\
+                .koboplus.nl h1 + p.dragon{font-size:41px !important;}\n\
                 .koboplus.nl.bol hr.dragon,{margin-bottom:25px;}\n\
                 .koboplus.nl.bol p.dragon{margin-bottom:32px;}\n\
                 .koboplus.nl.bol .image.dragon{padding-top:10px;padding-bottom:24px;}"
@@ -1410,7 +1410,7 @@ PROGRESIVE:
                 TouchLabel[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}"
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
-      Replace: "TouchLabel {border-top: 1px solid black; qproperty-indent: 0; qproperty-forceRepaintOnInvert: true; qproperty-highQualityInvert: false; font-family: Georgia; font-style: italic; font-size: 35px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "
+      Replace: "TouchLabel {border-top: 1px solid black; qproperty-indent: 0; qproperty-forceRepaintOnInvert: true; qproperty-highQualityInvert: false; font-family: Georgia; font-style: italic; font-size: 42px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "
       MustMatchLength: yes
 
 #19 (zlib) pos: 4cf27e
@@ -1551,7 +1551,7 @@ PROGRESIVE:
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
       Replace: "#mainContainer {background-color: black; qproperty-spacing: 22px;}\n\
-                #unlockLabel {color: white; font-size: 49px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "
+                #unlockLabel {color: white; font-size: 60px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "
       MustMatchLength: yes
 
 #23 (zlib) pos: 4cfd70
@@ -1845,8 +1845,8 @@ PROGRESIVE:
                 #keyboardFrame[isTextEditDialog=true],#keyboardFrame[isPasswordDialog=true]{qproperty-visible:true;}\n\
                 #closeButton{background-color:transparent;}\n\
                 #contentContainer{qproperty-topMargin:0px;}\n\
-                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text{font-size:30px;}\n\
-                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title{font-size:32px;}"
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text{font-size:34px;}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title{font-size:37px;}"
 
 #35 (nozlib) pos: 4d15af
   - FindReplaceString:
@@ -1893,7 +1893,7 @@ PROGRESIVE:
                 #rejectButton,\n#acceptButton {\n  qproperty-primaryButton: true;\n}"
       Replace: "BulkMarkAsDialog{background-color:transparent;}\n\
                 TouchRadioButton,RegularTouchLabel{padding:0px;}\n\
-                TouchRadioButton{font-style:normal;font-size:42px;}\n\
+                TouchRadioButton{font-style:normal;font-size:47px;}\n\
                 GenericContainerWidget{qproperty-bottomMargin:44px;}\n\
                 #frame{padding:50px;}\n\
                 RegularTouchLabel{margin-left:66px;}\n\
@@ -1926,8 +1926,8 @@ PROGRESIVE:
                 TouchLabel[imeStyle=\"kanji\"][qApp_deviceIsPhoenix=true] {\n  padding-left: 8px;\n  padding-right: 8px;\n}\n\
                 TouchLabel[imeStyle=\"kanji\"][qApp_deviceIsDragon=true] {\n  padding-left: 10px;\n  padding-right: 10px;\n}\n\
                 TouchLabel[imeStyle=\"kanji\"][qApp_deviceIsDaylight=true] {\n  padding-left: 13px;\n  padding-right: 13px;\n}"
-      Replace: "TouchLabel{font-family:Avenir;font-style:normal;qproperty-alignment:AlignCenter;font-size:32px;padding-left:22px;padding-right:22px;background-color:white;}\n\
-                TouchLabel[imeStyle=\"kanji\"]{border-right:1px solid black;font-size:50px;padding-left:10px;padding-right:10px;}"
+      Replace: "TouchLabel{font-family:Avenir;font-style:normal;qproperty-alignment:AlignCenter;font-size:37px;padding-left:22px;padding-right:22px;background-color:white;}\n\
+                TouchLabel[imeStyle=\"kanji\"]{border-right:1px solid black;font-size:60px;padding-left:10px;padding-right:10px;}"
 
 #38 (zlib) pos: 4d1b3d
   - FindZlib: "#QuickTourPage"
@@ -2149,7 +2149,7 @@ PROGRESIVE:
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
       Replace: "* {font-family: Georgia;}\n\
-                body {padding: 0px; margin: 0px; line-height: 1.3em; text-align: justify; font-size: 32px;}\n                                                                                                                                                                                                                                                                                                                     "
+                body {padding: 0px; margin: 0px; line-height: 1.3em; text-align: justify; font-size: 38px;}\n                                                                                                                                                                                                                                                                                                                     "
       MustMatchLength: yes
 
 #47 (zlib) pos: 4d2c76
@@ -2228,9 +2228,9 @@ PROGRESIVE:
       Replace: "DragonMenuBar{max-height:64px;min-height:64px;}\n\
                 #topMenu{max-height:62px;min-height:62px;}\n\
                 #menuContainer,#showMenu,#sortMenu,#topMenu,#view,#showMenuArrow,#sortMenuArrow{background-color:lightgray;}\n\
-                #showMenu,#sortMenu{font-family:Georgia;padding-right:14px;font-size:32px;}\n\
+                #showMenu,#sortMenu{font-family:Georgia;padding-right:14px;font-size:37px;}\n\
                 #sortMenu{margin-left:8px;}\n\
-                #view{font-family:Georgia;font-style:italic;padding-left:22px;padding-right:22px;font-size:32px;}"
+                #view{font-family:Georgia;font-style:italic;padding-left:22px;padding-right:22px;font-size:37px;}"
 
 #50 (zlib) pos: 4d306e
   - FindZlib: "#pageCount"
@@ -2309,13 +2309,13 @@ PROGRESIVE:
                 div.date {\n  display: none;\n}\n\
                 div.annotation + div.annotation {\n  margin-top: 20px;\n  padding-top: 20px;\n  border-top: 1px solid black;\n}\n\
                 div.dogear {\n  background-image: url('qrc:/images/book/AnnotationsList_icon_dogear.png');\n  background-repeat: no-repeat;\n  background-position: left top;\n  padding-left: 44px;\n}"
-      Replace: "html{font-family:Georgia;margin-left:2px;margin-right:2px;font-size:32px;}\n\
+      Replace: "html{font-family:Georgia;margin-left:2px;margin-right:2px;font-size:37px;}\n\
                 html div.note{margin-top:35px;padding:35px;}\n\
-                html div.highlight{margin-left:20px;margin-right:20px;font-size:32px;}\n\
-                html div.chapter{margin-top:20px;font-size:23px;}\n\
+                html div.highlight{margin-left:20px;margin-right:20px;font-size:37px;}\n\
+                html div.chapter{margin-top:20px;font-size:27px;}\n\
                 html div.annotation + div.annotation{margin-top:35px;padding-top:35px;}\n\
                 html div.dogear{background-position:0px 4px;padding-left:61px;}\n\
-                div.highlight{margin-left:10px;margin-right:10px;font-size:23px;background-color:white;}\n\
+                div.highlight{margin-left:10px;margin-right:10px;font-size:25px;background-color:white;}\n\
                 div.note{margin-top:20px;padding:20px;font-style:italic;background-color:lightgray;}\n\
                 div.chapter{text-transform:uppercase;font-family:sans-serif;margin-top:10px;}\n\
                 div.date{display:none;}\n\
@@ -2347,7 +2347,7 @@ PROGRESIVE:
                 #label {\n  border-bottom: 1px solid #BBBBBB;\n}"
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
-      Replace: "#label {font-size: 46px; max-width: 480px; min-width: 480px; max-height: 110px; min-height: 110px;}\n\
+      Replace: "#label {font-size: 60px; max-width: 480px; min-width: 480px; max-height: 110px; min-height: 110px;}\n\
                 #label {border-bottom: 1px solid #BBBBBB;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "
       MustMatchLength: yes
 
@@ -2389,7 +2389,7 @@ PROGRESIVE:
 # A negative top margin moves the caption text upwards,
 # further from the bezel and closer to the page content.
       Replace: "ReadingFooter {qproperty-footerMargin: 74; min-height: 42px; max-height: 42px;}\n\
-                #caption{font-size: 26px; margin-top: -08px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "
+                #caption{font-size: 32px; margin-top: -08px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "
       MustMatchLength: yes
 
 #nozlib pos: 4d3b8a - 5061514
@@ -2628,7 +2628,7 @@ PROGRESIVE:
                 #rejectButton,\n#acceptButton {\n  qproperty-primaryButton: true;\n}"
       Replace: "RemoveDialog{background-color:transparent;}\n\
                 TouchRadioButton,RegularTouchLabel{padding:0px;}\n\
-                TouchRadioButton{font-style:normal;font-size:42px;}\n\
+                TouchRadioButton{font-style:normal;font-size:47px;}\n\
                 GenericContainerWidget{qproperty-bottomMargin:44px;}\n\
                 #frame{padding:50px;}\n\
                 RegularTouchLabel{margin-left:66px;}\n\
@@ -2815,8 +2815,8 @@ PROGRESIVE:
                 SearchBox[regularFontSize=true][qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
                 SearchBox[regularFontSize=true][qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
                 SearchBox[regularFontSize=true][qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
-      Replace: "SearchBox{border:%1px solid black;margin:%2px;font-size:39px;background-color:white;}\n\
-                SearchBox[regularFontSize=true]{font-size:32px;}"
+      Replace: "SearchBox{border:%1px solid black;margin:%2px;font-size:47px;background-color:white;}\n\
+                SearchBox[regularFontSize=true]{font-size:37px;}"
 
 #70 (zlib) pos: 4d5e31
   - FindZlib: "#FramedDragonPowerView"
@@ -2863,7 +2863,7 @@ PROGRESIVE:
                 #statusLabel{color:black;}\n\
                 #statusLabel[powerOffView=true]{color:white;}\n\
                 #coverLabel{background-color:transparent;}\n\
-                #title{font-family:Georgia;font-style:italic;color:black;font-size:64px;qproperty-maxNumLines:3;}\n\
+                #title{font-family:Georgia;font-style:italic;color:black;font-size:72px;qproperty-maxNumLines:3;}\n\
                 #title[powerOffView=true]{color:white;}\n\
                 #title[bigTitle=true]{font-size:116px;qproperty-maxNumLines:5;}\n\
                 #progressLabel{color:black;}\n\
@@ -2934,7 +2934,7 @@ PROGRESIVE:
                 #emptyState{qproperty-leftMargin:244;qproperty-rightMargin:244;}\n\
                 #emptyButton{padding-left:10px;background-color:lightgray;}\n\
                 #searchIcon{background-color:transparent;}\n\
-                #numBooks{color:#666666;text-transform:uppercase;qproperty-indent:0;border-bottom:1px solid black;font-size:27px;max-height:70px;min-height:70px;background:transparent;}\n\
+                #numBooks{color:#666666;text-transform:uppercase;qproperty-indent:0;border-bottom:1px solid black;font-size:31px;max-height:70px;min-height:70px;background:transparent;}\n\
                 #emptyStateContainer QLabel{padding:0px;qproperty-indent:0;}\n\
                 #emptyStateContainer{qproperty-spacing:30;qproperty-bottomMargin:30;}"
 
@@ -3020,9 +3020,9 @@ PROGRESIVE:
                 #SyncMenuView{max-width:622px;min-width:622px;max-height:458px;min-height:458px;qproperty-minScreenPadding:30;background-color:transparent;}\n\
                 #contentContainer{qproperty-spacing:20;qproperty-topMargin:40;qproperty-bottomMargin:40;qproperty-leftMargin:40;qproperty-rightMargin:40;}\n\
                 #textContainer QLabel,#lastSyncTime{padding:0px;}\n\
-                #description,#statusLine1,#statusLine2{font-size:36px;}\n\
+                #description,#statusLine1,#statusLine2{font-size:42px;}\n\
                 #statusLine1,#statusLine2{max-width:432px;min-width:432px;}\n\
-                #lastSyncTime{font-size:28px;}\n\
+                #lastSyncTime{font-size:32px;}\n\
                 #progressBar{border:0px;max-height:15px;min-height:15px;margin-top:20px;background:lightgray;}\n\
                 #progressBar::chunk{background-color:black;}\n\
                 #cancelButton,#syncButton{qproperty-alignment:AlignCenter;background-color:lightgray;}"
@@ -3101,8 +3101,8 @@ PROGRESIVE:
                 #footerSpacer[qApp_deviceIsPhoenix=true] {\n  max-height: 70px;\n  min-height: 70px;\n}\n\
                 #footerSpacer[qApp_deviceIsDragon=true] {\n  max-height: 100px;\n  min-height: 100px;\n}\n\
                 #footerSpacer[qApp_deviceIsDaylight=true] {\n  max-height: 130px;\n  min-height: 130px;\n}"
-      Replace: "#title{font-family:Georgia;font-size:52px;}\n\
-                #label{font-family:Avenir;font-size:37px;}\n\
+      Replace: "#title{font-family:Georgia;font-size:60px;}\n\
+                #label{font-family:Avenir;font-size:42px;}\n\
                 #pixmap,#connectedPixmap{max-width:1080px;min-width:1080px;max-height:800px;min-height:800px;}\n\
                 #connectedPixmap{qproperty-alignment:AlignVCenter;}\n\
                 #footerSpacer{max-height:100px;min-height:100px;}"
@@ -3147,7 +3147,7 @@ PROGRESIVE:
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
       Replace: "#reversibleArea {qproperty-forceRepaintOnInvert: true;}\n\
                 #chapter, #type {padding-top: 2px;}\n\
-                #newLabel {font-family: Avenir; padding-left: 5px; padding-right: 5px; padding-top: 2px; font-size: 20px; color: white; background-color: grey;}\n\
+                #newLabel {font-family: Avenir; padding-left: 5px; padding-right: 5px; padding-top: 2px; font-size: 22px; color: white; background-color: grey;}\n\
                 #details {padding: 0px;}\n                                                                                                                                                                                                                                                                                                                                                                                     "
       MustMatchLength: yes
 
@@ -3186,7 +3186,7 @@ PROGRESIVE:
                 #page[notebookView=true]{qproperty-leftMargin:0;qproperty-rightMargin:0;}\n\
                 #emptyState{qproperty-leftMargin:150;qproperty-rightMargin:150;qproperty-spacing:30;}\n\
                 #titleContainer{qproperty-topMargin:0;qproperty-leftMargin:30;qproperty-rightMargin:30;qproperty-bottomMargin:20;max-height:80;min-height:80;}\n\
-                #label{font-family:Georgia;font-style:italic;font-size:50px;}\n\
+                #label{font-family:Georgia;font-style:italic;font-size:60px;}\n\
                 #pages{padding-left:5px;padding-right:5px;padding-bottom:22px;}"
 
 #82 (zlib) pos: 4d7686
@@ -3289,7 +3289,7 @@ PROGRESIVE:
                 #icon {\n  background-color: white;\n  qproperty-visible: true;\n}\n\
                 #icon[buyButtonStyle=\"plain\"] {\n  qproperty-visible: false;\n}"
       Replace: "ComboButton{background-color:transparent;}\n\
-                #textButtonContainer TouchLabel{font-family:Georgia;font-size:32px;qproperty-alignment:AlignCenter;min-width:170px;padding-left:22px;padding-right:22px;background-color:lightgray;}\n\
+                #textButtonContainer TouchLabel{font-family:Georgia;font-size:37px;qproperty-alignment:AlignCenter;min-width:170px;padding-left:22px;padding-right:22px;background-color:lightgray;}\n\
                 #textButtonContainer TouchLabel[vip=true]{min-width:205px;}\n\
                 #textButtonContainer TouchLabel[backgroundColor=\"white\"]{background-color:white;}\n\
                 #textButtonContainer{qproperty-spacing:22px;}\n\
@@ -3318,7 +3318,7 @@ PROGRESIVE:
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
       Replace: "#topContainer {qproperty-spacing: 0;}\n\
                 #pageLabel {padding: 0px;}\n\
-                #selectionCountLabel {font-family: Avenir; color: dimgray; padding-bottom: 1px; font-size: 32px;}\n\
+                #selectionCountLabel {font-family: Avenir; color: dimgray; padding-bottom: 1px; font-size: 36px;}\n\
                 #markAsButton, #addToButton, #removeButton {qproperty-primaryButton: true;}\n\
                 #footer {qproperty-spacing: 10px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "
       MustMatchLength: yes
@@ -3392,7 +3392,7 @@ PROGRESIVE:
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
       Replace: "#N3ToastView {border-width: 8px; border-image: url(:/images/dialogs/toast_background_simple.png) 8 8 8 8; background-color: transparent;}\n\
-                #primaryText {font-size: 32px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                "
+                #primaryText {font-size: 37px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                "
       MustMatchLength: yes
 
 #nozlib pos: 4d86e4 - 5080804
@@ -3429,7 +3429,7 @@ PROGRESIVE:
       Replace: "#QFrame {color: black;}\n\
                 #container {background-color: lightgray;}\n\
                 #container[colorTheme=\"LightTheme\"] {background-color: white;}\n\
-                #textEdit {font-family: Georgia; font-size: 32px; border: 0px; color: black;}\n\
+                #textEdit {font-family: Georgia; font-size: 38px; border: 0px; color: black;}\n\
                 #characterCount {padding: 10px; color: dimgray;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                            "
       MustMatchLength: yes
 
@@ -3561,7 +3561,7 @@ PROGRESIVE:
                 #subtitle{color:#696969 !important;font-style:italic;qproperty-maxNumLines:1;}\n\
                 #topContainer{qproperty-topMargin:0;qproperty-spacing:20;}\n\
                 #title{font-style:normal;qproperty-maxNumLines:1;}\n\
-                #syncWarning{text-transform:uppercase;font-size:27px;padding-left:10px;padding-right:10px;padding-top:15px;padding-bottom:15px;}"
+                #syncWarning{text-transform:uppercase;font-size:31px;padding-left:10px;padding-right:10px;padding-top:15px;padding-bottom:15px;}"
 
 #93 (zlib) pos: 4d990b
   - FindZlib: "BookProgressBarWidget"
@@ -3704,18 +3704,18 @@ PROGRESIVE:
       Replace: "#topContentContainer{qproperty-leftMargin:5;qproperty-spacing:20;}\n\
                 #coverImage{qproperty-showDownloadIcon:false;max-width:250px;min-width:250px;max-height:375px;min-height:375px;}\n\
                 #infoContainer{qproperty-spacing:10;}\n\
-                #author{font-family:Avenir;max-width:600px;min-width:600px;font-size:37px;}\n\
+                #author{font-family:Avenir;max-width:600px;min-width:600px;font-size:42px;}\n\
                 #comboContainer{qproperty-topMargin:0;qproperty-spacing:22px;}\n\
-                #readPreview{font-family:Georgia;font-style:italic;font-size:32px;padding-left:20px;padding-right:20px;max-height:70px;min-height:70px;}\n\
+                #readPreview{font-family:Georgia;font-style:italic;font-size:37px;padding-left:20px;padding-right:20px;max-height:70px;min-height:70px;}\n\
                 #koboLoveContainer{qproperty-topMargin:20;qproperty-spacing:20;}\n\
-                #upgradeLbl{font-family:Avenir;text-decoration:underline;text-transform:uppercase;padding-left:2px;padding-right:2px;font-size:23px;}\n\
+                #upgradeLbl{font-family:Avenir;text-decoration:underline;text-transform:uppercase;padding-left:2px;padding-right:2px;font-size:27px;}\n\
                 #ratingContainer{max-width:630px;min-width:630px;max-height:70px;min-height:70px;qproperty-bottomMargin:25;}\n\
                 #bookRateLabel{padding:0px;}\n\
                 #series{max-width:600px;min-width:600px;}\n\
-                #subtitle{color:#696969;font-style:italic;font-size:37px;}\n\
-                #title{padding-bottom:0;font-size:46px;}\n\
+                #subtitle{color:#696969;font-style:italic;font-size:42px;}\n\
+                #title{padding-bottom:0;font-size:52px;}\n\
                 #subscriptionLabel{color:gray;padding-top:24;}\n\
-                #startTrialLabel{text-decoration:underline;font-style:italic;qproperty-alignment:AlignBottom;font-size:37px;}"
+                #startTrialLabel{text-decoration:underline;font-style:italic;qproperty-alignment:AlignBottom;font-size:42px;}"
 
 #96 (zlib) pos: 4da303
   - FindZlib: "N3DeleteOptions"
@@ -3757,7 +3757,7 @@ PROGRESIVE:
                 #rejectButton,\n#acceptButton {\n  qproperty-primaryButton: true;\n}"
       Replace: "N3DeleteOptions{background-color:transparent;}\n\
                 TouchRadioButton,RegularTouchLabel{padding:0px;}\n\
-                TouchRadioButton{font-style:normal;font-size:42px;}\n\
+                TouchRadioButton{font-style:normal;font-size:47px;}\n\
                 HeaderMediumLabel{padding:0px;font-family:Georgia;font-style:normal;padding-bottom:22px;}\n\
                 GenericContainerWidget{qproperty-bottomMargin:44px;}\n\
                 #frame{padding:50px;}\n\
@@ -3841,7 +3841,7 @@ PROGRESIVE:
                 MenuTextItem,MenuImageItem{min-width:300px;}\n\
                 MenuTextItem{min-height:70px;max-height:70px;}\n\
                 MenuTextItem[qApp_isFontScaleLarge=true]{min-height:87px;max-height:87px;}\n\
-                MenuTextItem #menuTextItemLabel{font-size:32px;padding-top:4px;padding-bottom:4px;color:black;background-color:white;}\n\
+                MenuTextItem #menuTextItemLabel{font-size:42px;padding-top:4px;padding-bottom:4px;color:black;background-color:white;}\n\
                 MenuTextItem[italics=false] #menuTextItemLabel{font-family:Georgia;font-style:italic;}\n\
                 MenuTextItem[enabled=false] #menuTextItemLabel{color:grey;}\n\
                 StatusBarMenu{margin:30px;}\n\
@@ -3903,7 +3903,7 @@ PROGRESIVE:
       Replace: "#container{qproperty-bottomMargin:0;qproperty-topMargin:170;qproperty-leftMargin:60;qproperty-rightMargin:60;}\n\
                 #container[hidePagingFooter=true]{qproperty-bottomMargin:28;}\n\
                 #header{qproperty-spacing:18;max-height:70px;min-height:70px;}\n\
-                #header #headerTitle{font-family:Avenir;text-transform:uppercase;font-size:32px;}\n\
+                #header #headerTitle{font-family:Avenir;text-transform:uppercase;font-size:36px;}\n\
                 #header,#backButton,#moreLink{border-bottom:1px solid black;}\n\
                 #contentContainer,#emptyState{qproperty-leftMargin:60;qproperty-rightMargin:60;}\n\
                 #moreLink{qproperty-hitStateEnabled:false;}\n\
@@ -3935,7 +3935,7 @@ PROGRESIVE:
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
       Replace: "#container {qproperty-spacing: 22px;}\n\
-                #text {font-family: Avenir; text-transform: uppercase; font-size: 23px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    "
+                #text {font-family: Avenir; text-transform: uppercase; font-size: 27px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    "
       MustMatchLength: yes
 
 #101 (zlib) pos: 4db212
@@ -4029,14 +4029,14 @@ PROGRESIVE:
                 #footer[qApp_deviceIsDaylight=true] {\n  max-height: 156px;\n  min-height: 156px;\n}"
       Replace: "#page1{qproperty-leftMargin:180;qproperty-topMargin:120;qproperty-rightMargin:180;qproperty-bottomMargin:0;}\n\
                 #bookInfoLayout{qproperty-leftMargin:20;qproperty-topMargin:0;qproperty-rightMargin:0;qproperty-bottomMargin:20;qproperty-spacing:8;}\n\
-                #fullTitleLabel{font-family:Georgia;font-style:italic;border-bottom:1px solid black;font-size:50px;max-width:600px;min-width:600px;}\n\
+                #fullTitleLabel{font-family:Georgia;font-style:italic;border-bottom:1px solid black;font-size:60px;max-width:600px;min-width:600px;}\n\
                 #separator1,#separator2,#separator3,#separator4{border-bottom:1px solid grey;max-height:3px;min-height:3px;}\n\
                 #bookStatsContainer{max-height:195px;min-height:195px;}\n\
                 #ratingLayoutWidget{qproperty-leftMargin:20;qproperty-topMargin:0;qproperty-rightMargin:0;qproperty-bottomMargin:0;qproperty-spacing:10;}\n\
                 #rateLabel{padding:0px;max-height:78px;min-height:78px;}\n\
-                #writeReview{font-family:Georgia;font-style:italic;font-size:32px;max-height:78px;min-height:78px;margin-left:18;}\n\
+                #writeReview{font-family:Georgia;font-style:italic;font-size:37px;max-height:78px;min-height:78px;margin-left:18;}\n\
                 #relatedTitleContainer{qproperty-leftMargin:20;qproperty-topMargin:10;qproperty-rightMargin:0;qproperty-bottomMargin:10;}\n\
-                #relatedViewAll{font-family:Georgia;font-style:italic;font-size:32px;max-height:60px;min-height:60px;padding-left:20px;padding-right:20px;}\n\
+                #relatedViewAll{font-family:Georgia;font-style:italic;font-size:37px;max-height:60px;min-height:60px;padding-left:20px;padding-right:20px;}\n\
                 #coverContainer{max-height:320px;min-height:320px;max-width:720px;min-width:720px;qproperty-spacing:0;}\n\
                 #coverContainer VolumePixmapView{qproperty-alignment:AlignBottom;max-width:216px;min-width:216px;}\n\
                 #footer{max-height:120px;min-height:120px;}"
@@ -4096,11 +4096,11 @@ PROGRESIVE:
                 MenuTextItem,MenuImageItem{background-color:white;min-width:300px;}\n\
                 MenuTextItem{min-height:70px;max-height:70px;}\n\
                 MenuTextItem[qApp_isFontScaleLarge=true]{min-height:87px;max-height:87px;}\n\
-                MenuTextItem #menuTextItemLabel{font-size:32px;padding-top:4px;padding-bottom:4px;color:black;background-color:white;}\n\
+                MenuTextItem #menuTextItemLabel{font-size:37px;padding-top:4px;padding-bottom:4px;color:black;background-color:white;}\n\
                 MenuTextItem[italics=false] #menuTextItemLabel{font-family:Georgia;font-style:italic;}\n\
                 MenuTextItem[enabled=false] #menuTextItemLabel{color:grey;}\n\
-                #label{padding-left:0px;font-size:30px;}\n\
-                #lineEdit{qproperty-clearButtonAllowed:false;width:145px;max-width:145px;font-size:30px;}\n\
+                #label{padding-left:0px;font-size:34px;}\n\
+                #lineEdit{qproperty-clearButtonAllowed:false;width:145px;max-width:145px;font-size:34px;}\n\
                 #totalPages{padding-right:0px;}"
 
 #104 (zlib) pos: 4dba41
@@ -4219,15 +4219,15 @@ PROGRESIVE:
                 #progressLabel[qApp_deviceIsDragon=true] {\n  font-size: 32px;\n  margin-top: 20px;\n}\n\
                 #progressLabel[qApp_deviceIsDaylight=true] {\n  font-size: 42px;\n  margin-top: 26px;\n}"
       Replace: "*{color:white;background-color:black;}\n\
-                #title{font-family:Georgia;font-size:52px;}\n\
-                #label{font-family:Avenir;font-size:37px;}\n\
+                #title{font-family:Georgia;font-size:60px;}\n\
+                #label{font-family:Avenir;font-size:42px;}\n\
                 #connectTextContainer{qproperty-bottomMargin:100px;}\n\
                 #pixmapLabel{max-width:1080px;min-width:1080px;max-height:800px;min-height:800px;}\n\
                 #topVerticalSpacer{max-height:10px;min-height:10px;}\n\
                 #bottomVerticalSpacer{max-height:30px;min-height:30px;}\n\
                 #progress{max-width:720px;min-width:720px;}\n\
                 #progressBar::chunk::horizontal{background:white;}\n\
-                #progressLabel{font-size:37px;margin-top:20px;}"
+                #progressLabel{font-size:42px;margin-top:20px;}"
 
 #108 (zlib) pos: 4dc0d2
   - FindZlib: "#carousel"
@@ -4341,7 +4341,7 @@ PROGRESIVE:
       Replace: "#DragonSimilarLibraryView{qproperty-bottomMargin:15;}\n\
                 #header{qproperty-topMargin:170;qproperty-leftMargin:60;qproperty-rightMargin:60;}\n\
                 #bookinfo{max-height:136px;min-height:136px;}\n\
-                #title{font-family:Georgia;font-style:italic;font-size:39px;}\n\
+                #title{font-family:Georgia;font-style:italic;font-size:47px;}\n\
                 #author{padding-left:0px;padding-right:0px;}\n\
                 #series{qproperty-maxNumLines:1;padding:0px;}\n\
                 #footer{qproperty-leftMargin:60;qproperty-rightMargin:60;}\n\
@@ -4389,7 +4389,7 @@ PROGRESIVE:
                 #justificationButton_full[disabledStyle=true],#justificationButton_left[disabledStyle=true]{border:2px solid darkgrey;}\n\
                 #justificationButton_left[disabledStyle=true]{border:0px;border-top:2px solid darkgrey;border-bottom:2px solid darkgrey;}\n\
                 #justificationButton_full{border-top-right-radius:0px;border-bottom-right-radius:0px;}\n\
-                #justificationButton_off{border-top-left-radius:0px;border-bottom-left-radius:0px;font-family:Avenir;font-size:29px;background-color:lightgrey;}\n\
+                #justificationButton_off{border-top-left-radius:0px;border-bottom-left-radius:0px;font-family:Avenir;font-size:34px;background-color:lightgrey;}\n\
                 #justificationButton_off[disabledStyle=true]{border:2px solid darkgrey;}\n\
                 #fontSizeRevertProgress,#lineSpacingRevertProgress,#marginsRevertProgress{qproperty-thickLineEnabled:false;}"
 
@@ -4462,7 +4462,7 @@ PROGRESIVE:
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
       Replace: "* {background: none;}\n\
-                #loadingLabel {font-family: Georgia; font-size: 29px;}\n                                                                                                                                                                                                                                                                                                                                                                                        "
+                #loadingLabel {font-family: Georgia; font-size: 34px;}\n                                                                                                                                                                                                                                                                                                                                                                                        "
       MustMatchLength: yes
 
 #114 (zlib) pos: 4dce83
@@ -4523,8 +4523,8 @@ PROGRESIVE:
       Replace: "#StatusBarView{max-height:81px;min-height:81px;}\n\
                 #StatusBarView[showIndicators=false]{background-color:transparent;}\n\
                 #StatusBarView[showIndicators=true]{background-color:white;}\n\
-                #message{padding:0px;qproperty-alignment:'AlignLeft | AlignVCenter';font-style:italic;font-size:32px;background-color:transparent;}\n\
-                #message[showIndicators=false]{qproperty-alignment:'AlignCenter';font-style:normal;font-size:32px;}\n\
+                #message{padding:0px;qproperty-alignment:'AlignLeft | AlignVCenter';font-style:italic;font-size:42px;background-color:transparent;}\n\
+                #message[showIndicators=false]{qproperty-alignment:'AlignCenter';font-style:normal;font-size:37px;}\n\
                 #messageSpacer{min-width:70px;max-width:70px;}\n\
                 #messageSpacer[showIndicators=true]{qproperty-visible:true;}\n\
                 #messageSpacer[showIndicators=false]{qproperty-visible:false;}\n\
@@ -4586,7 +4586,7 @@ PROGRESIVE:
                 #infoWidget,#infoFrame{qproperty-topMargin:2px;qproperty-bottomMargin:2px;qproperty-rightMargin:2px;}\n\
                 #infoFrame{border-top:1px solid black;border-bottom:1px solid black;border-right:1px solid black;qproperty-leftMargin:2px;}\n\
                 #infoFrame[powerOffView=true]{border-top:1px solid white;border-bottom:1px solid white;border-right:1px solid white;}\n\
-                #batteryStatus{font-family:Georgia;font-size:30px;margin-left:22px;}\n\
+                #batteryStatus{font-family:Georgia;font-size:34px;margin-left:22px;}\n\
                 #progressLabel{margin-top:10px;}\n\
                 #batteryStatus[iconView=true]{margin-left:10px;}"
 
@@ -4773,7 +4773,7 @@ PROGRESIVE:
                 #container{qproperty-leftMargin:50;qproperty-rightMargin:50;qproperty-topMargin:30;qproperty-bottomMargin:30;}\n\
                 #chapter{padding:0px;max-width:400px;}\n\
                 #separator{padding-bottom:10px;}\n\
-                #tocButton{text-decoration:underline;font-size:32px;}\n\
+                #tocButton{text-decoration:underline;font-size:37px;}\n\
                 #progressPage{min-width:280px;}\n\
                 #revertProgress{qproperty-thickLineEnabled:false;}\n\
                 #revertProgress:handle:horizontal{image:url(:/images/reading/revert_progress_indicator.png);}\n\
@@ -4879,7 +4879,7 @@ PROGRESIVE:
                 #infoContainer[affiliateView=false]{qproperty-leftMargin:120;qproperty-rightMargin:50;}\n\
                 #affiliateBatterySpacer{qproperty-visible:false;}\n\
                 #affiliateBatterySpacer[affiliateView=true]{qproperty-visible:true;}\n\
-                #batteryStatus{font-family:Georgia;font-size:29px;}"
+                #batteryStatus{font-family:Georgia;font-size:32px;}"
 
 #127 (nozlib) pos: 4de3cd
   - FindReplaceString:
@@ -5111,13 +5111,13 @@ PROGRESIVE:
                 MenuTextItem,MenuImageItem{min-width:300px;background-color:white;}\n\
                 MenuTextItem{min-height:70px;max-height:70px;}\n\
                 MenuTextItem[qApp_isFontScaleLarge=true]{min-height:87px;max-height:87px;}\n\
-                MenuTextItem #menuTextItemLabel{color:black;font-size:32px;padding-top:4px;padding-bottom:4px;background-color:white;}\n\
+                MenuTextItem #menuTextItemLabel{color:black;font-size:37px;padding-top:4px;padding-bottom:4px;background-color:white;}\n\
                 MenuTextItem[italics=false] #menuTextItemLabel{font-family:Georgia;font-style:italic;}\n\
                 MenuTextItem[enabled=false] #menuTextItemLabel{color:grey;}\n\
                 #dictionary{margin-top:5px;margin-left:10px;}\n\
-                #settings{font-family:Georgia;font-size:32px;padding-left:22px;padding-right:22px;margin-top:30px;background-color:lightgray;}\n\
+                #settings{font-family:Georgia;font-size:37px;padding-left:22px;padding-right:22px;margin-top:30px;background-color:lightgray;}\n\
                 #message{font-family:Avenir;padding:0px;margin-left:50px;margin-right:50px}\n\
-                #language{font-size:32px;max-height:80px;}\n\
+                #language{font-size:37px;max-height:80px;}\n\
                 #mainContainer{qproperty-leftMargin:0px;qproperty-rightMargin:11px;}\n\
                 #header{border-bottom:1px solid gray;max-height:70px;min-height:70px;}"
 
@@ -5161,8 +5161,8 @@ PROGRESIVE:
       Replace: "#homeWidgetTopContainer{qproperty-leftMargin:10px;qproperty-rightMargin:10px;}\n\
                 #widgetContainer{qproperty-bottomMargin:18px;}\n\
                 #topBorder{min-height:1px;max-height:1px;margin-top:1px;margin-bottom:22px;background-color:dimgray;}\n\
-                RegularElidedLabel{font-size:42px;}\n\
-                MetaDataLabel{color:black;qproperty-indent:0;font-size:27px;padding-top:10px;padding-bottom:10px;min-height:66px;max-height:66px;}\n\
+                RegularElidedLabel{font-size:47px;}\n\
+                MetaDataLabel{color:black;qproperty-indent:0;font-size:31px;padding-top:10px;padding-bottom:10px;min-height:66px;max-height:66px;}\n\
                 RegularElidedLabel,MetaDataLabel{padding-left:0px;padding-right:0px;}"
 
 #133 (zlib) pos: 4df272
@@ -5249,7 +5249,7 @@ PROGRESIVE:
                 #availableText {\n  font-style: normal;\n}\n\
                 #learnMore {\n  qproperty-hitStateEnabled: false;\n  text-decoration: underline;\n}"
       Replace: "#KoboPlusDetailsWidget{max-height:40px;min-height:40px;max-width:892px;min-width:892px;}\n\
-                #availableText,#learnMore{padding:0px;font-size:32px;}\n\
+                #availableText,#learnMore{padding:0px;font-size:37px;}\n\
                 #availableText{font-style:normal;}\n\
                 #learnMore{qproperty-hitStateEnabled:false;text-decoration:underline;}"
 
@@ -5344,9 +5344,9 @@ PROGRESIVE:
                 #lblBullet_3[qApp_deviceIsDragon=true] {\n  padding-right: 119px;\n}\n\
                 #lblBullet_3[qApp_deviceIsDaylight=true] {\n  padding-right: 154px;\n}\n\
                 #lblBullet_1,\n#lblBullet_2 {\n  padding: 0px;\n}"
-      Replace: "TouchLabel{font-family:Avenir;text-align:center;font-size:66px;min-height:160;max-width:160;min-width:160;}\n\
+      Replace: "TouchLabel{font-family:Avenir;text-align:center;font-size:86px;min-height:160;max-width:160;min-width:160;}\n\
                 #title{font-family:Georgia;border-bottom:1px solid black;\n\
-                #title{font-size:36px;min-height:160;qproperty-leading:16;}\n\
+                #title{font-size:46px;min-height:160;qproperty-leading:16;}\n\
                 #lblBullet_0,#lblBullet_1,#lblBullet_2,#lblBullet_3,#lblDelete{border-bottom:1px solid black;}\n\
                 #lblBullet_0{/* (cell width - asset width) / 2 */}\n\
                 #lblBullet_0{padding-left:57px;}\n\
@@ -5391,7 +5391,7 @@ PROGRESIVE:
 # Increase the font size in My books, Activity, Bookstore...
 # See https://www.mobileread.com/forums/showpost.php?p=3527188&postcount=53
       Replace: "#barContainer{qproperty-spacing:10px;qproperty-spacing:36;max-height:70px;min-height:70px;}\n\
-                #tabContainer > N3TabItem{color:#666666;qproperty-alignment:AlignCenter;font-family:Avenir;font-size:32px;padding-top:8px;}\n\
+                #tabContainer > N3TabItem{color:#666666;qproperty-alignment:AlignCenter;font-family:Avenir;font-size:36px;padding-top:8px;}\n\
                 #tabContainer > N3TabItem[active=true],#tabContainer > N3TabItem[hit=true]{color:black;}\n\
                 #tabContainer > N3TabItem[active=false],#tabContainer > N3TabItem[active=true][single=true]{border-bottom:none;qproperty-hitStateEnabled:true;padding-bottom:8px;}\n\
                 #tabContainer > N3TabItem[active=true][single=false]{qproperty-hitStateEnabled:false;border-bottom:8px solid black;}"
@@ -5541,7 +5541,7 @@ PROGRESIVE:
                 #BatteryMenuView > GenericContainerWidget{max-height:100px;min-height:100px;}\n\
                 #batteryLevelContainer{qproperty-leftMargin:40;qproperty-rightMargin:40;}\n\
                 #usb,#settings{padding-left:40px;padding-right:40px;}\n\
-                #statusWidget{font-family:Avenir;font-size:35px;}\n\
+                #statusWidget{font-family:Avenir;font-size:42px;}\n\
                 #line{color:dimgray;}"
 
 #146 (zlib) pos: 4e0ed3
@@ -5564,7 +5564,7 @@ PROGRESIVE:
       Replace: "#OverDriveFilterPopup,#horizontalLayout,#arrowLayout,#textLayout{padding:0px;margin:0px;background-color:transparent;}\n\
                 #OverDriveFilterPopup{max-height:271px;min-height:271px;}\n\
                 #arrow{margin-top:20px;margin-left:12px;}\n\
-                #text{font-family:Avenir;line-height:1.6em;padding-right:0px;qproperty-alignment:AlignRight;font-size:32px;padding-top:70px;max-width:385px;min-width:385px;}"
+                #text{font-family:Avenir;line-height:1.6em;padding-right:0px;qproperty-alignment:AlignRight;font-size:37px;padding-top:70px;max-width:385px;min-width:385px;}"
 
 #147 (nozlib) pos: 4e106c
   - FindReplaceString:
@@ -5637,8 +5637,8 @@ PROGRESIVE:
       Replace: "#ReviewWidget{max-height:275px;min-height:275px;}\n\
                 #ReviewWidget[widgetSize=\"medium\"]{max-height:325px;min-height:325px;}\n\
                 #ReviewWidget[widgetSize=\"large\"]{max-height:600px;min-height:600px;}\n\
-                #title{font-family:Georgia;font-style:italic;font-size:37px;}\n\
-                #content{margin-top:15px;qproperty-maxNumLines:3;font-size:32px;}\n\
+                #title{font-family:Georgia;font-style:italic;font-size:42px;}\n\
+                #content{margin-top:15px;qproperty-maxNumLines:3;font-size:37px;}\n\
                 #content[qApp_isFontScaleLarge=true]{qproperty-maxNumLines:1;}\n\
                 #ReviewWidget[widgetSize=\"medium\"] #content {qproperty-maxNumLines:4;}\n\
                 #ReviewWidget[widgetSize=\"medium\"] #content[qApp_isFontScaleLarge=true] {qproperty-maxNumLines:2;}\n\
