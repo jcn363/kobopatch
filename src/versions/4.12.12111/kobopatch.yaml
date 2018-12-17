@@ -88,8 +88,11 @@ overrides:
     Only Reading and My Books: yes
     Remove Footer and Recommendations: #yes
 # END GROUP
+    Change the font-size of footnotes pop-up and alikes: yes
+    Change the font-family of footnotes pop-up and alikes: yes
+    footnotes and alike italicized: yes
     Reduce reading footer and quit caption: #yes
-    Font-family and font-size bulk change (part 1 of 2): yes # PART 2 in libnickel-PROGRESIVE.yaml
+    Font-family and font-size bulk change (part 1 of 2): #yes # PART 2 in libnickel-PROGRESIVE.yaml
   src/sickel.yaml:
 # PATCH GROUP - DON'T EANBLE MORE THAN 1
     sickel reboot timeout (20 sec): no
@@ -118,12 +121,12 @@ overrides:
     Replace adobe page numbers toggle with invert screen: yes #5
     Always display chapter name on navigation menu: yes #6
 # PATCH GROUP - DON'T EANBLE MORE THAN 1
-    My 10 line spacing values: yes #7
-    My 24 line spacing values: #8 yes
+    My 10 line spacing values: #7 yes
+    My 24 line spacing values: yes #8
 # END GROUP
-    Set KePub hyphenation: #9 yes
+    Set KePub hyphenation: yes #9
 # PATCH GROUP - DON'T EANBLE MORE THAN 1
-    ePub fixed/adjustable top/bottom margins: #10 yes
+    ePub fixed/adjustable top/bottom margins: yes #10
     ePub fixed top/bottom margins: #yes
     ePub disable built-in body padding-bottom: #yes
 # END GROUP
