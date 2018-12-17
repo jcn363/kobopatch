@@ -40,7 +40,203 @@ Reduce reading footer and quit caption:
       Replace: "ReadingFooter {qproperty-footerMargin: 00; min-height: 15px; max-height: 15px;}\n\
                 #caption{qproperty-visible:false;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "
       MustMatchLength: yes
-      
+
+Change the font-size of footnotes pop-up and alikes:
+  - Enabled: no
+  - Description: |
+      Change footnotes and alike font-size
+  - FindZlib:  "QWidget[small"
+# Pop-up header (footnotes and alike)
+  - ReplaceZlib:
+      Find:    "HeaderMediumElidedLabel,\n\
+                HeaderMediumTouchLabel,\n\
+                HeaderMediumLabel {\n  font-family: Georgia;\n  qproperty-alignment: 'AlignLeft|AlignVCenter';\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsTrilogy=true],\n\
+                HeaderMediumTouchLabel[qApp_deviceIsTrilogy=true],\n\
+                HeaderMediumLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 30px;\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsPhoenix=true],\n\
+                HeaderMediumTouchLabel[qApp_deviceIsPhoenix=true],\n\
+                HeaderMediumLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 36px;\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsDragon=true],\n\
+                HeaderMediumTouchLabel[qApp_deviceIsDragon=true],\n\
+                HeaderMediumLabel[qApp_deviceIsDragon=true] {\n  font-size: 46px;\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsAlyssum=true],\n\
+                HeaderMediumTouchLabel[qApp_deviceIsAlyssum=true],\n\
+                HeaderMediumLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 50px;\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsNova=true],\n\
+                HeaderMediumTouchLabel[qApp_deviceIsNova=true],\n\
+                HeaderMediumLabel[qApp_deviceIsNova=true] {\n  font-size: 50px;\n}\n\
+                HeaderMediumElidedLabel[qApp_deviceIsDaylight=true],\n\
+                HeaderMediumTouchLabel[qApp_deviceIsDaylight=true],\n\
+                HeaderMediumLabel[qApp_deviceIsDaylight=true] {\n  font-size: 60px;\n}"
+      Replace: "HeaderMediumElidedLabel,HeaderMediumTouchLabel,HeaderMediumLabel{font-family:Georgia;qproperty-alignment:'AlignLeft|AlignVCenter';font-size:60px;}"
+# Pop-up text (footnotes and alike)
+  - ReplaceZlib:
+      Find:    "RegularTouchLabel {\n  font-family: Georgia;\n  font-style: italic;\n}\n\
+                RegularTouchLabel[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                RegularTouchLabel[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                RegularTouchLabel[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                RegularTouchLabel[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                RegularTouchLabel[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                RegularTouchLabel[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+      Replace: "RegularTouchLabel{font-family:Georgia;font-style:italic;font-size:37px;}"
+
+Change the font-family of footnotes pop-up and alikes:
+  - Enabled: no
+  - Description: |
+      This patch allows you to change the font-family for the kepub pop-up footnotes (it
+      will also affect a few other dialogs, like no wifi, marked as finished, marked as
+      unread, etc).
+  # In ReadingController::showFootnoteDialog(Bookmark const&), a ConfirmationDialog is created.
+  # This changes the styles for ConfirmationDialog > #text
+  - FindZlib: "#ConfirmationDialog"
+  - ReplaceZlib: {Find: "font-family: Avenir;", Replace: "font-style:italic;}"} # with this change you'll have the same font family (for header and message) and italic for message
+  - ReplaceZlib: {Find: "font-family: Sans-SerifJP, sans-serif;", Replace: "font-family: Georgia;"}
+
+Same font all over the pop-up:
+  - Enabled: no
+  - Description: |
+      Change footnotes and alike pop-up to use the same font-family
+  - FindZlib: "#ConfirmationDialog"
+  - ReplaceZlib:
+      Find:    "#ConfirmationDialog {\n  background-color: transparent;\n}\n\
+                #ConfirmationDialog[isSansSerifDialog=true][qApp_deviceIsTrilogy=true] {\n  qproperty-widgetSpacing: 0;\n}\n\
+                TouchLabel {\n  qproperty-forceRepaintOnInvert: true;\n  qproperty-highQualityInvert: true;\n}\n\
+                #frame {\n  background-color: #FFFFFF;\n}\n\
+                #header,\n#title,\n#text {\n  padding: 0px;\n  font-family: Georgia;\n  font-style: normal;\n}\n\
+                #header[qApp_localeName=\"ja_JP\"],\n#title[qApp_localeName=\"ja_JP\"],\n#text[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}\n\
+                #header[qApp_localeName=\"ja_JP\"],\n#title[qApp_localeName=\"ja_JP\"],\n#text[qApp_localeName=\"ja_JP\"] {\n  qproperty-leading: 5;\n}\n\
+                #title[qApp_deviceIsTrilogy=true] {\n  margin-bottom: 15px;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  margin-bottom: 20px;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  margin-bottom: 28px;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  margin-bottom: 36px;\n}\n\
+                #text {\n  font-family: Avenir;\n}\n\
+                #text[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}\n\
+                #text[qApp_localeName=\"tr_TR\"] {\n  font-family: Georgia;\n}\n\
+                #text[isTextEditDialog=true] {\n  qproperty-visible: false;\n}\n\
+                #text[isSansSerifDialog=true] {\n  font-family: Avenir;\n  padding: 0px;\n}\n\
+                #text[isSansSerifDialog=true][qApp_deviceIsDaylight=true] {\n  padding-bottom: 12;\n}\n\
+                #text[isSansSerifDialog=true][qApp_deviceIsDragon=true] {\n  padding-bottom: 8;\n}\n\
+                #rejectButton,\n#acceptButton {\n  qproperty-primaryButton: true;\n}\n\
+                #pixmapContainerLayout[qApp_deviceIsTrilogy=true] {\n  margin-bottom: 38px;\n}\n\
+                #pixmapContainerLayout[qApp_deviceIsPhoenix=true] {\n  margin-bottom: 45px;\n}\n\
+                #pixmapContainerLayout[qApp_deviceIsDragon=true] {\n  margin-bottom: 54px;\n}\n\
+                #pixmapContainerLayout[qApp_deviceIsDaylight=true] {\n  margin-bottom: 70px;\n}\n\
+                #keyboardStatusContainer,\n#keyboardStatusContainer * {\n  background: #000000;\n  color: #FFFFFF;\n}\n\
+                #keyboardStatusText {\n  background-color: solid black;\n  font-family: Georgia;\n  padding: 0px;\n}\n\
+                #keyboardFrame {\n  qproperty-visible: false;\n}\n\
+                #keyboardFrame[isTextEditDialog=true],\n#keyboardFrame[isPasswordDialog=true] {\n  qproperty-visible: true;\n}\n\
+                #closeButton {\n  background-color: transparent;\n}\n\
+                #contentContainer {\n  qproperty-topMargin: 0px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsTrilogy=true] {\n  font-size: 17px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsPhoenix=true] {\n  font-size: 22px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsAlyssum=true] {\n  font-size: 30px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsNova=true] {\n  font-size: 30px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsDaylight=true] {\n  font-size: 34px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+# Font in pop-up text (footnotes and alike) -> #header,#title,#text
+      Replace: "#ConfirmationDialog{background-color:transparent;}\n\
+                TouchLabel{qproperty-forceRepaintOnInvert:true;qproperty-highQualityInvert:true;}\n\
+                #frame{background-color:#FFFFFF;}\n\
+                #header,#title,#text{padding:0px;font-family:Georgia;font-style:normal;}\n\
+                #title{margin-bottom:36px;}\n\
+                #text[isTextEditDialog=true]{qproperty-visible:false;}\n\
+                #text[isSansSerifDialog=true]{font-family:Avenir;padding:0px;padding-bottom:12;}\n\
+                #rejectButton,#acceptButton{qproperty-primaryButton:true;}\n\
+                #pixmapContainerLayout{margin-bottom:70px;}\n\
+                #keyboardStatusContainer,#keyboardStatusContainer *{background:#000000;color:#FFFFFF;}\n\
+                #keyboardStatusText{font-family:Georgia;padding:0px;background-color:solid black;}\n\
+                #keyboardFrame{qproperty-visible:false;}\n\
+                #keyboardFrame[isTextEditDialog=true],#keyboardFrame[isPasswordDialog=true]{qproperty-visible:true;}\n\
+                #closeButton{background-color:transparent;}\n\
+                #contentContainer{qproperty-topMargin:0px;}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text{font-size:40px;}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title{font-size:43px;}"
+
+footnotes and alike italicized:
+  - Enabled: no
+  - Description: |
+      This patch allows you to change the font-family for the kepub pop-up footnotes (it
+      will also affect a few other dialogs, like no wifi, marked as finished, marked as
+      unread, etc).
+  # If you want all the texts of the pop-up to be italicized then you can remove:
+  #       #text{font-style:italic;}
+  # and change this one:
+  #       #header,#title,#text{padding:0px;font-family:Georgia;font-style:normal;}
+  # to become into:
+  #       #header,#title,#text{padding:0px;font-family:Georgia;font-style:italic;}
+  # And if you want another font-family with italic in the body-text, then
+  #       #text{font-family:Arial;font-style:italic;}
+  - FindZlib: "#ConfirmationDialog"
+  - ReplaceZlib:
+      Find:    "#ConfirmationDialog {\n  background-color: transparent;\n}\n\
+                #ConfirmationDialog[isSansSerifDialog=true][qApp_deviceIsTrilogy=true] {\n  qproperty-widgetSpacing: 0;\n}\n\
+                TouchLabel {\n  qproperty-forceRepaintOnInvert: true;\n  qproperty-highQualityInvert: true;\n}\n\
+                #frame {\n  background-color: #FFFFFF;\n}\n\
+                #header,\n#title,\n#text {\n  padding: 0px;\n  font-family: Georgia;\n  font-style: normal;\n}\n\
+                #header[qApp_localeName=\"ja_JP\"],\n#title[qApp_localeName=\"ja_JP\"],\n#text[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}\n\
+                #header[qApp_localeName=\"ja_JP\"],\n#title[qApp_localeName=\"ja_JP\"],\n#text[qApp_localeName=\"ja_JP\"] {\n  qproperty-leading: 5;\n}\n\
+                #title[qApp_deviceIsTrilogy=true] {\n  margin-bottom: 15px;\n}\n\
+                #title[qApp_deviceIsPhoenix=true] {\n  margin-bottom: 20px;\n}\n\
+                #title[qApp_deviceIsDragon=true] {\n  margin-bottom: 28px;\n}\n\
+                #title[qApp_deviceIsDaylight=true] {\n  margin-bottom: 36px;\n}\n\
+                #text {\n  font-family: Avenir;\n}\n\
+                #text[qApp_localeName=\"ja_JP\"] {\n  font-family: Sans-SerifJP, sans-serif;\n  font-style: normal;\n}\n\
+                #text[qApp_localeName=\"tr_TR\"] {\n  font-family: Georgia;\n}\n\
+                #text[isTextEditDialog=true] {\n  qproperty-visible: false;\n}\n\
+                #text[isSansSerifDialog=true] {\n  font-family: Avenir;\n  padding: 0px;\n}\n\
+                #text[isSansSerifDialog=true][qApp_deviceIsDaylight=true] {\n  padding-bottom: 12;\n}\n\
+                #text[isSansSerifDialog=true][qApp_deviceIsDragon=true] {\n  padding-bottom: 8;\n}\n\
+                #rejectButton,\n#acceptButton {\n  qproperty-primaryButton: true;\n}\n\
+                #pixmapContainerLayout[qApp_deviceIsTrilogy=true] {\n  margin-bottom: 38px;\n}\n\
+                #pixmapContainerLayout[qApp_deviceIsPhoenix=true] {\n  margin-bottom: 45px;\n}\n\
+                #pixmapContainerLayout[qApp_deviceIsDragon=true] {\n  margin-bottom: 54px;\n}\n\
+                #pixmapContainerLayout[qApp_deviceIsDaylight=true] {\n  margin-bottom: 70px;\n}\n\
+                #keyboardStatusContainer,\n#keyboardStatusContainer * {\n  background: #000000;\n  color: #FFFFFF;\n}\n\
+                #keyboardStatusText {\n  background-color: solid black;\n  font-family: Georgia;\n  padding: 0px;\n}\n\
+                #keyboardFrame {\n  qproperty-visible: false;\n}\n\
+                #keyboardFrame[isTextEditDialog=true],\n#keyboardFrame[isPasswordDialog=true] {\n  qproperty-visible: true;\n}\n\
+                #closeButton {\n  background-color: transparent;\n}\n\
+                #contentContainer {\n  qproperty-topMargin: 0px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsTrilogy=true] {\n  font-size: 17px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsPhoenix=true] {\n  font-size: 22px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsDragon=true] {\n  font-size: 26px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsAlyssum=true] {\n  font-size: 30px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsNova=true] {\n  font-size: 30px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text[qApp_deviceIsDaylight=true] {\n  font-size: 34px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsTrilogy=true] {\n  font-size: 19px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsPhoenix=true] {\n  font-size: 23px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsDragon=true] {\n  font-size: 29px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsAlyssum=true] {\n  font-size: 32px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
+# Font in pop-up text (footnotes and alike) -> #header,#title,#text
+# #text italicized
+      Replace: "#ConfirmationDialog{background-color:transparent;}\n\
+                TouchLabel{qproperty-forceRepaintOnInvert:true;qproperty-highQualityInvert:true;}\n\
+                #frame{background-color:white;}\n\
+                #header,#title,#text{padding:0px;font-family:Georgia;font-style:normal;}\n\
+                #title{margin-bottom:36px;}\n\
+                #text{font-style:italic;}\n\
+                #text[isTextEditDialog=true]{qproperty-visible:false;}\n\
+                #text[isSansSerifDialog=true]{font-family:Avenir;padding:0px;padding-bottom:12;}\n\
+                #rejectButton,#acceptButton{qproperty-primaryButton:true;}\n\
+                #pixmapContainerLayout{margin-bottom:70px;}\n\
+                #keyboardStatusContainer,#keyboardStatusContainer *{background:black;color:white;}\n\
+                #keyboardStatusText{font-family:Georgia;padding:0px;background-color:solid black;}\n\
+                #keyboardFrame{qproperty-visible:false;}\n\
+                #keyboardFrame[isTextEditDialog=true],#keyboardFrame[isPasswordDialog=true]{qproperty-visible:true;}\n\
+                #closeButton{background-color:transparent;}\n\
+                #contentContainer{qproperty-topMargin:0px;}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #text{font-size:40px;}\n\
+                #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title{font-size:43px;}"
+
 # This is only for those who want to change font-family and/or the font-size
 # without bother on the look.
 #
@@ -113,7 +309,6 @@ Font-family and font-size bulk change (part 1 of 2):
         - {Find: "font-size: 28px", Replace: "font-size: 32px"}
         - {Find: "font-size: 23px", Replace: "font-size: 27px"}
 #2 (zlib) pos: 252ac1
-#zlib stream: offset_hex(0x252AC1) offset_int32(2435777) len_int32(57344) sha1(da62721d3ebc43e60e0221f16f2f7c4c1b98154b)
   - FindZlib: "QWidget[small"
   - ReplaceZlibGroup:
       Offset: 0

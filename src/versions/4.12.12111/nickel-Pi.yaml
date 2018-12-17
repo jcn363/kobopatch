@@ -1998,7 +1998,8 @@ PROGRESIVE:
 # Reduces the home screen margins, allowing larger cover images. -> #mainContainer
 # Only Reading and My Books -> #row1col2,#row2col2,#row3
       Replace: "#mainContainer{qproperty-leftMargin:16;qproperty-rightMargin:16;qproperty-topMargin:170;qproperty-bottomMargin:50;qproperty-spacing:16;}\n\
-                #row1,#row2{max-height:683px;min-height:488px;}\n\
+                #row1{max-height:488px;min-height:488px;}\n\
+                #row2{max-height:683px;min-height:488px;}\n\
                 [qApp_isFontScaleLarge=true] #row1{max-height:683px;min-height:683px;}\n\
                 [qApp_isFontScaleLarge=true] #row2{max-height:195px;min-height:195px;}\n\
                 #row1col2,#row2col2,#row3{qproperty-visible:false;}"

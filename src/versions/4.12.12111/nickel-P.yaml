@@ -1825,6 +1825,7 @@ PROGRESIVE:
                 #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsNova=true] {\n  font-size: 32px;\n}\n\
                 #ConfirmationDialog[longTextDialog=true][qApp_isFontScaleLarge=true] #title[qApp_deviceIsDaylight=true] {\n  font-size: 37px;\n}"
 # Font in pop-up text (footnotes and alike) -> #header,#title,#text
+# #text{font-family: Avenir;} has been removed to have the same font-type for header, title and text.
       Replace: "#ConfirmationDialog{background-color:transparent;}\n\
                 TouchLabel{qproperty-forceRepaintOnInvert:true;qproperty-highQualityInvert:true;}\n\
                 #frame{background-color:white;}\n\
@@ -1994,7 +1995,8 @@ PROGRESIVE:
 # Reduces the home screen margins, allowing larger cover images. -> #mainContainer
 # Only Reading and My Books -> #row1col2,#row2col2,#row3
       Replace: "#mainContainer{qproperty-leftMargin:20;qproperty-rightMargin:20;qproperty-topMargin:220;qproperty-bottomMargin:65;qproperty-spacing:20;}\n\
-                #row1,#row2{max-height:887px;min-height:634px;}\n\
+                #row1{max-height:634px;min-height:634px;}\n\
+                #row2{max-height:887px;min-height:634px;}\n\
                 [qApp_isFontScaleLarge=true] #row1{max-height:887px;min-height:887px;}\n\
                 [qApp_isFontScaleLarge=true] #row2{max-height:253px;min-height:253px;}\n\
                 #row1col2,#row2col2,#row3{qproperty-visible:false;}"
@@ -4792,7 +4794,7 @@ PROGRESIVE:
                 QuickTurnSlider[qApp_deviceIsDaylight=true] {\n  min-height: 56px;\n  max-height: 56px;\n}"
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
-      Replace: "QuickTurnSlider {min-height: 56px; max-height: 56px;}\n                                                                                                                                                                                                                                                                                                     "
+      Replace: "QuickTurnSlider {min-height: 56px; max-height: 24px;}\n                                                                                                                                                                                                                                                                                                     "
       MustMatchLength: yes
 
 #123 (zlib) pos: 4ddf13
