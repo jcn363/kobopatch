@@ -21,23 +21,23 @@ Gutting kobopatch.yaml
 
 · _Version_: it is the version of the firmware that we want to patch -> the version.
 
-· _In_: compressed (with its location) where the firmware we want to patch is located -> the firmware.
+· _In_: compressed (with address) where the firmware we want to patch is located -> the firmware.
 
-· _Out_: compressed (with your location) where the patched firmware will be saved ready for your application -> the patch.
+· _Out_: packed (with address) where the patched firmware will be saved ready for your application -> the patch.
 
-· _Log_: information / reference file where orders, errors, etc. are stored gernerated during the creation of the patch -> the log.
+· _Log_: information / reference file where commands, errors, etc. are stored while the patch creation -> the log.
 
 · _PatchFormat_: is the format in which the patches are written -> kobopatch is the current one.
 
-· Words that precede two points, but DO NOT carry text below, call a section.
+· Words that precede two points, but DO NOT carry text below, are sections.
 
-· In the patches section we find a list of relationships
+· In the _patches_ section we find a list of relationships
 
     file with patches: file to patch
 
-· In a file with patches there can only be patches that modify a program or library. But there may be several files that modify the same program or library.
+· In a file with patches there can only be patches which modify a only program or library. But there may be several files which modify the same program or library.
 
-· Both libnickel-PROGRESIVE.yaml and libnickel.so.1.0.0.yaml contain patches that modify the same library: libnickel.so.1.0.0.
+· Both _libnickel-PROGRESIVE.yaml_ and _libnickel.so.1.0.0.yaml_ contain patches which modify the same library: _libnickel.so.1.0.0_.
 
     patches:
         #  src/nickel-PROGRESIVE.yaml: usr/local/Kobo/nickel
@@ -50,28 +50,28 @@ Gutting kobopatch.yaml
           src/libnickel.so.1.0.0.yaml: usr/local/Kobo/libnickel.so.1.0.0
           src/librmsdk.so.1.0.0.yaml: usr/local/Kobo/librmsdk.so.1.0.0
 
-· In the overrides section there is a list of the files with patches (listed in the patches section) together with the patches they contain and if we want to apply them or not.
+· In the _overrides_ section there is a list of files with patches (nameed in the _patches_ section) with the patches they contain and whether we want to apply them or not.
 
-   The value assigned here overwrites the one that is inside the patch file (default is not).
+   The value assigned here overwrites the one that is inside the patch file (default is _no_).
    
-   It is not mandatory, but it is very useful and convenient, since at a glance it allows us to see the patches that we have available along with their status. In addition it allows us to activate and deactivate patches (of different programs and libraries) without having to open the file that contains them to look for them in it.
+   It is not mandatory, but it is very useful and convenient, since at a glance it allows us to see the patches that we have available along with their status. In addition it allows us to enable and disable patches (of different programs and libraries) without having to open the file which contains them and to look for them in it.
    
-   To say that we want to apply a patch called PROGRESIVE, which is inside the nickel-PROGRESIVE.yaml file, about the nickel program, regardless of whether it is activated or not, we would have to put:
+   To say we want to apply a patch called _PROGRESIVE_, which is inside the _nickel-PROGRESIVE.yaml_ file, to _nickel_ program, regardless of whether it is activated or not, we would have to put:
    
     overrides:
       src/nickel-PROGRESIVE.yaml:
         PROGRESIVE: yes
 
-**WARNING**: following this example the previous lines would not do anything, since in the patches section the line relative to nickel-PROGRESIVE.yaml was commented and therefore the program does not know what program it has to patch.
-patches:
+**WARNING**: following this example the previous lines would not do anything, since in the _patches_ section the line relative to _nickel-PROGRESIVE.yaml_ was commented and therefore the program does not know what file must patch.
 
+    patches:
     #  src/nickel-PROGRESIVE.yaml: usr/local/Kobo/nickel
 
-· There may be as many patches as there are patches within that file. As indicated, it is not mandatory that they are all, although very useful.
+· There may be as many patches named as patches are into that file. As said, it is not mandatory that they all are listed, although it's very useful.
 
 · The name of the patch must correspond exactly with the one that is inside the corresponding patch file.
 
-· Remember that the value that prevails is the one indicated here.
+· Remember that the value that rules is the one set here.
 
     src/libnickel-PROGRESIVE.yaml:
       Dictionary, remove long winded closest match notification: yes
@@ -81,7 +81,7 @@ patches:
       MY KePub stylesheet additions: yes
       My Dictionary text font-family/font-size/line-height: yes
 
-· There are patches that are self-explanatory. If more than one is activated, at the same time, the program will stop, the patch will not be generated and we will have to resort to the log to know where is the error that we have committed.
+· There are patches that are self-excluding. If more than one is activated, at the same time, the program will stop, the patch will not be generated and we will have to go to the log to know where is the error that we have made.
 
     # PATCH GROUP - DON'T EANBLE MORE THAN 1
         Disable reading footer: no
@@ -97,22 +97,22 @@ patches:
 
 **NOTE**: As you can see, the comments do not necessarily have to be at the beginning of the line.
 
-· If you want to translate the messages of the system that appear on the screen (let's say for example), or simply correct some of them (they have sometimes put libri instead of books), you can do it. To do this, you must install the program lrelease or tell the patch program where you are using
+· If you want to translate the messages of the system that appear on the screen (let's say into _spanish_ for example), or simply to correct/change some of them (they have sometimes put _libri_ instead of _libros_), you can do it. To do this, you must install the _lrelease_ program and tell to the patch program where do you installed
 
     # lrelease: /path/to/lrelease
 
 **NOTE**: I do not use it (it is commented) because I have it integrated in the system.
 
-· In the translations section you must indicate the list of translations you want to include in the patch.
+· In the translations section you must put the list of translations you want to include in the patch.
 
     file with your translation: file to include in the patch
 
     translations:
       src/translations/trans_es.ts: usr/local/Kobo/translations/trans_es.qm
 
-· You may not want to translate but you have a file that you want to incorporate / replace the system (fonts, script files, etc.). That's what the files section is for. Remember: "_a place for everything and everything in its place_".
+· You may not want to translate but you have a file that you want to include / replace into the system (fonts, script files, etc.). That's what the _files_ section is for. Remember: "_a place for every thing and everything in its place_".
 
-    file that you want to add to the patch: file with the location it will occupy in the device
+    file that you want to add to the patch: file with address in the device
     
     files:
       src/hyphenDicts/hyph_de.dic: usr/local/Kobo/hyphenDicts/hyph_de.dic
