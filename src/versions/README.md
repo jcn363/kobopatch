@@ -10,7 +10,7 @@ Gutting kobopatch.yaml
     ## Works with kobopatch v0.7 or higher.
     ## You can update kobopatch by downloading the latest release from https://github.com/geek1011/kobopatch/releases.
 
-· Words that precede two points, and carry text below, are variables, which hold the value that follows them. Like a dictionary, word and definition.
+· Words that precede two points, and carry text below, are variables, which hold the value that follow them. Like a dictionary, word and definition.
 
     version: 4.10.11655
     in: src/kobo-update-4.10.11655.zip
