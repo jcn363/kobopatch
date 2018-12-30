@@ -8,6 +8,8 @@ Ref.: https://www.mobileread.com/forums/showthread.php?t=297338
 
 # [YAML](http://yaml.org/spec/1.2/spec.html)
 
+# [Adding new interface languages](https://www.mobileread.com/forums/showthread.php?s=1e132ef33cfc20fd2f5820f81dbef9e5&t=261771)
+
 # [DICCIONARIOS](http://kobo.lectoreselectronicos.com/subweb/diccionarios.html)
 
 https://www.mobileread.com/forums/showpost.php?p=3312320&postcount=1
