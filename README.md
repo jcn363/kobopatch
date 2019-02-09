@@ -22,7 +22,7 @@ https://www.mobileread.com/forums/showthread.php?t=272762
 
 # [nickel GUI not displaying certain characters](https://www.mobileread.com/forums/showthread.php?t=278392)
 
-# [Conversor epub a kepub](https://pgaskin.net/kepubify)
+# [Conversor epub a kepub (kepubify)](https://pgaskin.net/kepubify)
 
 # [Kute File Monitor (kfmon)](https://www.mobileread.com/forums/showpost.php?p=3319170&postcount=1)
 
