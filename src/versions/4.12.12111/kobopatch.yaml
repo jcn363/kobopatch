@@ -19,9 +19,11 @@ patches:
 #  src/nickel-F.yaml: usr/local/Kobo/nickel
 #  src/nickel-FF.yaml: usr/local/Kobo/nickel
 #  src/nickel.yaml: usr/local/Kobo/nickel
-###  src/nickel-363.yaml: usr/local/Kobo/nickel
+##  src/nickel-363.yaml: usr/local/Kobo/nickel
   src/sickel.yaml: usr/local/Kobo/sickel
-#  src/libadobe.so.yaml: usr/local/Kobo/libadobe.so
+  src/libadobe.so.yaml: usr/local/Kobo/libadobe.so
+#  src/nickel-ReaderService.yaml: usr/local/Kobo/nickel
+#  src/libnickel-ReaderService.yaml: usr/local/Kobo/libnickel.so.1.0.0
   src/libnickel-PROGRESIVE.yaml: usr/local/Kobo/libnickel.so.1.0.0
   src/libnickel.so.1.0.0.yaml: usr/local/Kobo/libnickel.so.1.0.0
   src/librmsdk.so.1.0.0.yaml: usr/local/Kobo/librmsdk.so.1.0.0
@@ -41,6 +43,11 @@ patches:
 ##   src/libadobe.so.patch:
 ##     You get the idea: yes
 overrides:
+  src/nickel-ReaderService.yaml:
+    My Decrease MediumVertSpacer: yes
+  src/libnickel-ReaderService.yaml:
+    Decrease ReaderService viewport height: no
+    Increase ReaderService viewport height: yes
   src/nickel-F.yaml:
     Custom font-size: yes
   src/nickel-FF.yaml:
@@ -99,7 +106,9 @@ overrides:
     sickel reboot timeout (30 sec): yes
 # END GROUP
   src/libadobe.so.yaml:
-    Remove PDF map widget shown during panning: #yes
+    Remove PDF map widget shown during panning: yes
+    Remove PDF page turn arrows: yes
+    Keep PDF pan position: yes
   src/libnickel-PROGRESIVE.yaml:
     Dictionary, remove long winded closest match notification: yes
     unclassified (PROGRESIVE): yes
@@ -113,6 +122,10 @@ overrides:
     Use inverted landscape in rotation popup: ###2 yes
     My reading footer height: yes ###3
     Font-family and font-size bulk change (part 2 of 2): #yes # PART 1 in nickel-363.yaml
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    My 24 line spacing values KA1: yes #8
+    My 24 line spacing values H2O: no #8
+# END GROUP
   src/libnickel.so.1.0.0.yaml:
     Set slide to unlock: yes #1
     Enable rotation on all devices: yes #2
@@ -122,9 +135,10 @@ overrides:
     Always display chapter name on navigation menu: yes #6
 # PATCH GROUP - DON'T EANBLE MORE THAN 1
     My 10 line spacing values: #7 yes
-    My 24 line spacing values: yes #8
+    My 24 line spacing values: #8 yes  in libnickel-PROGRESIVE.yaml
 # END GROUP
     Set KePub hyphenation: yes #9
+    ePub left/right margins step size: #yes
 # PATCH GROUP - DON'T EANBLE MORE THAN 1
     ePub fixed/adjustable top/bottom margins: yes #10
     ePub fixed top/bottom margins: #yes
@@ -137,8 +151,12 @@ overrides:
     Both page turn buttons go next: no
     Rename settings: no
     Set reading footer height: no # in libnickel-PROGRESIVE.yaml
+    Use old keyboard on all devices: no
+    Hide browser from beta features: yes
+    Remove beta features not supported text: yes
+    Disable all tutorial dialogs: yes
     Custom left & right margins: yes
-    Block WiFi firmware upgrade: yes
+    Block WiFi firmware upgrade: no
     Custom footer (page number text): yes
     Custom Sleep/Power-off timeouts: no
     Fix three KePub fullScreenReading bugs: yes
@@ -204,6 +222,7 @@ files:
 # https://www.mobileread.com/forums/showthread.php?t=278392
   src/delete_files/delete_fonts.rules: etc/udev/rules.d/delete_fonts.rules
   src/delete_files/delete_fonts.sh: root/delete_fonts.sh
+  src/hyphenDicts/dicthtml.zip: mnt/onboard/.kobo/dict/dicthtml.zip
   src/hyphenDicts/dicthtml-e6.zip: mnt/onboard/.kobo/dict/dicthtml-es.zip
   src/hyphenDicts/hyph_de.dic: usr/local/Kobo/hyphenDicts/hyph_de.dic
   src/hyphenDicts/hyph_es.dic:
@@ -271,6 +290,20 @@ files:
   src/fonts/Literata-Regular.otf:
     - mnt/onboard/fonts/Literata-Regular.otf
     - mnt/onboard/.adds/koreader/fonts/Literata/Literata-Regular.otf
+# https://www.fontsquirrel.com/fonts/courier-prime
+  src/fonts/CourierPrime-Regular.ttf: mnt/onboard/fonts/CourierPrime-Regular.ttf
+  src/fonts/CourierPrime-Italic.ttf: mnt/onboard/fonts/CourierPrime-Italic.ttf
+  src/fonts/CourierPrime-Bold.ttf: mnt/onboard/fonts/CourierPrime-Bold.ttf
+  src/fonts/CourierPrime-BoldItalic.ttf: mnt/onboard/fonts/CourierPrime-BoldItalic.ttf
+  src/fonts/CourierPrimeSans-Regular.ttf: mnt/onboard/fonts/CourierPrimeSans-Regular.ttf
+  src/fonts/CourierPrimeSans-Italic.ttf: mnt/onboard/fonts/CourierPrimeSans-Italic.ttf
+  src/fonts/CourierPrimeSans-Bold.ttf: mnt/onboard/fonts/CourierPrimeSans-Bold.ttf
+  src/fonts/CourierPrimeSans-BoldItalic.ttf: mnt/onboard/fonts/CourierPrimeSans-BoldItalic.ttf
+# https://www.wfonts.com/font/dark-courier
+  src/fonts/DarkCourier-Regular.ttf: mnt/onboard/fonts/DarkCourier-Regular.ttf
+  src/fonts/DarkCourier-Italic.ttf: mnt/onboard/fonts/DarkCourier-Italic.ttf
+  src/fonts/DarkCourier-Bold.ttf: mnt/onboard/fonts/DarkCourier-Bold.ttf
+  src/fonts/DarkCourier-BoldItalic.ttf: mnt/onboard/fonts/DarkCourier-BoldItalic.ttf
 # https://github.com/adobe-fonts/source-sans-pro
   src/fonts/SourceSansPro-Regular.ttf: mnt/onboard/fonts/SourceSansPro-Regular.ttf
   src/fonts/SourceSansPro-Italic.ttf: mnt/onboard/fonts/SourceSansPro-Italic.ttf
@@ -284,7 +317,7 @@ files:
   dropbear/usr/local/dropbear/dropbear.sh: usr/local/dropbear/dropbear.sh
   dropbear/usr/local/dropbear/dropbearmulti: usr/local/dropbear/dropbearmulti
   dropbear/usr/libexec/sftp-server: usr/libexec/sftp-server
-# KFMon 1.2.9
+# KFMon 1.2.12
   kfmon/etc/init.d/on-animator.sh: etc/init.d/on-animator.sh
   kfmon/etc/udev/rules.d/99-kfmon.rules: etc/udev/rules.d/99-kfmon.rules
   kfmon/usr/local/kfmon/bin/fbink: usr/local/kfmon/bin/fbink
@@ -301,7 +334,7 @@ files:
   kfmon/icons/kfmon.png: mnt/onboard/icons/kfmon.png
   kfmon/icons/koreader.png: mnt/onboard/icons/koreader.png
   kfmon/icons/plato.png: mnt/onboard/icons/plato.png
-# Miniclock
+# Miniclock 20181123
   miniclock/etc/udev/rules.d/miniclock.rules: etc/udev/rules.d/miniclock.rules
   miniclock/mnt/onboard/.addons/miniclock/miniclock.cfg: mnt/onboard/.adds/miniclock/miniclock.cfg
   miniclock/usr/local/MiniClock/fbink: usr/local/MiniClock/fbink
