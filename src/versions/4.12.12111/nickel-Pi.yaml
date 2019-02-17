@@ -744,6 +744,7 @@ PROGRESIVE:
 # Pop-up text (footnotes and alike) -> RegularTouchLabel
 # More information in Light menu -> RegularElidedLabel
 # Type of file and file size on My Books menu -> MetaDataElidedLabel
+# Header size in epub and kepub -> MediumVertSpacer
       Replace: "*{background-color:white;}\n\
                 QWidget[smallIconHeight=true]{min-height:32px;max-height:32px;}\n\
                 QWidget[smallIconWidth=true]{min-width:32px;max-width:32px;}\n\
@@ -820,7 +821,7 @@ PROGRESIVE:
                 RegularHorizSpacer{min-width:22px;max-width:22px;}\n\
                 RegularVertSpacer{min-height:22px;max-height:22px;}\n\
                 MediumHorizSpacer{min-width:44px;max-width:44px;}\n\
-                MediumVertSpacer{min-height:44px;max-height:44px;}\n\
+                MediumVertSpacer{min-height:12px;max-height:12px;}\n\
                 LargeVertSpacer{min-height:66px;max-height:66px;}\n\
                 SmallMarginContainer{qproperty-leftMargin:10px;qproperty-rightMargin:10px;qproperty-topMargin:10px;qproperty-bottomMargin:10px;qproperty-spacing:10px;}\n\
                 SmallHorizMarginContainer{qproperty-spacing:10px;qproperty-leftMargin:10px;qproperty-rightMargin:10px;}\n\
@@ -1486,6 +1487,7 @@ PROGRESIVE:
 # See: https://www.mobileread.com/forums/showpost.php?p=3520011&postcount=22
       Replace: "#StatsView{qproperty-topMargin:170;qproperty-leftMargin:60;qproperty-rightMargin:60;qproperty-spacing:40;}\n\
                 #currentlyReading{qproperty-spacing:40;max-height:370px;min-height:370px;}\n\
+                #currentlyReading[qApp_isFontScaleLarge=true]{max-height:408px;min-height:408px;}\n\
                 #bookCover{max-width:215px;min-width:215px;}\n\
                 #bookInfoContainer{qproperty-spacing:10;}\n\
                 #author{padding:0px;padding-top:10px;padding-bottom:4px;}\n\
@@ -2390,7 +2392,7 @@ PROGRESIVE:
 # A negative top margin moves the caption text upwards,
 # further from the bezel and closer to the page content.
       Replace: "ReadingFooter {qproperty-footerMargin: 74; min-height: 42px; max-height: 42px;}\n\
-                #caption{font-size: 26px; margin-top: -08px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              "
+                #caption {font-family: Georgia; font-size: 26px; margin-top: -08px;}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       "
       MustMatchLength: yes
 
 #nozlib pos: 4d3b8a - 5061514
@@ -3019,6 +3021,7 @@ PROGRESIVE:
 # Sync title of home screen main menu -> lastSyncTime
       Replace: "QLabel{qproperty-indent:0;}\n\
                 #SyncMenuView{max-width:622px;min-width:622px;max-height:458px;min-height:458px;qproperty-minScreenPadding:30;background-color:transparent;}\n\
+                #SyncMenuView[qApp_isFontScaleLarge=true]{max-height:447px;min-height:447px;}\n\
                 #contentContainer{qproperty-spacing:20;qproperty-topMargin:40;qproperty-bottomMargin:40;qproperty-leftMargin:40;qproperty-rightMargin:40;}\n\
                 #textContainer QLabel,#lastSyncTime{padding:0px;}\n\
                 #description,#statusLine1,#statusLine2{font-size:36px;}\n\
@@ -4342,6 +4345,7 @@ PROGRESIVE:
       Replace: "#DragonSimilarLibraryView{qproperty-bottomMargin:15;}\n\
                 #header{qproperty-topMargin:170;qproperty-leftMargin:60;qproperty-rightMargin:60;}\n\
                 #bookinfo{max-height:136px;min-height:136px;}\n\
+                #bookinfo[qApp_isFontScaleLarge=true]{max-height:170px;min-height:170px;}\n\
                 #title{font-family:Georgia;font-style:italic;font-size:39px;}\n\
                 #author{padding-left:0px;padding-right:0px;}\n\
                 #series{qproperty-maxNumLines:1;padding:0px;}\n\
@@ -4729,6 +4733,7 @@ PROGRESIVE:
                 #verticalSpacer_3[qApp_deviceIsTrilogy=true],\n#verticalSpacer_4[qApp_deviceIsTrilogy=true] {\n  max-height: 10px;\n  min-height: 10px;\n}"
       Replace: "#container{qproperty-leftMargin:140;qproperty-rightMargin:140;qproperty-BottomMargin:60;}\n\
                 #badge{max-width:400px;min-width:400px;max-height:400px;min-height:400px;}\n\
+                #badge[qApp_isFontScaleLarge=true]{max-width:300px;min-width:300px;max-height:300px;min-height:300px;}\n\
                 #percentage{max-height:70;min-height:70;}\n\
                 #solidLine{background:black;}\n\
                 #verticalSpacer_1{max-height:155;min-height:155;}\n\
@@ -4788,7 +4793,7 @@ PROGRESIVE:
                 QuickTurnSlider[qApp_deviceIsDaylight=true] {\n  min-height: 56px;\n  max-height: 56px;\n}"
 # When editing the replacement values below,
 # BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
-      Replace: "QuickTurnSlider {min-height: 56px; max-height: 44px;}\n                                                                                                                                                                                                                                                                                                     "
+      Replace: "QuickTurnSlider {min-height: 22px; max-height: 22px;}\n                                                                                                                                                                                                                                                                                                     "
       MustMatchLength: yes
 
 #123 (zlib) pos: 4ddf13
