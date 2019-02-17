@@ -5656,7 +5656,3 @@ PROGRESIVE:
                 #ReviewWidget[widgetSize=\"medium\"] #content[qApp_isFontScaleLarge=true] {qproperty-maxNumLines:2;}\n\
                 #ReviewWidget[widgetSize=\"large\"] #content {qproperty-maxNumLines:10;}\n\
                 #ReviewWidget[widgetSize=\"large\"] #content[qApp_isFontScaleLarge=true] {qproperty-maxNumLines:5;}"
-
-# Please, when you are going to implement the nozlib part of cssextract take into account pipcat's tool (extract.py) is not detecting all css strings (chunks).
-# It has detected 149 (4.11.12111) and I have 169 (but, perhaps, there are more).
-# As a plus I'd wish to extract the svg files too.
