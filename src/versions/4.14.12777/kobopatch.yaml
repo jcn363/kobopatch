@@ -1,0 +1,340 @@
+## Works with kobopatch v0.9.1 and later.
+## You can update kobopatch by downloading the latest release from https://github.com/geek1011/kobopatch/releases. 
+version: 4.14.12777
+in: src/kobo-update-4.14.12777.zip
+out: out/KoboRoot.tgz
+log: out/log.txt
+
+patchFormat: kobopatch
+
+## Comment with ## at the beginning of the line, any of the four "patchable" files if you do not want 
+## to patch this specific file (saves space in the KoboRoot.tgz file). If no line is commented with #,
+## the four files will be saved to KoboRoot.tgz regardless of they have been patched or not.
+patches:
+  src/nickel-P.yaml: usr/local/Kobo/nickel
+#  src/nickel-PH.yaml: usr/local/Kobo/nickel
+#  src/nickel-Pi.yaml: usr/local/Kobo/nickel
+#  src/nickel-PZ.yaml: usr/local/Kobo/nickel
+#  src/nickel-PNZ.yaml: usr/local/Kobo/nickel
+#  src/nickel-F.yaml: usr/local/Kobo/nickel
+#  src/nickel-FF.yaml: usr/local/Kobo/nickel
+#  src/nickel.yaml: usr/local/Kobo/nickel
+##  src/nickel-363.yaml: usr/local/Kobo/nickel
+  src/sickel.yaml: usr/local/Kobo/sickel
+  src/libadobe.so.yaml: usr/local/Kobo/libadobe.so
+#  src/nickel-ReaderService.yaml: usr/local/Kobo/nickel
+#  src/libnickel-ReaderService.yaml: usr/local/Kobo/libnickel.so.1.0.0
+  src/libnickel-PROGRESIVE.yaml: usr/local/Kobo/libnickel.so.1.0.0
+  src/libnickel.so.1.0.0.yaml: usr/local/Kobo/libnickel.so.1.0.0
+  src/librmsdk-PROGRESIVE.yaml: usr/local/Kobo/librmsdk.so.1.0.0
+  src/librmsdk.so.1.0.0.yaml: usr/local/Kobo/librmsdk.so.1.0.0
+
+## You can put lines in the following section to override the enabled state of patches.
+## The indentation matters! Each file to be patched (e.g. src/nickel.yaml:)should be indented by 2 spaces.
+## Each override (e.g. Custom synopsis/details line spacing: yes) should be indented by 4 spaces. 
+## Add to the section below. This section can be copy and pasted into newer patch versions to
+## keep your selections. 
+## The name of the overrides has to be exactly the same than in the corresponding yaml file.
+##
+## Example of how it should look:
+## overrides:
+##   src/nickel.patch:
+##     Custom synopsis/details line spacing: yes
+##     Whatever the patch is called: no
+##   src/libadobe.so.patch:
+##     You get the idea: yes
+overrides:
+  src/nickel-ReaderService.yaml:
+    My Decrease MediumVertSpacer: yes
+  src/libnickel-ReaderService.yaml:
+    Decrease ReaderService viewport height: no
+    Increase ReaderService viewport height: yes
+  src/nickel-F.yaml:
+    Custom font-size: yes
+  src/nickel-FF.yaml:
+    Font-Family bulk change: yes
+  src/nickel-P.yaml:
+    PROGRESIVE: yes
+  src/nickel-PH.yaml:
+    PROGRESIVE: yes
+  src/nickel-Pi.yaml:
+    PROGRESIVE: yes
+  src/nickel-PZ.yaml:
+    PROGRESIVE: yes
+  src/nickel-PNZ.yaml:
+    PROGRESIVE: yes
+  src/nickel.yaml:
+    Show all games: yes
+    Remove forgot pin button from lock screen: yes
+    Remove recommendations (row1col2) from home screen: # before 4.14.12777, now in libnickel
+    Change pop-up footnote font-family: yes
+    Remove extra space on selection menu: yes
+    Reduce top/bottom page spacer: yes
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    Disable reading footer: no
+    Custom reading footer style: yes
+# END GROUP
+    Custom synopsis/details line spacing: no
+    Custom synopsis/font size: no
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    Custom menubar - reduce height by 33%: no
+    Custom menubar - reduce height by 50%: yes
+# END GROUP
+    Dictionary pop-up frame size increase: # before 4.10.11591
+    Dictionary pop-up - increase available text area: yes
+    Fix reading stats/author name cut off when series is showing: yes
+    Changing the info panel in full size screensaver- beta 1: no
+    Increase the cover size in library: yes
+    Increase the view details container size: yes
+    Increase size of kepub chapter progress chart: yes
+    Custom font to collection and author titles: no
+    Increase headlines font: no
+    New home screen subtitle custom font: no
+# PATCH GROUP (Home screen tweaks) - DON'T EANBLE MORE THAN 1
+    Remove footer (row3) and increase cover size on new home screen: no
+    Remove footer (row3) on new home screen: no
+    New home screen increasing cover size: no
+  src/nickel-363.yaml:
+    Only Reading and My Books: yes
+    Remove Footer and Recommendations: #yes
+# END GROUP
+    Change the font-size of footnotes pop-up and alikes: yes
+    Change the font-family of footnotes pop-up and alikes: yes
+    footnotes and alike italicized: yes
+    Reduce reading footer and quit caption: #yes
+  src/sickel.yaml:
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    sickel reboot timeout (20 sec): no
+    sickel reboot timeout (30 sec): yes #
+# END GROUP
+  src/libadobe.so.yaml:
+    Remove PDF map widget shown during panning: yes
+    Remove PDF page turn arrows: yes
+    Keep PDF pan position: yes
+  src/libnickel-PROGRESIVE.yaml:
+    Dictionary, remove long winded closest match notification: yes
+    unclassified (PROGRESIVE): yes
+    My ePub/Kepub fixed font sharpness: yes
+    Wikipedia Search language: yes
+    My KePub stylesheet additions: yes
+    My Dictionary text font-family/font-size/line-height: yes
+    My Brightness fine control: no
+    Add orientation dropdown to developer options on all devices: ###1 yes
+    Use inverted portrait in rotation popup: no
+    Use inverted landscape in rotation popup: ###2 yes
+    My reading footer height: yes ###3
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    My 10 line spacing values KA1: yes #8
+    My 24 line spacing values KA1: #8 yes
+# END GROUP
+  src/libnickel.so.1.0.0.yaml:
+    Set slide to unlock: yes #1
+    Enable rotation on all devices: yes #2
+    Always show confirmation dialog before upgrading: #3 yes
+    Custom kepub default margins: yes #4
+    Replace adobe page numbers toggle with invert screen: yes #5
+    Always display chapter name on navigation menu: yes #6
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    My 10 line spacing values: #7 yes
+    My 24 line spacing values: #8 yes  in libnickel-PROGRESIVE.yaml
+# END GROUP
+    Set KePub hyphenation: yes #9
+    ePub left/right margins step size: #yes
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    ePub fixed/adjustable top/bottom margins: #10 yes
+    ePub fixed top/bottom margins: #yes
+    ePub disable built-in body padding-bottom: #yes
+# END GROUP
+    Clock display duration: yes #11
+    Freedom to advanced fonts control: yes #12
+    Custom font sizes: yes #13
+    Rename new home screen footer: no
+    Both page turn buttons go next: no
+    Both page turn sides go next: no
+    Rename settings: no
+    Set reading footer height: no # in libnickel-PROGRESIVE.yaml
+    Use old keyboard on all devices: no
+    Hide browser from beta features: yes #
+    Remove beta features not supported text: yes #
+    Disable all tutorial dialogs: yes #
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    Set visible SmartLink: yes #
+    Only show Pocket SmartLink: no
+    Only show stats SmartLink: no
+    Never show Kobo Plus, wishlist, and points SmartLinks: no
+# END GROUP
+    Disable wishlist: # yes
+    Remove recommendations (row1col2) from home screen: yes
+    Custom left & right margins: yes
+    Block WiFi firmware upgrade: no
+    Custom footer (page number text): yes
+    Custom Sleep/Power-off timeouts: no
+    Fix three KePub fullScreenReading bugs: yes
+    Force user line spacing in KePubs: yes
+    Force user line spacing in ePubs (part 1 of 2): yes # PART 2 in librmsdk.so.1.0.0.yaml
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    Un-force font-family override p tags (std epubs): no
+    Force user font-family in ePubs (Part 1 of 2): yes # PART 2 in librmsdk.so.1.0.0.yaml
+# END GROUP
+    ePub constant font sharpness: no # in libnickel-PROGRESIVE.yaml
+    KePub constant font sharpness: no # in libnickel-PROGRESIVE.yaml
+    Un-Force user text-align in div,p tags in KePubs: yes
+    Un-Force user font-family in KePubs: yes
+    Un-force link decoration in KePubs: yes
+    KePub stylesheet additions: no # in libnickel-PROGRESIVE.yaml
+    Change dicthtml strings to micthtml: no
+    Allow searches on Extra dictionaries: yes
+    Ignore .otf fonts: no
+    Brightness fine control: no # in libnickel-PROGRESIVE.yaml
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    Keyboard template (Mini/Touch/Glo/Aura): no
+    Keyboard template (AuraHD/H2O): no
+    Keyboard template (GloHD/ClaraHD/AuraOne/H2O2): no
+    Cyrillic keyboard (Mini/Touch/Glo/Aura/AuraHD/H2O): no
+    Cyrillic Keyboard (GloHD/ClaraHD/AuraOne/H2O2): no
+    Arabic keyboard (Mini/Touch/Glo/Aura/AuraHD/H2O): no
+    Hebrew keyboard (Mini/Touch/Glo/Aura): no
+    Hebrew keyboard (AuraHD/H2O): no
+    Hebrew keyboard (GloHD/ClaraHD/AuraOne/H2O2): no
+    Greek Keyboard (GloHD/ClaraHD/AuraOne/H2O2): no
+# END GROUP
+    Dictionary text font-family/font-size/line-height - beta: no # in libnickel-PROGRESIVE.yaml
+    Dictionary, remove long winded closest match notification: no # in libnickel-PROGRESIVE.yaml
+    Wikipedia Search language: no # in libnickel-PROGRESIVE.yaml
+  src/librmsdk-PROGRESIVE.yaml:
+    ePub multi-column gap size: yes
+# PATCH GROUP - DON'T EANBLE MORE THAN 1
+    ePub default 1P/1L columns [All]: no
+    ePub default 1P/2L columns [Daylight]: yes
+    ePub default 2P/3L columns [Daylight]: no
+# END GROUP
+  src/librmsdk.so.1.0.0.yaml:
+    Disable orphans/widows avoidance: yes
+    Default ePub monospace font (Courier): yes
+    Default ePub serif font (Amasis): no
+    Default ePub sans-serif font (Gill Sans): no
+    Default ePub symbol font (Symbol): no
+    Force user line spacing in ePubs (Part 2 of 2): yes # PART 1 in libnickel.so.1.0.0.yaml
+    Force user font-family in ePubs (Part 2 of 2): yes # PART 1 in libnickel.so.1.0.0.yaml
+    Ignore ePub book Adobe XPGT stylesheet (page-template.xpgt): yes
+    Ignore ePub book CSS and Adobe XPGT stylesheets: no
+    Ignore ePub TOC navpoints: no
+
+## TRANSLATIONS ##
+# Optional, use only if lrelease is not in PATH and if translations are needed
+# lrelease: /path/to/lrelease
+
+# Uncomment the following to add translations (replace lc with the language code)
+# translations:
+#   src/whatever.ts: usr/local/Kobo/translations/trans_lc.qm
+translations:
+  src/translations/trans_es.ts: usr/local/Kobo/translations/trans_es.qm
+## ADDITIONAL FILES ##
+# Uncomment the following to add additional files to the tgz (like init scripts or hyphen dicts)
+# The files will be root-owned, and world readable, writable, and executable (0777)
+# files:
+#   src/whatever.txt: usr/local/Kobo/whatever.txt
+files:
+# To remove the system fonts
+# https://www.mobileread.com/forums/showthread.php?t=278392
+  src/delete_files/delete_fonts.rules: etc/udev/rules.d/delete_fonts.rules
+  src/delete_files/delete_fonts.sh: root/delete_fonts.sh
+  src/hyphenDicts/dicthtml.zip: mnt/onboard/.kobo/dict/dicthtml.zip
+  src/hyphenDicts/dicthtml-e6.zip: mnt/onboard/.kobo/dict/dicthtml-es.zip
+  src/hyphenDicts/hyph_de.dic: usr/local/Kobo/hyphenDicts/hyph_de.dic
+  src/hyphenDicts/hyph_es.dic:
+    - usr/local/Kobo/hyphenDicts/hyph_es.dic 
+    - usr/local/Kobo/hyphenDicts/hyph_es_ES.dic
+  src/hyphenDicts/hyph_en_US.dic: usr/local/Kobo/hyphenDicts/hyph_en_US.dic
+  src/hyphenDicts/hyph_fr.dic: usr/local/Kobo/hyphenDicts/hyph_fr.dic
+  src/hyphenDicts/hyph_la.dic: usr/local/Kobo/hyphenDicts/hyph_la.dic
+#  src/translations/trans_es.qm: usr/local/Kobo/translations/trans_es.qm
+  src/otros/hosts-363: etc/hosts
+  src/otros/jcn-t.css:
+    - mnt/onboard/kobo_extra.css
+    - mnt/onboard/.kobo/kepub/kepub-book.css
+# https://www.ibm.com/plex/
+  src/fonts/IBMPlexMono-Regular.ttf:
+    - mnt/onboard/fonts/IBMPlexMono-Regular.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexMono-Regular.ttf
+  src/fonts/IBMPlexMono-Italic.ttf:
+    - mnt/onboard/fonts/IBMPlexMono-Italic.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexMono-Italic.ttf
+  src/fonts/IBMPlexMono-Bold.ttf:
+    - mnt/onboard/fonts/IBMPlexMono-Bold.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexMono-Bold.ttf
+  src/fonts/IBMPlexMono-BoldItalic.ttf:
+    - mnt/onboard/fonts/IBMPlexMono-BoldItalic.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexMono-BoldItalic.ttf
+  src/fonts/IBMPlexSans-Regular.ttf:
+    - mnt/onboard/fonts/IBMPlexSans-Regular.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexSans-Regular.ttf
+  src/fonts/IBMPlexSans-Italic.ttf:
+    - mnt/onboard/fonts/IBMPlexSans-Italic.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexSans-Italic.ttf
+  src/fonts/IBMPlexSans-Bold.ttf:
+    - mnt/onboard/fonts/IBMPlexSans-Bold.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexSans-Bold.ttf
+  src/fonts/IBMPlexSans-BoldItalic.ttf:
+    - mnt/onboard/fonts/IBMPlexSans-BoldItalic.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexSans-BoldItalic.ttf
+  src/fonts/IBMPlexSerif-Regular.ttf:
+    - mnt/onboard/fonts/IBMPlexSerif-Regular.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexSerif-Regular.ttf
+  src/fonts/IBMPlexSerif-Italic.ttf:
+    - mnt/onboard/fonts/IBMPlexSerif-Italic.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexSerif-Italic.ttf
+  src/fonts/IBMPlexSerif-Bold.ttf:
+    - mnt/onboard/fonts/IBMPlexSerif-Bold.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexSerif-Bold.ttf
+  src/fonts/IBMPlexSerif-BoldItalic.ttf:
+    - mnt/onboard/fonts/IBMPlexSerif-BoldItalic.ttf
+    - mnt/onboard/.adds/koreader/fonts/ibm/IBMPlexSerif-BoldItalic.ttf
+# https://www.type-together.com/literata
+  src/fonts/Literata-BoldItalic.otf:
+    - mnt/onboard/fonts/Literata-BoldItalic.otf
+    - mnt/onboard/.adds/koreader/fonts/Literata/Literata-BoldItalic.otf
+  src/fonts/Literata-Bold.otf:
+    - mnt/onboard/fonts/Literata-Bold.otf
+    - mnt/onboard/.adds/koreader/fonts/Literata/Literata-Bold.otf
+  src/fonts/Literata-Italic.otf:
+    - mnt/onboard/fonts/Literata-Italic.otf
+    - mnt/onboard/.adds/koreader/fonts/Literata/Literata-Italic.otf
+  src/fonts/Literata-Regular.otf:
+    - mnt/onboard/fonts/Literata-Regular.otf
+    - mnt/onboard/.adds/koreader/fonts/Literata/Literata-Regular.otf
+# https://www.fontsquirrel.com/fonts/courier-prime
+  src/fonts/CourierPrime-Regular.ttf: mnt/onboard/fonts/CourierPrime-Regular.ttf
+  src/fonts/CourierPrime-Italic.ttf: mnt/onboard/fonts/CourierPrime-Italic.ttf
+  src/fonts/CourierPrime-Bold.ttf: mnt/onboard/fonts/CourierPrime-Bold.ttf
+  src/fonts/CourierPrime-BoldItalic.ttf: mnt/onboard/fonts/CourierPrime-BoldItalic.ttf
+  src/fonts/CourierPrimeSans-Regular.ttf: mnt/onboard/fonts/CourierPrimeSans-Regular.ttf
+  src/fonts/CourierPrimeSans-Italic.ttf: mnt/onboard/fonts/CourierPrimeSans-Italic.ttf
+  src/fonts/CourierPrimeSans-Bold.ttf: mnt/onboard/fonts/CourierPrimeSans-Bold.ttf
+  src/fonts/CourierPrimeSans-BoldItalic.ttf: mnt/onboard/fonts/CourierPrimeSans-BoldItalic.ttf
+# https://www.wfonts.com/font/dark-courier
+  src/fonts/DarkCourier-Regular.ttf: mnt/onboard/fonts/DarkCourier-Regular.ttf
+  src/fonts/DarkCourier-Italic.ttf: mnt/onboard/fonts/DarkCourier-Italic.ttf
+  src/fonts/DarkCourier-Bold.ttf: mnt/onboard/fonts/DarkCourier-Bold.ttf
+  src/fonts/DarkCourier-BoldItalic.ttf: mnt/onboard/fonts/DarkCourier-BoldItalic.ttf
+# https://github.com/adobe-fonts/source-sans-pro
+  src/fonts/SourceSansPro-Regular.ttf: mnt/onboard/fonts/SourceSansPro-Regular.ttf
+  src/fonts/SourceSansPro-Italic.ttf: mnt/onboard/fonts/SourceSansPro-Italic.ttf
+  src/fonts/SourceSansPro-Bold.ttf: mnt/onboard/fonts/SourceSansPro-Bold.ttf
+  src/fonts/SourceSansPro-BoldItalic.ttf: mnt/onboard/fonts/SourceSansPro-BoldItalic.ttf
+# https://github.com/adobe-fonts/source-serif-pro
+  src/fonts/SourceSerifPro-Regular.otf: mnt/onboard/fonts/SourceSerifPro-Regular.otf
+  src/fonts/SourceSerifPro-Italic.otf: mnt/onboard/fonts/SourceSerifPro-Italic.otf
+  src/fonts/SourceSerifPro-Bold.otf: mnt/onboard/fonts/SourceSerifPro-Bold.otf
+  src/fonts/SourceSerifPro-BoldItalic.otf: mnt/onboard/fonts/SourceSerifPro-BoldItalic.otf
+# https://github.com/adobe-fonts/source-code-pro
+  src/fonts/SourceCodePro-Regular.otf: mnt/onboard/fonts/SourceCodePro-Regular.otf
+  src/fonts/SourceCodePro-Italic.otf: mnt/onboard/fonts/SourceCodePro-Italic.otf
+  src/fonts/SourceCodePro-Bold.otf: mnt/onboard/fonts/SourceCodePro-Bold.otf
+  src/fonts/SourceCodePro-BoldItalic.otf: mnt/onboard/fonts/SourceCodePro-BoldItalic.otf
+# Miniclock-20181123 (frostschutz)
+# https://www.mobileread.com/forums/showpost.php?s=c55642360f98750550fd9795aa281816&p=3762123&postcount=6
+  miniclock/etc/udev/rules.d/miniclock.rules: etc/udev/rules.d/miniclock.rules
+  miniclock/mnt/onboard/.addons/miniclock/miniclock.cfg: mnt/onboard/.adds/miniclock/miniclock.cfg
+  miniclock/usr/local/MiniClock/fbink: usr/local/MiniClock/fbink
+  miniclock/usr/local/MiniClock/miniclock.sh: usr/local/MiniClock/miniclock.sh

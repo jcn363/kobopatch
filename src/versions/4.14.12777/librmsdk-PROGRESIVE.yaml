@@ -1,0 +1,27 @@
+# The following patch(es) are ported from GeoffR's patch zips
+ePub multi-column gap size:
+  - Enabled: no
+  - Description: |
+      Sets the default size of the gap between columns.
+      BEWARE: Also sets the default size of <h2> headers,
+      and maybe other things too.
+  - FindBaseAddressString: "\01.5em\0"
+  - ReplaceString: {Offset: 1, Find: "1.5em", Replace: "1.4em"}
+  
+ePub default 1P/1L columns [All]:
+  - Enabled: no
+  - PatchGroup: ePub multi-column alternatives
+  - FindReplaceString: {Find: "93em\0\0", Replace: "9999px"}
+  - FindReplaceString: {Find: "61.5em",   Replace: "6666px"}
+
+ePub default 1P/2L columns [Daylight]:
+  - Enabled: no
+  - PatchGroup: ePub multi-column alternatives
+  - FindReplaceString: {Find: "93em\0\0", Replace: "1921px"}
+  - FindReplaceString: {Find: "61.5em",   Replace: "1441px"}
+
+ePub default 2P/3L columns [Daylight]:
+  - Enabled: no
+  - PatchGroup: ePub multi-column alternatives
+  - FindReplaceString: {Find: "93em\0\0", Replace: "1441px"}
+  - FindReplaceString: {Find: "61.5em",   Replace: "961px"}
