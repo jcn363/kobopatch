@@ -124,8 +124,8 @@ overrides:
     Use inverted landscape in rotation popup: ###2 yes
     My reading footer height: yes ###3
 # PATCH GROUP - DON'T EANBLE MORE THAN 1
-    My 10 line spacing values KA1: yes #8
-    My 24 line spacing values KA1: #8 yes
+    My 10 line spacing values KA1: #8 yes
+    My 24 line spacing values KA1: yes #8
 # END GROUP
   src/libnickel.so.1.0.0.yaml:
     Set slide to unlock: yes #1
@@ -141,7 +141,7 @@ overrides:
     Set KePub hyphenation: yes #9
     ePub left/right margins step size: #yes
 # PATCH GROUP - DON'T EANBLE MORE THAN 1
-    ePub fixed/adjustable top/bottom margins: #10 yes
+    ePub fixed/adjustable top/bottom margins: yes #10
     ePub fixed top/bottom margins: #yes
     ePub disable built-in body padding-bottom: #yes
 # END GROUP
