@@ -148,7 +148,7 @@ overrides:
     Clock display duration: yes #11
     Freedom to advanced fonts control: yes #12
     Custom font sizes: yes #13
-    Rename new home screen footer: no
+    Rename new home screen footer: yes
     Both page turn buttons go next: no
     Both page turn sides go next: no
     Rename settings: no
